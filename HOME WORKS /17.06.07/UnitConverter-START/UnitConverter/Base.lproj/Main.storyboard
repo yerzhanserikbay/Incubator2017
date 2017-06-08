@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UnitConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="8ls-6V-h6C">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iAl-kv-TcT">
+                                <rect key="frame" x="87.5" y="42" width="200" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KM9-E8-Bom"/>
+                                    <constraint firstAttribute="height" constant="28" id="kCy-04-4yX"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <segments>
+                                    <segment title="F"/>
+                                    <segment title="C"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="UnM-zF-e26"/>
+                                </connections>
+                            </segmentedControl>
+                            <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="6cE-21-g0m">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="a8h-YZ-rxe">
+                                <rect key="frame" x="0.0" y="110" width="375" height="160"/>
+                                <color key="tintColor" red="0.98852358712736144" green="0.99980570888600218" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Zky-wO-Yag"/>
+                                    <constraint firstAttribute="width" constant="375" id="iD1-QX-rHl"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="37">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="137"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.98852358712736144" green="0.99980570888600218" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8ls-6V-h6C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6fn-O1-TKE"/>
+                            <constraint firstAttribute="trailing" secondItem="6cE-21-g0m" secondAttribute="trailing" id="AvY-I2-ihv"/>
+                            <constraint firstItem="8ls-6V-h6C" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EbB-iT-vlg"/>
+                            <constraint firstAttribute="trailing" secondItem="8ls-6V-h6C" secondAttribute="trailing" id="HZQ-ec-vOU"/>
+                            <constraint firstItem="a8h-YZ-rxe" firstAttribute="top" secondItem="iAl-kv-TcT" secondAttribute="bottom" constant="40" id="U2b-TA-dYd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6cE-21-g0m" secondAttribute="bottom" id="Y5e-Sm-WA6"/>
+                            <constraint firstItem="iAl-kv-TcT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="g8o-Fq-oiH"/>
+                            <constraint firstItem="a8h-YZ-rxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jfr-qT-z55"/>
+                            <constraint firstItem="6cE-21-g0m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s9s-IU-gfa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8ls-6V-h6C" secondAttribute="bottom" id="vNu-AO-E4z"/>
+                            <constraint firstItem="iAl-kv-TcT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wMd-nN-maV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="display" destination="a8h-YZ-rxe" id="cQZ-Iw-ITd"/>
+                        <outlet property="pickerView" destination="6cE-21-g0m" id="DKY-2M-DC4"/>
+                        <outlet property="segmentControl" destination="iAl-kv-TcT" id="J3y-56-53H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Untitled-1 copy" width="750" height="1334"/>
+    </resources>
+</document>
