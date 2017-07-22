@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="17A264c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="URLSessionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWo-Rm-8Mx">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="231" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nth-Yt-izN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="595"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="231" id="Vn1-5p-hak" customClass="BookUITableViewCell" customModule="URLSessionApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="231"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vn1-5p-hak" id="ofg-On-kre">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="230.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xGi-u7-CVE">
+                                                    <rect key="frame" x="10" y="10" width="120" height="210.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="gBm-bC-MCs"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKQ-kz-2NJ">
+                                                    <rect key="frame" x="150" y="28" width="207" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD8-kP-tVJ">
+                                                    <rect key="frame" x="140" y="69" width="217" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kD8-kP-tVJ" firstAttribute="leading" secondItem="xGi-u7-CVE" secondAttribute="trailing" constant="10" id="9om-aL-6Mg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kD8-kP-tVJ" secondAttribute="trailing" constant="10" id="CoS-Ga-5i7"/>
+                                                <constraint firstAttribute="bottom" secondItem="xGi-u7-CVE" secondAttribute="bottom" constant="10" id="ZzF-fB-H3w"/>
+                                                <constraint firstItem="eKQ-kz-2NJ" firstAttribute="leading" secondItem="xGi-u7-CVE" secondAttribute="trailing" constant="20" id="keb-Uc-ZMR"/>
+                                                <constraint firstItem="kD8-kP-tVJ" firstAttribute="top" secondItem="eKQ-kz-2NJ" secondAttribute="bottom" constant="20" id="odG-ee-HzB"/>
+                                                <constraint firstItem="eKQ-kz-2NJ" firstAttribute="top" secondItem="ofg-On-kre" secondAttribute="topMargin" constant="20" id="v23-kc-81z"/>
+                                                <constraint firstItem="xGi-u7-CVE" firstAttribute="top" secondItem="ofg-On-kre" secondAttribute="top" constant="10" id="vJf-06-9rb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eKQ-kz-2NJ" secondAttribute="trailing" constant="10" id="vLk-dw-Mi8"/>
+                                                <constraint firstItem="xGi-u7-CVE" firstAttribute="leading" secondItem="ofg-On-kre" secondAttribute="leading" constant="10" id="x4b-gU-Xft"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="kD8-kP-tVJ" id="AgP-8U-YGH"/>
+                                            <outlet property="bookImageView" destination="xGi-u7-CVE" id="icx-ZE-z3w"/>
+                                            <outlet property="titleLabel" destination="eKQ-kz-2NJ" id="gju-yZ-sea"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="nWo-Rm-8Mx" id="1A7-eb-nOn"/>
+                        <outlet property="tablemView" destination="nth-Yt-izN" id="d07-y0-2bg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="94.902548725637189"/>
+        </scene>
+    </scenes>
+</document>

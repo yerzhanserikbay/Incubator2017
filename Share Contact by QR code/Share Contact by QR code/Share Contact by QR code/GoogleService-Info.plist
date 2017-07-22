@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1002812612607-36k5kpuov1sp0njhilqjq1310ccbghlg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1002812612607-36k5kpuov1sp0njhilqjq1310ccbghlg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCoV4eZlOFMgpfG4ISYHs16Q4Ac272gBHc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1002812612607</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>HOME.Share-Contact-by-QR-code</string>
+	<key>PROJECT_ID</key>
+	<string>share-contact-by-qr-code</string>
+	<key>STORAGE_BUCKET</key>
+	<string>share-contact-by-qr-code.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1002812612607:ios:d445b0aae60b77c7</string>
+	<key>DATABASE_URL</key>
+	<string>https://share-contact-by-qr-code.firebaseio.com</string>
+</dict>
+</plist>

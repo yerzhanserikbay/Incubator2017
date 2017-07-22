@@ -1,0 +1,844 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29C5BECAF5C4B50217F4F8D2 /* Pods_Share_Contact_by_QR_code.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F25BC0FE662E2DF5B92AD6 /* Pods_Share_Contact_by_QR_code.framework */; };
+		4A273088BDE970664DCBD8F0 /* Pods_Share_Contact_by_QR_codeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2243839B39445E4AFCE52C62 /* Pods_Share_Contact_by_QR_codeTests.framework */; };
+		DB9D9D3142FF412197AD0F35 /* Pods_Share_Contact_by_QR_codeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6858236077940BB0430BDEB /* Pods_Share_Contact_by_QR_codeUITests.framework */; };
+		E63C98D11F177DF700D22AE7 /* SetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C98D01F177DF700D22AE7 /* SetProfileViewController.swift */; };
+		E63C98D31F1A1BB000D22AE7 /* OpenSettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C98D21F1A1BB000D22AE7 /* OpenSettingProfileViewController.swift */; };
+		E66D2F261F1D017A003B741F /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = E66D2F251F1D017A003B741F /* user.png */; };
+		E66D2F281F1DFCBA003B741F /* photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E66D2F271F1DFCBA003B741F /* photo.jpeg */; };
+		E6B93ADA1F137EC200EF2129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93AD91F137EC200EF2129 /* AppDelegate.swift */; };
+		E6B93ADC1F137EC200EF2129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93ADB1F137EC200EF2129 /* ViewController.swift */; };
+		E6B93ADF1F137EC200EF2129 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B93ADD1F137EC200EF2129 /* Main.storyboard */; };
+		E6B93AE21F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6B93AE01F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodeld */; };
+		E6B93AE71F137EC200EF2129 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B93AE51F137EC200EF2129 /* LaunchScreen.storyboard */; };
+		E6B93AF21F137EC300EF2129 /* Share_Contact_by_QR_codeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93AF11F137EC300EF2129 /* Share_Contact_by_QR_codeTests.swift */; };
+		E6B93AFD1F137EC300EF2129 /* Share_Contact_by_QR_codeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93AFC1F137EC300EF2129 /* Share_Contact_by_QR_codeUITests.swift */; };
+		E6B93B0F1F13845400EF2129 /* MyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93B0E1F13845400EF2129 /* MyCodeViewController.swift */; };
+		E6B93B111F138CE500EF2129 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93B101F138CE500EF2129 /* ScanCodeViewController.swift */; };
+		E6DFCDD31F14C8B3007F90AB /* Private.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD01F14C8B3007F90AB /* Private.png */; };
+		E6DFCDD41F14C8B3007F90AB /* Public.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD11F14C8B3007F90AB /* Public.png */; };
+		E6DFCDD51F14C8B3007F90AB /* Social.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD21F14C8B3007F90AB /* Social.png */; };
+		E6DFCDD91F14CB22007F90AB /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD61F14CB22007F90AB /* qrcode.png */; };
+		E6DFCDDA1F14CB22007F90AB /* scan.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD71F14CB22007F90AB /* scan.png */; };
+		E6DFCDDB1F14CB22007F90AB /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD81F14CB22007F90AB /* settings.png */; };
+		E6DFCDDD1F15F024007F90AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDDC1F15F024007F90AB /* GoogleService-Info.plist */; };
+		E6DFCDE01F1605DC007F90AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93ADB1F137EC200EF2129 /* ViewController.swift */; };
+		E6DFCDE21F1627C9007F90AB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFCDE11F1627C9007F90AB /* TableViewCell.swift */; };
+		E6DFCDE41F162A45007F90AB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFCDE31F162A45007F90AB /* SettingsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6B93AEE1F137EC300EF2129 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6B93ACE1F137EC200EF2129 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6B93AD51F137EC200EF2129;
+			remoteInfo = "Share Contact by QR code";
+		};
+		E6B93AF91F137EC300EF2129 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6B93ACE1F137EC200EF2129 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6B93AD51F137EC200EF2129;
+			remoteInfo = "Share Contact by QR code";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2243839B39445E4AFCE52C62 /* Pods_Share_Contact_by_QR_codeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Contact_by_QR_codeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2713007495B934F7904EE66B /* Pods-Share Contact by QR codeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR codeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR codeUITests/Pods-Share Contact by QR codeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6858236077940BB0430BDEB /* Pods_Share_Contact_by_QR_codeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Contact_by_QR_codeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D787BD41A2B695534D1679C5 /* Pods-Share Contact by QR code.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR code.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR code/Pods-Share Contact by QR code.debug.xcconfig"; sourceTree = "<group>"; };
+		E51831154CAAE4514050FB8E /* Pods-Share Contact by QR codeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR codeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR codeTests/Pods-Share Contact by QR codeTests.release.xcconfig"; sourceTree = "<group>"; };
+		E63C98D01F177DF700D22AE7 /* SetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetProfileViewController.swift; sourceTree = "<group>"; };
+		E63C98D21F1A1BB000D22AE7 /* OpenSettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSettingProfileViewController.swift; sourceTree = "<group>"; };
+		E66D2F251F1D017A003B741F /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		E66D2F271F1DFCBA003B741F /* photo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpeg; sourceTree = "<group>"; };
+		E673EE72C7F8E15484CD19CC /* Pods-Share Contact by QR code.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR code.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR code/Pods-Share Contact by QR code.release.xcconfig"; sourceTree = "<group>"; };
+		E6B93AD61F137EC200EF2129 /* Share Contact by QR code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Share Contact by QR code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B93AD91F137EC200EF2129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E6B93ADB1F137EC200EF2129 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6B93ADE1F137EC200EF2129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E6B93AE11F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Share_Contact_by_QR_code.xcdatamodel; sourceTree = "<group>"; };
+		E6B93AE61F137EC200EF2129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E6B93AE81F137EC200EF2129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6B93AED1F137EC300EF2129 /* Share Contact by QR codeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Share Contact by QR codeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B93AF11F137EC300EF2129 /* Share_Contact_by_QR_codeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share_Contact_by_QR_codeTests.swift; sourceTree = "<group>"; };
+		E6B93AF31F137EC300EF2129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6B93AF81F137EC300EF2129 /* Share Contact by QR codeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Share Contact by QR codeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B93AFC1F137EC300EF2129 /* Share_Contact_by_QR_codeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share_Contact_by_QR_codeUITests.swift; sourceTree = "<group>"; };
+		E6B93AFE1F137EC300EF2129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6B93B0E1F13845400EF2129 /* MyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCodeViewController.swift; sourceTree = "<group>"; };
+		E6B93B101F138CE500EF2129 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
+		E6DFCDD01F14C8B3007F90AB /* Private.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Private.png; sourceTree = "<group>"; };
+		E6DFCDD11F14C8B3007F90AB /* Public.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Public.png; sourceTree = "<group>"; };
+		E6DFCDD21F14C8B3007F90AB /* Social.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Social.png; sourceTree = "<group>"; };
+		E6DFCDD61F14CB22007F90AB /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrcode.png; sourceTree = "<group>"; };
+		E6DFCDD71F14CB22007F90AB /* scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan.png; sourceTree = "<group>"; };
+		E6DFCDD81F14CB22007F90AB /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		E6DFCDDC1F15F024007F90AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E6DFCDE11F1627C9007F90AB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		E6DFCDE31F162A45007F90AB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		EB031CE73D04C175EF0FB4CC /* Pods-Share Contact by QR codeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR codeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR codeTests/Pods-Share Contact by QR codeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED00BC5B4D6199ABBABE6854 /* Pods-Share Contact by QR codeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR codeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR codeUITests/Pods-Share Contact by QR codeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F3F25BC0FE662E2DF5B92AD6 /* Pods_Share_Contact_by_QR_code.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Contact_by_QR_code.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6B93AD31F137EC200EF2129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C5BECAF5C4B50217F4F8D2 /* Pods_Share_Contact_by_QR_code.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B93AEA1F137EC300EF2129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A273088BDE970664DCBD8F0 /* Pods_Share_Contact_by_QR_codeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B93AF51F137EC300EF2129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9D9D3142FF412197AD0F35 /* Pods_Share_Contact_by_QR_codeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		430B3EBED93E68FE4AA8BC75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3F25BC0FE662E2DF5B92AD6 /* Pods_Share_Contact_by_QR_code.framework */,
+				2243839B39445E4AFCE52C62 /* Pods_Share_Contact_by_QR_codeTests.framework */,
+				C6858236077940BB0430BDEB /* Pods_Share_Contact_by_QR_codeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C4FDA3D64E7B007345E5E0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D787BD41A2B695534D1679C5 /* Pods-Share Contact by QR code.debug.xcconfig */,
+				E673EE72C7F8E15484CD19CC /* Pods-Share Contact by QR code.release.xcconfig */,
+				EB031CE73D04C175EF0FB4CC /* Pods-Share Contact by QR codeTests.debug.xcconfig */,
+				E51831154CAAE4514050FB8E /* Pods-Share Contact by QR codeTests.release.xcconfig */,
+				2713007495B934F7904EE66B /* Pods-Share Contact by QR codeUITests.debug.xcconfig */,
+				ED00BC5B4D6199ABBABE6854 /* Pods-Share Contact by QR codeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E68344EA1F14C72D0030CC26 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				E66D2F251F1D017A003B741F /* user.png */,
+				E6DFCDD61F14CB22007F90AB /* qrcode.png */,
+				E6DFCDD71F14CB22007F90AB /* scan.png */,
+				E6DFCDD81F14CB22007F90AB /* settings.png */,
+				E66D2F271F1DFCBA003B741F /* photo.jpeg */,
+				E6DFCDD01F14C8B3007F90AB /* Private.png */,
+				E6DFCDD11F14C8B3007F90AB /* Public.png */,
+				E6DFCDD21F14C8B3007F90AB /* Social.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		E6B93ACD1F137EC200EF2129 = {
+			isa = PBXGroup;
+			children = (
+				E6B93AD81F137EC200EF2129 /* Share Contact by QR code */,
+				E6B93AF01F137EC300EF2129 /* Share Contact by QR codeTests */,
+				E6B93AFB1F137EC300EF2129 /* Share Contact by QR codeUITests */,
+				E6B93AD71F137EC200EF2129 /* Products */,
+				6C4FDA3D64E7B007345E5E0C /* Pods */,
+				430B3EBED93E68FE4AA8BC75 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E6B93AD71F137EC200EF2129 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6B93AD61F137EC200EF2129 /* Share Contact by QR code.app */,
+				E6B93AED1F137EC300EF2129 /* Share Contact by QR codeTests.xctest */,
+				E6B93AF81F137EC300EF2129 /* Share Contact by QR codeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6B93AD81F137EC200EF2129 /* Share Contact by QR code */ = {
+			isa = PBXGroup;
+			children = (
+				E6B93B0A1F137F0500EF2129 /* View */,
+				E6B93B0C1F137F0F00EF2129 /* Controller */,
+				E6B93B0D1F137F3000EF2129 /* Resource */,
+				E6B93B0B1F137F0D00EF2129 /* Model */,
+			);
+			path = "Share Contact by QR code";
+			sourceTree = "<group>";
+		};
+		E6B93AF01F137EC300EF2129 /* Share Contact by QR codeTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6B93AF11F137EC300EF2129 /* Share_Contact_by_QR_codeTests.swift */,
+				E6B93AF31F137EC300EF2129 /* Info.plist */,
+			);
+			path = "Share Contact by QR codeTests";
+			sourceTree = "<group>";
+		};
+		E6B93AFB1F137EC300EF2129 /* Share Contact by QR codeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E6B93AFC1F137EC300EF2129 /* Share_Contact_by_QR_codeUITests.swift */,
+				E6B93AFE1F137EC300EF2129 /* Info.plist */,
+			);
+			path = "Share Contact by QR codeUITests";
+			sourceTree = "<group>";
+		};
+		E6B93B0A1F137F0500EF2129 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E6B93B0B1F137F0D00EF2129 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6B93ADD1F137EC200EF2129 /* Main.storyboard */,
+				E6B93AE51F137EC200EF2129 /* LaunchScreen.storyboard */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E6B93B0C1F137F0F00EF2129 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6B93AD91F137EC200EF2129 /* AppDelegate.swift */,
+				E6B93ADB1F137EC200EF2129 /* ViewController.swift */,
+				E63C98D01F177DF700D22AE7 /* SetProfileViewController.swift */,
+				E6DFCDE31F162A45007F90AB /* SettingsViewController.swift */,
+				E6B93B0E1F13845400EF2129 /* MyCodeViewController.swift */,
+				E63C98D21F1A1BB000D22AE7 /* OpenSettingProfileViewController.swift */,
+				E6B93B101F138CE500EF2129 /* ScanCodeViewController.swift */,
+				E6DFCDE11F1627C9007F90AB /* TableViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E6B93B0D1F137F3000EF2129 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E6DFCDDC1F15F024007F90AB /* GoogleService-Info.plist */,
+				E68344EA1F14C72D0030CC26 /* image */,
+				E6B93AE81F137EC200EF2129 /* Info.plist */,
+				E6B93AE01F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodeld */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6B93AD51F137EC200EF2129 /* Share Contact by QR code */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6B93B011F137EC300EF2129 /* Build configuration list for PBXNativeTarget "Share Contact by QR code" */;
+			buildPhases = (
+				C641E0AC7C8F0676AD1F0F06 /* [CP] Check Pods Manifest.lock */,
+				E6B93AD21F137EC200EF2129 /* Sources */,
+				E6B93AD31F137EC200EF2129 /* Frameworks */,
+				E6B93AD41F137EC200EF2129 /* Resources */,
+				68441BF1CD79BFE549949728 /* [CP] Embed Pods Frameworks */,
+				5385BE4143C1B974C5B25628 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Share Contact by QR code";
+			productName = "Share Contact by QR code";
+			productReference = E6B93AD61F137EC200EF2129 /* Share Contact by QR code.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E6B93AEC1F137EC300EF2129 /* Share Contact by QR codeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6B93B041F137EC300EF2129 /* Build configuration list for PBXNativeTarget "Share Contact by QR codeTests" */;
+			buildPhases = (
+				3D43B1529E569ED027E669EE /* [CP] Check Pods Manifest.lock */,
+				E6B93AE91F137EC300EF2129 /* Sources */,
+				E6B93AEA1F137EC300EF2129 /* Frameworks */,
+				E6B93AEB1F137EC300EF2129 /* Resources */,
+				C0D9D188E5E4BE40452AA17E /* [CP] Embed Pods Frameworks */,
+				6FADBAA1DA91A1B2ED37AA16 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6B93AEF1F137EC300EF2129 /* PBXTargetDependency */,
+			);
+			name = "Share Contact by QR codeTests";
+			productName = "Share Contact by QR codeTests";
+			productReference = E6B93AED1F137EC300EF2129 /* Share Contact by QR codeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E6B93AF71F137EC300EF2129 /* Share Contact by QR codeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6B93B071F137EC300EF2129 /* Build configuration list for PBXNativeTarget "Share Contact by QR codeUITests" */;
+			buildPhases = (
+				461BC2CCE05A0937BB67853C /* [CP] Check Pods Manifest.lock */,
+				E6B93AF41F137EC300EF2129 /* Sources */,
+				E6B93AF51F137EC300EF2129 /* Frameworks */,
+				E6B93AF61F137EC300EF2129 /* Resources */,
+				1475245CDAC5F46F20224F3F /* [CP] Embed Pods Frameworks */,
+				27737CE397AE7BA93E80ED0E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6B93AFA1F137EC300EF2129 /* PBXTargetDependency */,
+			);
+			name = "Share Contact by QR codeUITests";
+			productName = "Share Contact by QR codeUITests";
+			productReference = E6B93AF81F137EC300EF2129 /* Share Contact by QR codeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6B93ACE1F137EC200EF2129 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "YERZHAN SERIKBAY";
+				TargetAttributes = {
+					E6B93AD51F137EC200EF2129 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = L3B877U2ZV;
+						ProvisioningStyle = Automatic;
+					};
+					E6B93AEC1F137EC300EF2129 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E6B93AD51F137EC200EF2129;
+					};
+					E6B93AF71F137EC300EF2129 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E6B93AD51F137EC200EF2129;
+					};
+				};
+			};
+			buildConfigurationList = E6B93AD11F137EC200EF2129 /* Build configuration list for PBXProject "Share Contact by QR code" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6B93ACD1F137EC200EF2129;
+			productRefGroup = E6B93AD71F137EC200EF2129 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6B93AD51F137EC200EF2129 /* Share Contact by QR code */,
+				E6B93AEC1F137EC300EF2129 /* Share Contact by QR codeTests */,
+				E6B93AF71F137EC300EF2129 /* Share Contact by QR codeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6B93AD41F137EC200EF2129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6DFCDDB1F14CB22007F90AB /* settings.png in Resources */,
+				E6DFCDD51F14C8B3007F90AB /* Social.png in Resources */,
+				E6DFCDDD1F15F024007F90AB /* GoogleService-Info.plist in Resources */,
+				E6B93AE71F137EC200EF2129 /* LaunchScreen.storyboard in Resources */,
+				E66D2F281F1DFCBA003B741F /* photo.jpeg in Resources */,
+				E6B93ADF1F137EC200EF2129 /* Main.storyboard in Resources */,
+				E6DFCDDA1F14CB22007F90AB /* scan.png in Resources */,
+				E66D2F261F1D017A003B741F /* user.png in Resources */,
+				E6DFCDD91F14CB22007F90AB /* qrcode.png in Resources */,
+				E6DFCDD31F14C8B3007F90AB /* Private.png in Resources */,
+				E6DFCDD41F14C8B3007F90AB /* Public.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B93AEB1F137EC300EF2129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B93AF61F137EC300EF2129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1475245CDAC5F46F20224F3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Contact by QR codeUITests/Pods-Share Contact by QR codeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27737CE397AE7BA93E80ED0E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Contact by QR codeUITests/Pods-Share Contact by QR codeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D43B1529E569ED027E669EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		461BC2CCE05A0937BB67853C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5385BE4143C1B974C5B25628 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Contact by QR code/Pods-Share Contact by QR code-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68441BF1CD79BFE549949728 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Contact by QR code/Pods-Share Contact by QR code-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FADBAA1DA91A1B2ED37AA16 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Contact by QR codeTests/Pods-Share Contact by QR codeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0D9D188E5E4BE40452AA17E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Contact by QR codeTests/Pods-Share Contact by QR codeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C641E0AC7C8F0676AD1F0F06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6B93AD21F137EC200EF2129 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6B93ADC1F137EC200EF2129 /* ViewController.swift in Sources */,
+				E6B93B0F1F13845400EF2129 /* MyCodeViewController.swift in Sources */,
+				E6DFCDE41F162A45007F90AB /* SettingsViewController.swift in Sources */,
+				E6B93B111F138CE500EF2129 /* ScanCodeViewController.swift in Sources */,
+				E6DFCDE21F1627C9007F90AB /* TableViewCell.swift in Sources */,
+				E63C98D11F177DF700D22AE7 /* SetProfileViewController.swift in Sources */,
+				E63C98D31F1A1BB000D22AE7 /* OpenSettingProfileViewController.swift in Sources */,
+				E6B93ADA1F137EC200EF2129 /* AppDelegate.swift in Sources */,
+				E6B93AE21F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B93AE91F137EC300EF2129 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6DFCDE01F1605DC007F90AB /* ViewController.swift in Sources */,
+				E6B93AF21F137EC300EF2129 /* Share_Contact_by_QR_codeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B93AF41F137EC300EF2129 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6B93AFD1F137EC300EF2129 /* Share_Contact_by_QR_codeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6B93AEF1F137EC300EF2129 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6B93AD51F137EC200EF2129 /* Share Contact by QR code */;
+			targetProxy = E6B93AEE1F137EC300EF2129 /* PBXContainerItemProxy */;
+		};
+		E6B93AFA1F137EC300EF2129 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6B93AD51F137EC200EF2129 /* Share Contact by QR code */;
+			targetProxy = E6B93AF91F137EC300EF2129 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6B93ADD1F137EC200EF2129 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6B93ADE1F137EC200EF2129 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E6B93AE51F137EC200EF2129 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6B93AE61F137EC200EF2129 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6B93AFF1F137EC300EF2129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6B93B001F137EC300EF2129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6B93B021F137EC300EF2129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D787BD41A2B695534D1679C5 /* Pods-Share Contact by QR code.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L3B877U2ZV;
+				INFOPLIST_FILE = "Share Contact by QR code/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Share-Contact-by-QR-code";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E6B93B031F137EC300EF2129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E673EE72C7F8E15484CD19CC /* Pods-Share Contact by QR code.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L3B877U2ZV;
+				INFOPLIST_FILE = "Share Contact by QR code/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Share-Contact-by-QR-code";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E6B93B051F137EC300EF2129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB031CE73D04C175EF0FB4CC /* Pods-Share Contact by QR codeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Share Contact by QR codeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Share-Contact-by-QR-codeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Share Contact by QR code.app/Share Contact by QR code";
+			};
+			name = Debug;
+		};
+		E6B93B061F137EC300EF2129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E51831154CAAE4514050FB8E /* Pods-Share Contact by QR codeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Share Contact by QR codeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Share-Contact-by-QR-codeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Share Contact by QR code.app/Share Contact by QR code";
+			};
+			name = Release;
+		};
+		E6B93B081F137EC300EF2129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2713007495B934F7904EE66B /* Pods-Share Contact by QR codeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Share Contact by QR codeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Share-Contact-by-QR-codeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Share Contact by QR code";
+			};
+			name = Debug;
+		};
+		E6B93B091F137EC300EF2129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED00BC5B4D6199ABBABE6854 /* Pods-Share Contact by QR codeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Share Contact by QR codeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Share-Contact-by-QR-codeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Share Contact by QR code";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6B93AD11F137EC200EF2129 /* Build configuration list for PBXProject "Share Contact by QR code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6B93AFF1F137EC300EF2129 /* Debug */,
+				E6B93B001F137EC300EF2129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6B93B011F137EC300EF2129 /* Build configuration list for PBXNativeTarget "Share Contact by QR code" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6B93B021F137EC300EF2129 /* Debug */,
+				E6B93B031F137EC300EF2129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6B93B041F137EC300EF2129 /* Build configuration list for PBXNativeTarget "Share Contact by QR codeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6B93B051F137EC300EF2129 /* Debug */,
+				E6B93B061F137EC300EF2129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6B93B071F137EC300EF2129 /* Build configuration list for PBXNativeTarget "Share Contact by QR codeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6B93B081F137EC300EF2129 /* Debug */,
+				E6B93B091F137EC300EF2129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E6B93AE01F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E6B93AE11F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodel */,
+			);
+			currentVersion = E6B93AE11F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodel */;
+			path = Share_Contact_by_QR_code.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E6B93ACE1F137EC200EF2129 /* Project object */;
+}

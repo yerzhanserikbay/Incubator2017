@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E63F12CD1EF7FE1300AEDA85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F12CC1EF7FE1300AEDA85 /* AppDelegate.swift */; };
+		E63F12CF1EF7FE1300AEDA85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F12CE1EF7FE1300AEDA85 /* ViewController.swift */; };
+		E63F12D21EF7FE1300AEDA85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63F12D01EF7FE1300AEDA85 /* Main.storyboard */; };
+		E63F12D41EF7FE1300AEDA85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63F12D31EF7FE1300AEDA85 /* Assets.xcassets */; };
+		E63F12D71EF7FE1300AEDA85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63F12D51EF7FE1300AEDA85 /* LaunchScreen.storyboard */; };
+		E63F12E21EF7FE1300AEDA85 /* Cool_Places_in_AstanaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F12E11EF7FE1300AEDA85 /* Cool_Places_in_AstanaTests.swift */; };
+		E63F12ED1EF7FE1300AEDA85 /* Cool_Places_in_AstanaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F12EC1EF7FE1300AEDA85 /* Cool_Places_in_AstanaUITests.swift */; };
+		E63F12FB1EF800E900AEDA85 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F12FA1EF800E900AEDA85 /* Place.swift */; };
+		E63F12FE1EF8019B00AEDA85 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63F12FD1EF8019B00AEDA85 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E63F12DE1EF7FE1300AEDA85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E63F12C11EF7FE1300AEDA85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E63F12C81EF7FE1300AEDA85;
+			remoteInfo = "Cool Places in Astana";
+		};
+		E63F12E91EF7FE1300AEDA85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E63F12C11EF7FE1300AEDA85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E63F12C81EF7FE1300AEDA85;
+			remoteInfo = "Cool Places in Astana";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E63F12C91EF7FE1300AEDA85 /* Cool Places in Astana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cool Places in Astana.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63F12CC1EF7FE1300AEDA85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E63F12CE1EF7FE1300AEDA85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E63F12D11EF7FE1300AEDA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E63F12D31EF7FE1300AEDA85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E63F12D61EF7FE1300AEDA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E63F12D81EF7FE1300AEDA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E63F12DD1EF7FE1300AEDA85 /* Cool Places in AstanaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cool Places in AstanaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63F12E11EF7FE1300AEDA85 /* Cool_Places_in_AstanaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cool_Places_in_AstanaTests.swift; sourceTree = "<group>"; };
+		E63F12E31EF7FE1300AEDA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E63F12E81EF7FE1300AEDA85 /* Cool Places in AstanaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cool Places in AstanaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63F12EC1EF7FE1300AEDA85 /* Cool_Places_in_AstanaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cool_Places_in_AstanaUITests.swift; sourceTree = "<group>"; };
+		E63F12EE1EF7FE1300AEDA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E63F12FA1EF800E900AEDA85 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		E63F12FD1EF8019B00AEDA85 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E63F12C61EF7FE1300AEDA85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E63F12FE1EF8019B00AEDA85 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E63F12DA1EF7FE1300AEDA85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E63F12E51EF7FE1300AEDA85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E63F12C01EF7FE1300AEDA85 = {
+			isa = PBXGroup;
+			children = (
+				E63F12CB1EF7FE1300AEDA85 /* Cool Places in Astana */,
+				E63F12E01EF7FE1300AEDA85 /* Cool Places in AstanaTests */,
+				E63F12EB1EF7FE1300AEDA85 /* Cool Places in AstanaUITests */,
+				E63F12CA1EF7FE1300AEDA85 /* Products */,
+				E63F12FC1EF8019B00AEDA85 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E63F12CA1EF7FE1300AEDA85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E63F12C91EF7FE1300AEDA85 /* Cool Places in Astana.app */,
+				E63F12DD1EF7FE1300AEDA85 /* Cool Places in AstanaTests.xctest */,
+				E63F12E81EF7FE1300AEDA85 /* Cool Places in AstanaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E63F12CB1EF7FE1300AEDA85 /* Cool Places in Astana */ = {
+			isa = PBXGroup;
+			children = (
+				E63F12CC1EF7FE1300AEDA85 /* AppDelegate.swift */,
+				E63F12CE1EF7FE1300AEDA85 /* ViewController.swift */,
+				E63F12FA1EF800E900AEDA85 /* Place.swift */,
+				E63F12D01EF7FE1300AEDA85 /* Main.storyboard */,
+				E63F12D31EF7FE1300AEDA85 /* Assets.xcassets */,
+				E63F12D51EF7FE1300AEDA85 /* LaunchScreen.storyboard */,
+				E63F12D81EF7FE1300AEDA85 /* Info.plist */,
+			);
+			path = "Cool Places in Astana";
+			sourceTree = "<group>";
+		};
+		E63F12E01EF7FE1300AEDA85 /* Cool Places in AstanaTests */ = {
+			isa = PBXGroup;
+			children = (
+				E63F12E11EF7FE1300AEDA85 /* Cool_Places_in_AstanaTests.swift */,
+				E63F12E31EF7FE1300AEDA85 /* Info.plist */,
+			);
+			path = "Cool Places in AstanaTests";
+			sourceTree = "<group>";
+		};
+		E63F12EB1EF7FE1300AEDA85 /* Cool Places in AstanaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E63F12EC1EF7FE1300AEDA85 /* Cool_Places_in_AstanaUITests.swift */,
+				E63F12EE1EF7FE1300AEDA85 /* Info.plist */,
+			);
+			path = "Cool Places in AstanaUITests";
+			sourceTree = "<group>";
+		};
+		E63F12FC1EF8019B00AEDA85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E63F12FD1EF8019B00AEDA85 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E63F12C81EF7FE1300AEDA85 /* Cool Places in Astana */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E63F12F11EF7FE1300AEDA85 /* Build configuration list for PBXNativeTarget "Cool Places in Astana" */;
+			buildPhases = (
+				E63F12C51EF7FE1300AEDA85 /* Sources */,
+				E63F12C61EF7FE1300AEDA85 /* Frameworks */,
+				E63F12C71EF7FE1300AEDA85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cool Places in Astana";
+			productName = "Cool Places in Astana";
+			productReference = E63F12C91EF7FE1300AEDA85 /* Cool Places in Astana.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E63F12DC1EF7FE1300AEDA85 /* Cool Places in AstanaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E63F12F41EF7FE1300AEDA85 /* Build configuration list for PBXNativeTarget "Cool Places in AstanaTests" */;
+			buildPhases = (
+				E63F12D91EF7FE1300AEDA85 /* Sources */,
+				E63F12DA1EF7FE1300AEDA85 /* Frameworks */,
+				E63F12DB1EF7FE1300AEDA85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E63F12DF1EF7FE1300AEDA85 /* PBXTargetDependency */,
+			);
+			name = "Cool Places in AstanaTests";
+			productName = "Cool Places in AstanaTests";
+			productReference = E63F12DD1EF7FE1300AEDA85 /* Cool Places in AstanaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E63F12E71EF7FE1300AEDA85 /* Cool Places in AstanaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E63F12F71EF7FE1300AEDA85 /* Build configuration list for PBXNativeTarget "Cool Places in AstanaUITests" */;
+			buildPhases = (
+				E63F12E41EF7FE1300AEDA85 /* Sources */,
+				E63F12E51EF7FE1300AEDA85 /* Frameworks */,
+				E63F12E61EF7FE1300AEDA85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E63F12EA1EF7FE1300AEDA85 /* PBXTargetDependency */,
+			);
+			name = "Cool Places in AstanaUITests";
+			productName = "Cool Places in AstanaUITests";
+			productReference = E63F12E81EF7FE1300AEDA85 /* Cool Places in AstanaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E63F12C11EF7FE1300AEDA85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "YERZHAN SERIKBAY";
+				TargetAttributes = {
+					E63F12C81EF7FE1300AEDA85 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					E63F12DC1EF7FE1300AEDA85 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E63F12C81EF7FE1300AEDA85;
+					};
+					E63F12E71EF7FE1300AEDA85 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E63F12C81EF7FE1300AEDA85;
+					};
+				};
+			};
+			buildConfigurationList = E63F12C41EF7FE1300AEDA85 /* Build configuration list for PBXProject "Cool Places in Astana" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E63F12C01EF7FE1300AEDA85;
+			productRefGroup = E63F12CA1EF7FE1300AEDA85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E63F12C81EF7FE1300AEDA85 /* Cool Places in Astana */,
+				E63F12DC1EF7FE1300AEDA85 /* Cool Places in AstanaTests */,
+				E63F12E71EF7FE1300AEDA85 /* Cool Places in AstanaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E63F12C71EF7FE1300AEDA85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E63F12D71EF7FE1300AEDA85 /* LaunchScreen.storyboard in Resources */,
+				E63F12D41EF7FE1300AEDA85 /* Assets.xcassets in Resources */,
+				E63F12D21EF7FE1300AEDA85 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E63F12DB1EF7FE1300AEDA85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E63F12E61EF7FE1300AEDA85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E63F12C51EF7FE1300AEDA85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E63F12FB1EF800E900AEDA85 /* Place.swift in Sources */,
+				E63F12CF1EF7FE1300AEDA85 /* ViewController.swift in Sources */,
+				E63F12CD1EF7FE1300AEDA85 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E63F12D91EF7FE1300AEDA85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E63F12E21EF7FE1300AEDA85 /* Cool_Places_in_AstanaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E63F12E41EF7FE1300AEDA85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E63F12ED1EF7FE1300AEDA85 /* Cool_Places_in_AstanaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E63F12DF1EF7FE1300AEDA85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E63F12C81EF7FE1300AEDA85 /* Cool Places in Astana */;
+			targetProxy = E63F12DE1EF7FE1300AEDA85 /* PBXContainerItemProxy */;
+		};
+		E63F12EA1EF7FE1300AEDA85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E63F12C81EF7FE1300AEDA85 /* Cool Places in Astana */;
+			targetProxy = E63F12E91EF7FE1300AEDA85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E63F12D01EF7FE1300AEDA85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63F12D11EF7FE1300AEDA85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E63F12D51EF7FE1300AEDA85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E63F12D61EF7FE1300AEDA85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E63F12EF1EF7FE1300AEDA85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E63F12F01EF7FE1300AEDA85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E63F12F21EF7FE1300AEDA85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cool Places in Astana/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Cool-Places-in-Astana";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E63F12F31EF7FE1300AEDA85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cool Places in Astana/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Cool-Places-in-Astana";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E63F12F51EF7FE1300AEDA85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Cool Places in AstanaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Cool-Places-in-AstanaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cool Places in Astana.app/Cool Places in Astana";
+			};
+			name = Debug;
+		};
+		E63F12F61EF7FE1300AEDA85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Cool Places in AstanaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Cool-Places-in-AstanaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cool Places in Astana.app/Cool Places in Astana";
+			};
+			name = Release;
+		};
+		E63F12F81EF7FE1300AEDA85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Cool Places in AstanaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Cool-Places-in-AstanaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Cool Places in Astana";
+			};
+			name = Debug;
+		};
+		E63F12F91EF7FE1300AEDA85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Cool Places in AstanaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Cool-Places-in-AstanaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Cool Places in Astana";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E63F12C41EF7FE1300AEDA85 /* Build configuration list for PBXProject "Cool Places in Astana" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E63F12EF1EF7FE1300AEDA85 /* Debug */,
+				E63F12F01EF7FE1300AEDA85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E63F12F11EF7FE1300AEDA85 /* Build configuration list for PBXNativeTarget "Cool Places in Astana" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E63F12F21EF7FE1300AEDA85 /* Debug */,
+				E63F12F31EF7FE1300AEDA85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E63F12F41EF7FE1300AEDA85 /* Build configuration list for PBXNativeTarget "Cool Places in AstanaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E63F12F51EF7FE1300AEDA85 /* Debug */,
+				E63F12F61EF7FE1300AEDA85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E63F12F71EF7FE1300AEDA85 /* Build configuration list for PBXNativeTarget "Cool Places in AstanaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E63F12F81EF7FE1300AEDA85 /* Debug */,
+				E63F12F91EF7FE1300AEDA85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E63F12C11EF7FE1300AEDA85 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_Share_Contact_by_QR_codeUITests {
+  umbrella header "Pods-Share Contact by QR codeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

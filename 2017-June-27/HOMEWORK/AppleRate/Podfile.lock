@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (4.5.0)
+  - EasyPeasy (1.4.2)
+  - Kingfisher (3.10.2)
+  - ObjectMapper (2.2.7)
+
+DEPENDENCIES:
+  - Alamofire
+  - EasyPeasy
+  - Kingfisher
+  - ObjectMapper
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
+  Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
+  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
+
+PODFILE CHECKSUM: e689f47f73ef9e71cbc2db6a2ee520c7c01f8cd6
+
+COCOAPODS: 1.2.1
