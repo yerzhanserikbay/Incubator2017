@@ -15,43 +15,43 @@ class ViewController: UITabBarController {
         super.viewDidLoad()
         // how to insert info into Farebase
 
-        let privateFirstName = Database.database().reference().child("Private").child("Frist Name")
-        
-        let privateLastName = Database.database().reference().child("Private").child("Last Name")
-        
-        let privatePhoneNumber = Database.database().reference().child("Private").child("Phone Number")
-        
-        let privateBirthday = Database.database().reference().child("Private").child("Birthday")
-        
-        let privateAdress = Database.database().reference().child("Private").child("Adress")
         
         
-        let publicNameSurname = Database.database().reference().child("Public").child("Name")
-        
-        let publicPhoneNumber = Database.database().reference().child("Public").child("Phone Number")
-        
-        let publicOfficeAdress = Database.database().reference().child("Public").child("Office Adress")
         
         
-        let socialInstagram = Database.database().reference().child("Social").child("Instagram")
+      //  let privatePhoneNumber = Database.database().reference().child("Private").child("Phone Number")
         
-        let socialFacebook = Database.database().reference().child("Social").child("Facebook")
+       // let privateBirthday = Database.database().reference().child("Private").child("Birthday")
+    
+    //    let privateAdress = Database.database().reference().child("Private").child("Adress")
         
-        let socialTweeter = Database.database().reference().child("Social").child("Twitter")
+
+      //  let publicNameSurname = Database.database().reference().child("Public").child("Name")
+        
+      //  let publicPhoneNumber = Database.database().reference().child("Public").child("Phone Number")
+        
+      //  let publicOfficeAdress = Database.database().reference().child("Public").child("Office Adress")
+        
+        
+      //  let socialInstagram = Database.database().reference().child("Social").child("Instagram")
+        
+      //  let socialFacebook = Database.database().reference().child("Social").child("Facebook")
+        
+       // let socialTweeter = Database.database().reference().child("Social").child("Twitter")
        
-        privateFirstName.setValue("Yerzhan")
-        privateLastName.setValue("Serikbay")
-        privatePhoneNumber.setValue("7077710102")
-        privateBirthday.setValue("13.08.1996")
-        privateAdress.setValue("Abay av. 162, apr. 19")
+      //  privateFirstName.setValue("Yerzhan")
+       // privateLastName.setValue("Serikbay")
+      //  privatePhoneNumber.setValue("7077710102")
+      //  privateBirthday.setValue("13.08.1996")
+      //  privateAdress.setValue("Abay av. 162, apr. 19")
         
-        publicNameSurname.setValue("Yerzhan Serikbay")
-        publicPhoneNumber.setValue("7077770707")
-        publicOfficeAdress.setValue("facebook.com/yerzhanserikbay")
+      //  publicNameSurname.setValue("Yerzhan Serikbay")
+      //  publicPhoneNumber.setValue("7077770707")
+      //  publicOfficeAdress.setValue("facebook.com/yerzhanserikbay")
         
-        socialInstagram.setValue("instagram.com/yerzhanserikbay")
-        socialFacebook.setValue("facebook.com/yerzhanserikbay")
-        socialTweeter.setValue("twitter.com/yerzhanserikbay")
+      //  socialInstagram.setValue("instagram.com/yerzhanserikbay")
+   //     socialFacebook.setValue("facebook.com/yerzhanserikbay")
+     //   socialTweeter.setValue("twitter.com/yerzhanserikbay")
         
         
 
