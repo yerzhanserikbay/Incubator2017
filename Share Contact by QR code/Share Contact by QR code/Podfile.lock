@@ -3,6 +3,9 @@ PODS:
   - Eureka (3.0.0)
   - Firebase (4.0.2):
     - Firebase/Core (= 4.0.2)
+  - Firebase/Auth (4.0.2):
+    - Firebase/Core
+    - FirebaseAuth (= 4.0.0)
   - Firebase/Core (4.0.2):
     - FirebaseAnalytics (= 4.0.1)
     - FirebaseCore (= 4.0.2)
@@ -13,40 +16,61 @@ PODS:
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseAuth (4.0.0):
+    - FirebaseAnalytics (~> 4.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.2):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (4.0.0):
     - FirebaseAnalytics (~> 4.0)
   - FirebaseInstanceID (2.0.0):
     - FirebaseCore (~> 4.0)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMSessionFetcher/Core (1.1.10)
   - ImageRow (2.0.0):
     - Eureka (= 3.0)
+  - NVActivityIndicatorView (3.6.1)
   - PostalAddressRow (1.1.0):
     - Eureka (= 3.0)
+  - QRCode (2.0)
 
 DEPENDENCIES:
   - EasyPeasy
   - Eureka
   - Firebase
+  - Firebase/Auth
   - Firebase/Database
   - ImageRow
+  - NVActivityIndicatorView
   - PostalAddressRow
+  - QRCode
 
 SPEC CHECKSUMS:
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
   Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
   Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
   FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
+  FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
   FirebaseCore: 1a8bf6c795ad07d2918278657954ffd2552e9c17
   FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   ImageRow: 9dfbfa38c1e62c25d638bc40e97a48c1809443c4
+  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
   PostalAddressRow: 8e56ae5154c00540981f47aa11ba8004e486d834
+  QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
 
-PODFILE CHECKSUM: 9a533b6e0a12b896a67289182718407db7b837dc
+PODFILE CHECKSUM: e4bb228e483bfdc974656e8ccc0b146652296b41
 
 COCOAPODS: 1.2.1

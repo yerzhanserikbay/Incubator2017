@@ -62,14 +62,14 @@ class ViewController: UITabBarController {
         
         
         //how to read info from Farebase
-        Database.database().reference().observe(.value, with: { (snapshot) in
-            guard let value = snapshot.value, snapshot.exists() else {
-                print("Error with getting data")
-                return
-            }
-            
-            print("Value is \(value)")
-        })
+       // Database.database().reference().observe(.value, with: { (snapshot) in
+         //   guard let value = snapshot.value, snapshot.exists() else {
+           //     print("Error with getting data")
+             //   return
+           // }
+           //
+           // print("Value is \(value)")
+        //})
         
     }
 }

@@ -14,12 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>ImageRow.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,10 +59,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>QRCode.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00103D6C821BE85971C563025527BA5D</key>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1779113B7D8441BC99631C1C20A85447</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>28FA888388F88B270ECDDCF77F06C9C2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>37900E72EC972AF6ED5D988BD1F194A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DD15CFAEBE48B3431B9DB04AF04CDE9</key>
+		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +97,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A636D3E5779EBD1BC5F8EBEE82E7789D</key>
+		<key>702234E7B69B0C25BFB0A19E7724464B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71251129DB7877FA073067A5BBB19C67</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B5221EA08C01208C608AC6ECB17B9F2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE37D1B2DB29F4547B7E1390FAE82763</key>
 		<dict>
 			<key>primary</key>
 			<true/>

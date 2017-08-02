@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNS-R5-1ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3261.5999999999999" y="497.90104947526243"/>
+            <point key="canvasLocation" x="4200.8000000000002" y="497.90104947526243"/>
         </scene>
         <!--Settings-->
         <scene sceneID="FxU-TS-4pP">
@@ -54,7 +54,7 @@
                         <viewControllerLayoutGuide type="top" id="bva-7l-tFT"/>
                         <viewControllerLayoutGuide type="bottom" id="2x8-Ix-GZT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="H9j-rM-OXn">
+                    <view key="view" contentMode="scaleToFill" id="H9j-rM-OXn" customClass="View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -62,14 +62,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="7Uv-Rc-4Za" style="IBUITableViewCellStyleDefault" id="tHj-Ht-gtd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="firstCustomCell" textLabel="zlb-Z5-Vq7" style="IBUITableViewCellStyleDefault" id="zwR-ij-MY6" customClass="FirstTableCell" customModule="Share_Contact_by_QR_code" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tHj-Ht-gtd" id="15a-Nv-Kae">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zwR-ij-MY6" id="KwA-VL-6Am" customClass="FirstTableViewCell" customModule="Share_Contact_by_QR_code">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Uv-Rc-4Za">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zlb-Z5-Vq7">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="50.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -79,7 +79,50 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="kCP-6k-GGt" kind="show" id="ffK-cC-IvB"/>
+                                            <outlet property="privateLabel" destination="zlb-Z5-Vq7" id="yXf-qY-I3z"/>
+                                            <segue destination="kCP-6k-GGt" kind="show" identifier="privateSegue" id="vZx-J4-eve"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="secondCustomCell" textLabel="8tQ-nm-9gg" style="IBUITableViewCellStyleDefault" id="76f-xr-YB0" customClass="SecondTableCell" customModule="Share_Contact_by_QR_code" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="107" width="375" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="76f-xr-YB0" id="mdE-fw-ZLw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8tQ-nm-9gg">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="50.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="publicLabel" destination="8tQ-nm-9gg" id="uMw-IN-JTQ"/>
+                                            <segue destination="U6M-ng-CEf" kind="show" identifier="publicSegue" id="BOv-03-Gr2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="thirdCustomCell" textLabel="hZ0-1E-eKj" style="IBUITableViewCellStyleDefault" id="VpT-4O-VNu" customClass="ThirdTableCell" customModule="Share_Contact_by_QR_code" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="158" width="375" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VpT-4O-VNu" id="KqW-Rg-OSw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hZ0-1E-eKj">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="50.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="socialLabel" destination="hZ0-1E-eKj" id="Ivt-yH-KNh"/>
+                                            <segue destination="byH-n8-l2x" kind="show" identifier="socialSegue" id="AYt-Df-qGx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -94,26 +137,19 @@
                             <constraint firstAttribute="trailing" secondItem="cr0-A1-FYz" secondAttribute="trailing" id="woP-Dq-j2d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="kct-m9-Ozb">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="vPB-S8-uI8">
-                            <connections>
-                                <action selector="editPressed:" destination="tBl-RH-879" id="IOq-qc-M5W"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="kct-m9-Ozb"/>
                     <connections>
-                        <outlet property="editButton" destination="vPB-S8-uI8" id="arN-Fx-yA1"/>
                         <outlet property="tableView" destination="cr0-A1-FYz" id="FxK-nZ-3xk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgd-0B-ODB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200.8" y="862.21889055472275"/>
+            <point key="canvasLocation" x="2139.5" y="861.5"/>
         </scene>
-        <!--Open Setting Profile View Controller-->
+        <!--Open Private Setting Profile View Controller-->
         <scene sceneID="jTJ-XI-TUe">
             <objects>
-                <viewController id="cM2-Yl-Jct" customClass="OpenSettingProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cM2-Yl-Jct" customClass="OpenPrivateSettingProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="trd-3d-LTH"/>
                         <viewControllerLayoutGuide type="bottom" id="mwm-9A-M6E"/>
@@ -138,12 +174,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igf-fb-bCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3392.8000000000002" y="1560.2698650674663"/>
+            <point key="canvasLocation" x="2158" y="3238"/>
         </scene>
-        <!--Set Profile View Controller-->
+        <!--Set Private Profile View Controller-->
         <scene sceneID="j4Y-jn-qEb">
             <objects>
-                <viewController id="kCP-6k-GGt" customClass="SetProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="privateIndetifier" id="kCP-6k-GGt" customClass="SetPrivateProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4F3-cS-r7s"/>
                         <viewControllerLayoutGuide type="bottom" id="a39-Ja-oxf"/>
@@ -154,17 +190,18 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="s5T-cf-xib">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Settings" id="4u6-YZ-gIN"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="fua-LH-mjh">
                             <connections>
-                                <segue destination="cPw-Wy-zPf" kind="show" id="HNs-Ca-97G"/>
+                                <segue destination="cPw-Wy-zPf" kind="show" identifier="" id="HNs-Ca-97G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqu-RU-CJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1201" y="1562"/>
+            <point key="canvasLocation" x="2140" y="1666"/>
         </scene>
         <!--My Code-->
         <scene sceneID="f2s-6u-svG">
@@ -213,7 +250,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Code" id="ofh-zV-GGS"/>
                     <connections>
-                        <outlet property="QRCodeImage" destination="LJy-e0-hFG" id="qWl-22-XgQ"/>
+                        <outlet property="imgqrCode" destination="LJy-e0-hFG" id="bve-td-dec"/>
                         <outlet property="segmentedControl" destination="odI-gK-K6l" id="1fM-K2-vl0"/>
                     </connections>
                 </viewController>
@@ -252,7 +289,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tBl-RH-879" kind="relationship" relationship="rootViewController" id="ctH-JQ-g3i"/>
+                        <segue destination="tBl-RH-879" kind="relationship" relationship="rootViewController" id="X6d-Pg-06s"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWo-4l-PsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,7 +313,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Wo-Oy-nfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2322.4000000000001" y="497.90104947526243"/>
+            <point key="canvasLocation" x="3261.5999999999999" y="497.90104947526243"/>
         </scene>
         <!--My Code-->
         <scene sceneID="lhQ-K4-sLo">
@@ -300,6 +337,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iVu-EL-Ibl">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdF-zf-8Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="cPw-Wy-zPf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzG-ed-fVP">
@@ -315,9 +353,158 @@
                         <segue destination="cM2-Yl-Jct" kind="relationship" relationship="rootViewController" id="NGq-fb-gWw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fdF-zf-8Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2453.5999999999999" y="1560.2698650674663"/>
+            <point key="canvasLocation" x="2140" y="2436"/>
+        </scene>
+        <!--Set Public Profile View Controller-->
+        <scene sceneID="I1n-gF-Rds">
+            <objects>
+                <viewController storyboardIdentifier="publicIndetifier" id="U6M-ng-CEf" customClass="SetPublicProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dBF-PM-Vwr"/>
+                        <viewControllerLayoutGuide type="bottom" id="2qV-Wr-xIk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="avZ-pg-0nq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qYn-q2-936">
+                        <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="Settings" id="2ZN-Zf-nfm"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Fzm-O5-9nR">
+                            <connections>
+                                <segue destination="hqz-Vc-Kcs" kind="show" id="St1-ND-SGq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGD-mf-Vj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3190" y="1594"/>
+        </scene>
+        <!--Open Public Setting Profile View Controller-->
+        <scene sceneID="StI-hz-XlS">
+            <objects>
+                <viewController id="t4A-bt-4Jg" customClass="OpenPublicSettingProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q4V-Gv-sUL"/>
+                        <viewControllerLayoutGuide type="bottom" id="bXQ-aE-jOS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uHh-BQ-PKf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K9C-z7-haU">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="agO-2U-g1m">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="t4A-bt-4Jg" id="wdr-kb-0D6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="2T5-Fg-GF4">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="t4A-bt-4Jg" id="9v9-yL-9C7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3i-pa-EtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3190" y="3238"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k6u-Yd-4AH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hqz-Vc-Kcs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wdW-4Q-TZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="t4A-bt-4Jg" kind="relationship" relationship="rootViewController" id="EUY-7K-1aT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjL-hv-sCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3190" y="2454"/>
+        </scene>
+        <!--Set Social Profile View Controller-->
+        <scene sceneID="Jnw-2e-sNa">
+            <objects>
+                <viewController storyboardIdentifier="socialIndetifier" id="byH-n8-l2x" customClass="SetSocialProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3iH-Wh-Dfj"/>
+                        <viewControllerLayoutGuide type="bottom" id="SeP-L2-5zd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z7J-Wx-hu9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dR6-B3-i1d">
+                        <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="Settings" id="Ids-Bd-oq3"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="U1U-1B-0We">
+                            <connections>
+                                <segue destination="isv-i4-BAV" kind="show" id="fwB-FV-SMK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K2R-iw-ZV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="1594"/>
+        </scene>
+        <!--Open Social Setting Profile View Controller-->
+        <scene sceneID="IGI-Zq-u3z">
+            <objects>
+                <viewController id="2yK-RC-xTD" customClass="OpenSocialSettingProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HSr-Mh-dBz"/>
+                        <viewControllerLayoutGuide type="bottom" id="XIy-NG-nke"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kl4-67-Wfz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YWh-bv-Ua5">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="nQq-gD-f6n">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="2yK-RC-xTD" id="xS7-Nd-ujW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="4nU-cl-VeP">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="2yK-RC-xTD" id="OAd-Mn-aez"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XqZ-pg-DfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="3238"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Uwh-AM-Qzx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="isv-i4-BAV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2RK-Ga-oWa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2yK-RC-xTD" kind="relationship" relationship="rootViewController" id="VGr-le-qkg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jao-mN-P0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="2436"/>
         </scene>
     </scenes>
     <resources>

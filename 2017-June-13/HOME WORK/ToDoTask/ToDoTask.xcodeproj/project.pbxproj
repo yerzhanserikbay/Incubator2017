@@ -101,8 +101,8 @@
 		E6C52A261EF357E20083D0E4 /* ToDoTask */ = {
 			isa = PBXGroup;
 			children = (
-				E6C52A571EF377C80083D0E4 /* ListOfToDo.swift */,
 				E6C52A271EF357E20083D0E4 /* AppDelegate.swift */,
+				E6C52A571EF377C80083D0E4 /* ListOfToDo.swift */,
 				E6C52A291EF357E20083D0E4 /* ViewController.swift */,
 				E6C52A591EF381180083D0E4 /* MenuViewController.swift */,
 				E6C52A2B1EF357E20083D0E4 /* Main.storyboard */,
@@ -515,6 +515,7 @@
 				E6C52A4E1EF357E20083D0E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6C52A4F1EF357E20083D0E4 /* Build configuration list for PBXNativeTarget "ToDoTaskTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +524,7 @@
 				E6C52A511EF357E20083D0E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6C52A521EF357E20083D0E4 /* Build configuration list for PBXNativeTarget "ToDoTaskUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +533,7 @@
 				E6C52A541EF357E20083D0E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

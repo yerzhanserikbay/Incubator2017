@@ -10,6 +10,9 @@ target 'Share Contact by QR code' do
   pod 'ImageRow' 
   pod 'EasyPeasy'
   pod 'PostalAddressRow' 
+  pod 'Firebase/Auth'
+  pod 'QRCode'
+  pod 'NVActivityIndicatorView'
  # Pods for Share Contact by QR code
 
   target 'Share Contact by QR codeTests' do

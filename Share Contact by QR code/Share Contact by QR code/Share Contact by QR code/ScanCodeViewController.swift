@@ -9,21 +9,21 @@
 import UIKit
 import AVFoundation
 
+
 class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    var captureSession: AVCaptureSession?
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    var qrCodeFrameView: UIView?
 
-    var captureSession:AVCaptureSession?
-    var videoPreviewLayer:AVCaptureVideoPreviewLayer?
-    var qrCodeFrameView:UIView?
-    
 
     @IBOutlet weak var messageLabel: UILabel!
-  //  @IBOutlet weak var bottomBar: UIView!
+    
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        
-        
+
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
@@ -51,6 +51,8 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
             
             qrCodeFrameView = UIView()
             
+            
+            
             if let qrCodeFrameView = qrCodeFrameView {
                 qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
                 qrCodeFrameView.layer.borderWidth = 2
@@ -65,6 +67,9 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     }
     
     
+// 1. Current user id with profile type, example: "usa212sau2, public"
+// 2. Get from data from metadate(result QRCODE), ref.child("users").child("user id").child("profile type")
+// 3. Creat contact controller with needed data.
     
     
         func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {

@@ -1,4 +1,4 @@
-//
+ //
 //  AppDelegate.swift
 //  Share Contact by QR code
 //
