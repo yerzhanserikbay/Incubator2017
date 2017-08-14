@@ -9,12 +9,25 @@
 import UIKit
 import CoreData
 import Firebase
-
+import Contacts
+ 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var contactStore = CNContactStore()
+    
+    enum TouchActions: String {
+        case scan = "scan"
+        
+        var number: Int {
+            switch self {
+            case .scan:
+                return 0
+            }
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -22,6 +35,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+//    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+//        
+//        
+//        
+//        guard let type = TouchActions(rawValue: shortcutItem.type) else {
+//            completionHandler(false)
+//            return
+//        }
+//        
+//        let selectedIndex = type.number
+//        (window?.rootViewController as? UITabBarController)?.selectedIndex = selectedIndex
+//        
+//        completionHandler(true)
+//    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -90,6 +118,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 

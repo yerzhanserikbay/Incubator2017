@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PhoneNumberKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Share Contact by QR code.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,17 +72,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>016BEC29C9DBB8330FA2672A70FCB0B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1779113B7D8441BC99631C1C20A85447</key>
+		<key>1A914997CC2442CB00BA14C7F71EAE95</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1A914997CC2442CB00BA14C7F71EAE95</key>
+		<key>1FD13E72FC13953EE0E815A823091320</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,17 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5186C29C8BA3C26A5FA57EB3749D1893</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>675A114988AE198732ED4AD726408964</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>702234E7B69B0C25BFB0A19E7724464B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>71251129DB7877FA073067A5BBB19C67</key>
+		<key>8C5BD10883BD185426DD737247F56DEC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE37D1B2DB29F4547B7E1390FAE82763</key>
+		<key>CF2882000931D667403B85ADB7F98B26</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF2882000931D667403B85ADB7F98B26</key>
+		<key>DB74E7EB234A1E34A066F89AC5B96751</key>
 		<dict>
 			<key>primary</key>
 			<true/>

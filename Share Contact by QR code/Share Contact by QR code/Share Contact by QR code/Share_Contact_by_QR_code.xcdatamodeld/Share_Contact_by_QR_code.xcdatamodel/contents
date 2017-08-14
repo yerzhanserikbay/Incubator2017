@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="UserCodeData" representedClassName="UserCodeData" syncable="YES" codeGenerationType="class">
-        <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Private" representedClassName="Private" syncable="YES" codeGenerationType="class">
+        <attribute name="account1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="account2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="account3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="account4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="account5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postalCode1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postalCode2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postalCode3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relatives1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relatives2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relatives3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relatives4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relatives5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="socialProfile1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="socialProfile2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="socialProfile3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="socialProfile4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="socialProfile5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url5" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UserCodeData" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Private" positionX="-63" positionY="-18" width="128" height="795"/>
     </elements>
 </model>

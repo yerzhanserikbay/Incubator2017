@@ -21,26 +21,9 @@
                     <view key="view" contentMode="scaleToFill" id="Yc6-S4-HFk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNJ-hB-eRv">
-                                <rect key="frame" x="0.0" y="546" width="375" height="88"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="qNJ-hB-eRv" secondAttribute="bottom" constant="33" id="8AD-Eb-76c"/>
-                            <constraint firstItem="qNJ-hB-eRv" firstAttribute="top" secondItem="Yc6-S4-HFk" secondAttribute="top" constant="546" id="Glf-w0-tya"/>
-                            <constraint firstAttribute="trailing" secondItem="qNJ-hB-eRv" secondAttribute="trailing" id="cpY-f6-PgE"/>
-                            <constraint firstItem="qNJ-hB-eRv" firstAttribute="leading" secondItem="Yc6-S4-HFk" secondAttribute="leading" id="nkl-tG-25C"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scan Code" id="yW6-8p-IMe"/>
-                    <connections>
-                        <outlet property="messageLabel" destination="qNJ-hB-eRv" id="6G6-Qq-4cu"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNS-R5-1ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -337,7 +320,6 @@
         <!--Navigation Controller-->
         <scene sceneID="iVu-EL-Ibl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fdF-zf-8Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="cPw-Wy-zPf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzG-ed-fVP">
@@ -353,6 +335,7 @@
                         <segue destination="cM2-Yl-Jct" kind="relationship" relationship="rootViewController" id="NGq-fb-gWw"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdF-zf-8Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2140" y="2436"/>
         </scene>

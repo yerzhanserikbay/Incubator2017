@@ -76,105 +76,106 @@ class UserPublic {
     
     
     
-    static func fetchUser(completion: @escaping ((User?, String?) -> Void)) {
-        let userID = Auth.auth().currentUser?.uid
-        
-        let firstNameRef = Database.database().reference().child("Users").child(userID!).child("Public").child("First Name")
-        
-        firstNameRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(firstName: m)
-                completion(user, nil)
-            }
-            
-        })
-        
-        let lastNameRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Last Name")
-        lastNameRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(lastName: m)
-                completion(user, nil)
-            }
-        })
-        
-        let companyRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Company")
-        companyRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(company: m)
-                completion(user, nil)
-            }
-        })
-        
-        let phoneNumberRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Phone Number")
-        phoneNumberRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(phoneNumber: m)
-                completion(user, nil)
-            }
-        })
-        
-        let emailRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Email")
-        emailRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(email: m)
-                completion(user, nil)
-            }
-        })
-        
-        let urlRef = Database.database().reference().child("Users").child(userID!).child("Public").child("URL")
-        urlRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(url: m)
-                completion(user, nil)
-            }
-        })
-        
-        //   let addressRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Address")
-        //   addressRef.observeSingleEvent(of: .value, with: { snapshot in
-        //       if let m = snapshot.value as? String? {
-        //         let user = User(address: m)
-        //       completion(user, nil)
-        // }
-        //})
-        
-        //let birthdayRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Birthday")
-        //    birthdayRef.observeSingleEvent(of: .value, with: { snapshot in
-        //      if let m = snapshot.value as? String? {
-        //        let user = User(birthday: m)
-        //      completion(user, nil)
-        //   }
-        // })
-        
-        let socialProfileRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Social Profile")
-        socialProfileRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(socialProfile: m)
-                completion(user, nil)
-            }
-        })
-        
-        let instantMessageRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Instant Message")
-        instantMessageRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(instantMessage: m)
-                completion(user, nil)
-            }
-        })
-        
-        let relativesRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Relatives")
-        relativesRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(relatives: m)
-                completion(user, nil)
-            }
-        })
-        
-        let notesRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Notes")
-        notesRef.observeSingleEvent(of: .value, with: { snapshot in
-            if let m = snapshot.value as? String {
-                let user = User(notes: m)
-                completion(user, nil)
-            }
-        })
-    }
+//    static func fetchUser(completion: @escaping ((User?, String?) -> Void)) {
+//
+//        let userID = Auth.auth().currentUser?.uid
+//        
+//        let firstNameRef = Database.database().reference().child("Users").child(userID!).child("Public").child("First Name")
+//        
+//        firstNameRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(firstName: m)
+//                completion(user, nil)
+//            }
+//            
+//        })
+//        
+//        let lastNameRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Last Name")
+//        lastNameRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(lastName: m)
+//                completion(user, nil)
+//            }
+//        })
+//        
+//        let companyRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Company")
+//        companyRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(company: m)
+//                completion(user, nil)
+//            }
+//        })
+//        
+//        let phoneNumberRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Phone Number")
+//        phoneNumberRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(phoneNumber: m)
+//                completion(user, nil)
+//            }
+//        })
+//        
+//        let emailRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Email")
+//        emailRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(email: m)
+//                completion(user, nil)
+//            }
+//        })
+//        
+//        let urlRef = Database.database().reference().child("Users").child(userID!).child("Public").child("URL")
+//        urlRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(url: m)
+//                completion(user, nil)
+//            }
+//        })
+//        
+//        //   let addressRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Address")
+//        //   addressRef.observeSingleEvent(of: .value, with: { snapshot in
+//        //       if let m = snapshot.value as? String? {
+//        //         let user = User(address: m)
+//        //       completion(user, nil)
+//        // }
+//        //})
+//        
+//        //let birthdayRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Birthday")
+//        //    birthdayRef.observeSingleEvent(of: .value, with: { snapshot in
+//        //      if let m = snapshot.value as? String? {
+//        //        let user = User(birthday: m)
+//        //      completion(user, nil)
+//        //   }
+//        // })
+//        
+//        let socialProfileRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Social Profile")
+//        socialProfileRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(socialProfile: m)
+//                completion(user, nil)
+//            }
+//        })
+//        
+//        let instantMessageRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Instant Message")
+//        instantMessageRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(instantMessage: m)
+//                completion(user, nil)
+//            }
+//        })
+//        
+//        let relativesRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Relatives")
+//        relativesRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(relatives: m)
+//                completion(user, nil)
+//            }
+//        })
+//        
+//        let notesRef = Database.database().reference().child("Users").child(userID!).child("Public").child("Notes")
+//        notesRef.observeSingleEvent(of: .value, with: { snapshot in
+//            if let m = snapshot.value as? String {
+//                let user = User(notes: m)
+//                completion(user, nil)
+//            }
+//        })
+//    }
 }

@@ -97,16 +97,6 @@ class SetSocialProfileViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Auth.auth().signInAnonymously(completion: { (user, error) in
-            
-            if error != nil {
-                print(error!)
-                return
-            }
-            print("User logged anonymously wth uid: " + user!.uid)
-        })
-        
-        
         self.view.backgroundColor = .white
         self.view.addSubview(self.container)
         
@@ -163,72 +153,72 @@ class SetSocialProfileViewController: FormViewController {
         ]
         
         
-        UserSocial.fetchUser { (user, error) in
-            if error == nil {
-                guard let user = user else { return }
-                
-                if let number = user.phoneNumber {
-                    self.phoneNumber = number
-                    self.form.rowBy(tag: "Phone")?.updateCell()
-                }
-                
-                if let firstName = user.firstName {
-                    self.firstName = firstName
-                    userName.text = firstName
-                    
-                }
-                
-                if let lastName = user.lastName {
-                    self.lastName = lastName
-                    userLastName.text = lastName
-                }
-                
-                if let company = user.company {
-                    self.company = company
-                    userCompany.text = company
-                }
-                
-                if let email = user.email {
-                    self.email = email
-                    self.form.rowBy(tag: "Email")?.updateCell()
-                }
-                
-                if let url = user.url {
-                    self.url = url
-                    self.form.rowBy(tag: "Url")?.updateCell()
-                }
-                
-                //     if let address = user.address {
-                //       self.address = address
-                //     self.form.rowBy(tag: "Address")?.updateCell()
-                // }
-                //     if let birthday = user.birthday {
-                //       self.birthday = birthday
-                //     self.form.rowBy(tag: "Birthday")?.updateCell()
-                // }
-                
-                if let socialProfile = user.socialProfile {
-                    self.socialProfile = socialProfile
-                    self.form.rowBy(tag: "Social profile")?.updateCell()
-                }
-                
-                if let instantMessage = user.instantMessage {
-                    self.instantMessage = instantMessage
-                    self.form.rowBy(tag: "Instant message")?.updateCell()
-                }
-                
-                if let relatives = user.relatives {
-                    self.relatives = relatives
-                    self.form.rowBy(tag: "Family")?.updateCell()
-                }
-                
-                if let notes = user.notes {
-                    self.notes = notes
-                    self.form.rowBy(tag: "Notes")?.updateCell()
-                }
-                
-            }
-        }
+//        UserSocial.fetchUser { (user, error) in
+//            if error == nil {
+//                guard let user = user else { return }
+//                
+//                if let number = user.phoneNumber {
+//                    self.phoneNumber = number
+//                    self.form.rowBy(tag: "Phone")?.updateCell()
+//                }
+//                
+//                if let firstName = user.firstName {
+//                    self.firstName = firstName
+//                    userName.text = firstName
+//                    
+//                }
+//                
+//                if let lastName = user.lastName {
+//                    self.lastName = lastName
+//                    userLastName.text = lastName
+//                }
+//                
+//                if let company = user.company {
+//                    self.company = company
+//                    userCompany.text = company
+//                }
+//                
+//                if let email = user.email {
+//                    self.email = email
+//                    self.form.rowBy(tag: "Email")?.updateCell()
+//                }
+//                
+//                if let url = user.url {
+//                    self.url = url
+//                    self.form.rowBy(tag: "Url")?.updateCell()
+//                }
+//                
+//                //     if let address = user.address {
+//                //       self.address = address
+//                //     self.form.rowBy(tag: "Address")?.updateCell()
+//                // }
+//                //     if let birthday = user.birthday {
+//                //       self.birthday = birthday
+//                //     self.form.rowBy(tag: "Birthday")?.updateCell()
+//                // }
+//                
+//                if let socialProfile = user.socialProfile {
+//                    self.socialProfile = socialProfile
+//                    self.form.rowBy(tag: "Social profile")?.updateCell()
+//                }
+//                
+//                if let instantMessage = user.instantMessage {
+//                    self.instantMessage = instantMessage
+//                    self.form.rowBy(tag: "Instant message")?.updateCell()
+//                }
+//                
+//                if let relatives = user.relatives {
+//                    self.relatives = relatives
+//                    self.form.rowBy(tag: "Family")?.updateCell()
+//                }
+//                
+//                if let notes = user.notes {
+//                    self.notes = notes
+//                    self.form.rowBy(tag: "Notes")?.updateCell()
+//                }
+//                
+//            }
+//        }
         
         form +++ Section()
         form +++ Section()

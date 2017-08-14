@@ -10,6 +10,7 @@
 		29C5BECAF5C4B50217F4F8D2 /* Pods_Share_Contact_by_QR_code.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F25BC0FE662E2DF5B92AD6 /* Pods_Share_Contact_by_QR_code.framework */; };
 		4A273088BDE970664DCBD8F0 /* Pods_Share_Contact_by_QR_codeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2243839B39445E4AFCE52C62 /* Pods_Share_Contact_by_QR_codeTests.framework */; };
 		DB9D9D3142FF412197AD0F35 /* Pods_Share_Contact_by_QR_codeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6858236077940BB0430BDEB /* Pods_Share_Contact_by_QR_codeUITests.framework */; };
+		E610AB401F31A421003BA6FF /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E610AB3F1F31A421003BA6FF /* iAd.framework */; };
 		E629EC4C1F2F3E4E00FE7DA1 /* SetPublicProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC4B1F2F3E4E00FE7DA1 /* SetPublicProfileViewController.swift */; };
 		E629EC501F2F3E9A00FE7DA1 /* OpenPublicSettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC4F1F2F3E9A00FE7DA1 /* OpenPublicSettingProfileViewController.swift */; };
 		E629EC521F2F3EAC00FE7DA1 /* OpenSocialSettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC511F2F3EAC00FE7DA1 /* OpenSocialSettingProfileViewController.swift */; };
@@ -19,6 +20,7 @@
 		E63C98D11F177DF700D22AE7 /* SetPrivateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C98D01F177DF700D22AE7 /* SetPrivateProfileViewController.swift */; };
 		E63C98D31F1A1BB000D22AE7 /* OpenPrivateSettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C98D21F1A1BB000D22AE7 /* OpenPrivateSettingProfileViewController.swift */; };
 		E64144921F27491300165F38 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64144911F27491300165F38 /* User.swift */; };
+		E66268FB1F329B2400C13721 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66268FA1F329B2400C13721 /* Images.xcassets */; };
 		E66D2F261F1D017A003B741F /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = E66D2F251F1D017A003B741F /* user.png */; };
 		E66D2F281F1DFCBA003B741F /* photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E66D2F271F1DFCBA003B741F /* photo.jpeg */; };
 		E6B93ADA1F137EC200EF2129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93AD91F137EC200EF2129 /* AppDelegate.swift */; };
@@ -64,6 +66,7 @@
 		C6858236077940BB0430BDEB /* Pods_Share_Contact_by_QR_codeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Contact_by_QR_codeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D787BD41A2B695534D1679C5 /* Pods-Share Contact by QR code.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR code.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR code/Pods-Share Contact by QR code.debug.xcconfig"; sourceTree = "<group>"; };
 		E51831154CAAE4514050FB8E /* Pods-Share Contact by QR codeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR codeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR codeTests/Pods-Share Contact by QR codeTests.release.xcconfig"; sourceTree = "<group>"; };
+		E610AB3F1F31A421003BA6FF /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		E629EC4B1F2F3E4E00FE7DA1 /* SetPublicProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPublicProfileViewController.swift; sourceTree = "<group>"; };
 		E629EC4F1F2F3E9A00FE7DA1 /* OpenPublicSettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPublicSettingProfileViewController.swift; sourceTree = "<group>"; };
 		E629EC511F2F3EAC00FE7DA1 /* OpenSocialSettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSocialSettingProfileViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		E63C98D21F1A1BB000D22AE7 /* OpenPrivateSettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPrivateSettingProfileViewController.swift; sourceTree = "<group>"; };
 		E64144911F27491300165F38 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E64144A81F29F57D00165F38 /* Share Contact by QR code.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Share Contact by QR code.entitlements"; sourceTree = "<group>"; };
+		E66268FA1F329B2400C13721 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E66D2F251F1D017A003B741F /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		E66D2F271F1DFCBA003B741F /* photo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpeg; sourceTree = "<group>"; };
 		E673EE72C7F8E15484CD19CC /* Pods-Share Contact by QR code.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR code.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR code/Pods-Share Contact by QR code.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E610AB401F31A421003BA6FF /* iAd.framework in Frameworks */,
 				29C5BECAF5C4B50217F4F8D2 /* Pods_Share_Contact_by_QR_code.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +141,7 @@
 		430B3EBED93E68FE4AA8BC75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E610AB3F1F31A421003BA6FF /* iAd.framework */,
 				F3F25BC0FE662E2DF5B92AD6 /* Pods_Share_Contact_by_QR_code.framework */,
 				2243839B39445E4AFCE52C62 /* Pods_Share_Contact_by_QR_codeTests.framework */,
 				C6858236077940BB0430BDEB /* Pods_Share_Contact_by_QR_codeUITests.framework */,
@@ -231,6 +237,7 @@
 				E6B93B0C1F137F0F00EF2129 /* Controller */,
 				E6B93B0D1F137F3000EF2129 /* Resource */,
 				E6B93B0B1F137F0D00EF2129 /* Model */,
+				E66268FA1F329B2400C13721 /* Images.xcassets */,
 			);
 			path = "Share Contact by QR code";
 			sourceTree = "<group>";
@@ -426,6 +433,7 @@
 				E6DFCDDA1F14CB22007F90AB /* scan.png in Resources */,
 				E66D2F261F1D017A003B741F /* user.png in Resources */,
 				E6DFCDD91F14CB22007F90AB /* qrcode.png in Resources */,
+				E66268FB1F329B2400C13721 /* Images.xcassets in Resources */,
 				E6DFCDD31F14C8B3007F90AB /* Private.png in Resources */,
 				E6DFCDD41F14C8B3007F90AB /* Public.png in Resources */,
 			);
