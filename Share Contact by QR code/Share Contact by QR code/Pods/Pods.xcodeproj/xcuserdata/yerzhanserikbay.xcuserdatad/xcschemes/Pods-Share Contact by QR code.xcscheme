@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DB74E7EB234A1E34A066F89AC5B96751"
+               BlueprintIdentifier = "CD87B492989B79C7BA115A44E863D082"
                BuildableName = "Pods_Share_Contact_by_QR_code.framework"
                BlueprintName = "Pods-Share Contact by QR code"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DB74E7EB234A1E34A066F89AC5B96751"
+            BlueprintIdentifier = "CD87B492989B79C7BA115A44E863D082"
             BuildableName = "Pods_Share_Contact_by_QR_code.framework"
             BlueprintName = "Pods-Share Contact by QR code"
             ReferencedContainer = "container:Pods.xcodeproj">

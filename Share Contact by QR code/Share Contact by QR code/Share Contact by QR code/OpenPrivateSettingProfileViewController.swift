@@ -10,14 +10,31 @@ import UIKit
 import Eureka
 import ImageRow
 import EasyPeasy
-import PostalAddressRow
-import FirebaseDatabase
-import FirebaseAuth
 import CoreData
 import PhoneNumberKit
+import PostalAddressRow
 
+public protocol SectionDelegate: class {
+    func rowsHaveBeenAdded(_ rows: [BaseRow], at: IndexSet)
+    func rowsHaveBeenRemoved(_ rows: [BaseRow], at: IndexSet)
+    func rowsHaveBeenReplaced(oldRows: [BaseRow], newRows: [BaseRow], at: IndexSet)
+}
 
-class OpenPrivateSettingProfileViewController: FormViewController {
+class OpenPrivateSettingProfileViewController: FormViewController, SectionDelegate {
+    
+    func rowsHaveBeenReplaced(oldRows: [BaseRow], newRows: [BaseRow], at: IndexSet) {
+        print("rowsHaveBeenReplaced", oldRows)
+    }
+
+    func rowsHaveBeenRemoved(_ rows: [BaseRow], at: IndexSet) {
+        print("rowsHaveBeenRemoved", rows)
+
+    }
+
+    func rowsHaveBeenAdded(_ rows: [BaseRow], at: IndexSet) {
+        print("rowsHaveBeenAdded", rows)
+    }
+
     
     var firstName: String? = "" {
         didSet {
@@ -341,31 +358,22 @@ class OpenPrivateSettingProfileViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView?.backgroundColor = UIColor.white
         getUsers()
         
-//        var avatar = #imageLiteral(resourceName: "user.png")
-        
-//        form +++ ImageRow() {
-//            $0.tag = "Avatar"
-//            $0.title = "Choose Photo For Your Profile"
-//            $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
-//            $0.value = avatar
-//            $0.cell.height = { 102 }
-//            $0.clearAction = .no
-//            }
-//            .cellUpdate { cell, row in
-//                row.value = avatar
-//                cell.accessoryView?.layer.cornerRadius = 34
-//                cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 68, height: 68)
-//                
-//            } .onChange { row in
-//                avatar = row.value!
-//                let imageData:NSData = UIImageJPEGRepresentation(avatar, 0.8)! as NSData
-//                
-//                UserDefaults.standard.set(imageData, forKey: "savedImage")
-//        }
-        
-        
+           form +++ ImageRow() {
+            $0.tag = "Avatar"
+            $0.title = "Choose Photo For Your Profile"
+            $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
+            $0.value = #imageLiteral(resourceName: "user.png")
+            $0.cell.height = { 102 }
+            $0.clearAction = .no
+            $0.disabled = true
+            }
+            .cellUpdate { cell, row in
+                cell.accessoryView?.layer.cornerRadius = 34
+                cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 68, height: 68)
+        }
         
         form +++ Section()
             <<< NameRow("First Name") {
@@ -396,6 +404,11 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                     
         }
         
+        let phone1 = phoneNumber1 ?? ""
+        let phone2 = phoneNumber2 ?? ""
+        let phone3 = phoneNumber3 ?? ""
+        let phone4 = phoneNumber4 ?? ""
+        let phone5 = phoneNumber5 ?? ""
         var hiddenPhone = false
         form +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete]) {
             $0.addButtonProvider = { section in
@@ -409,16 +422,28 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                         if hiddenPhone == true {
                             cell.isHidden = true
                         }
-                    } .onChange { row in
-                        print("Hello")
-                }
+                    }
             }
             
             $0.multivaluedRowToInsertAt = { index in
                 return PhoneRow("tag_\(index + 1)") {
                     $0.placeholder = "Phone"
+                    
+                    if index == 0 {
+                        $0.tag = "tag_1"
+                    }
+                    if index == 1 {
+                        $0.tag = "tag_2"
+                    }
+                    if index == 2 {
+                        $0.tag = "tag_3"
+                    }
+                    if index == 3 {
+                        $0.tag = "tag_4"
+                    }
                     if index == 4 {
                         hiddenPhone = true
+                        $0.tag = "tag_5"
                         self.form.rowBy(tag: "PhoneButton")?.updateCell()
                     }
                     } .cellSetup { cell, row in
@@ -434,50 +459,44 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                     })
             }
             
-            if phoneNumber1 != "" {
+            
+            
+            if phone1 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_1"
-                    } .cellSetup { cell, row in
-                        row.value = self.phoneNumber1
-                        row.cell.update()
-                }
+                    $0.value = self.phoneNumber1
+                    }
             }
             
-            if phoneNumber2 != "" {
+            if phone2 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_2"
-                    print("tag_2")
-                    } .cellSetup { cell, row in
-                        row.value = self.phoneNumber2
-                        row.cell.update()
-                }
+                    $0.value = self.phoneNumber2
+                    }
             }
             
-            if phoneNumber3 != "" {
+            if phone3 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_3"
-                    } .cellSetup { cell, row in
-                        row.value = self.phoneNumber3
-                        row.cell.update()
-                }
+                    $0.value = self.phoneNumber3
+                    $0.cell.update()
+                    }
             }
             
-            if phoneNumber4 != "" {
+            if phone4 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_4"
-                    } .cellSetup { cell, row in
-                        row.value = self.phoneNumber4
-                        row.cell.update()
-                }
+                    $0.value = self.phoneNumber4
+                    $0.cell.update()
+                    }
             }
             
-            if phoneNumber5 != "" {
+            if phone5 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_5"
-                    } .cellSetup { cell, row in
-                        row.value = self.phoneNumber5
-                        row.cell.update()
-                }
+                    $0.value = self.phoneNumber5
+                    $0.cell.update()
+                    }
             }
         }
         
@@ -747,7 +766,10 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                         if hiddenBirthday == true {
                             cell.isHidden = true
                         }
-                }
+                    } .cellSetup({ (cell, row) in
+                        cell.height = ({return 0})
+                    })
+
             }
             
             $0.multivaluedRowToInsertAt = { index in
@@ -764,7 +786,6 @@ class OpenPrivateSettingProfileViewController: FormViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = DateFormatter.Style.long
             let date = dateFormatter.date(from: self.birthday!)
-            print(date ?? "hello")
             
             if birthday != "" {
                 $0 <<< DateRow() {
@@ -947,6 +968,7 @@ class OpenPrivateSettingProfileViewController: FormViewController {
             }
         }
         
+    
         var tagMe = "tag"
         func actionSheetMessage() {
             
@@ -1118,6 +1140,12 @@ class OpenPrivateSettingProfileViewController: FormViewController {
             }
         }
         
+        let familyNonOpt1 = relatives1 ?? ""
+        let familyNonOpt2 = relatives2 ?? ""
+        let familyNonOpt3 = relatives3 ?? ""
+        let familyNonOpt4 = relatives4 ?? ""
+        let familyNonOpt5 = relatives5 ?? ""
+        
         var tagFam = "tag"
         func actionSheetFamily() {
             
@@ -1180,6 +1208,8 @@ class OpenPrivateSettingProfileViewController: FormViewController {
             self.present(actionSheetController, animated: true, completion: nil)
         }
         
+        
+        
         var hiddenFamily = false
         form +++ Section()
             <<< SwitchRow("switchRowTag") {
@@ -1204,35 +1234,18 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                             if hiddenFamily == true {
                                 cell.isHidden = true
                             }
-                    }
+                    } 
                 }
                 
                 $0.multivaluedRowToInsertAt = { index in
                     return TextRow("Relatives_\(index + 1)") {
+                        $0.title = "Select"
                         $0.cell.textField.keyboardType = .default
                         $0.placeholder = "Family member"
                         $0.cell.textField.autocorrectionType = .no
                         $0.cell.textField.autocapitalizationType = .sentences
-                        
-                        if index == 0 {
-                            $0.title = "Select"
-                            tagFam = "Relatives_1"
-                        }
-                        if index == 1 {
-                            $0.title = "Select"
-                            tagFam = "Relatives_1"
-                        }
-                        if index == 2 {
-                            $0.title = "Select"
-                            tagFam = "Relatives_1"
-                        }
-                        if index == 3 {
-                            $0.title = "Select"
-                            tagFam = "Relatives_1"
-                        }
+                        //rowsHaveBeenRemoved([TextRow()], at: [IndexSet])
                         if index == 4 {
-                            $0.title = "Select"
-                            tagFam = "Relatives_1"
                             hiddenFamily = true
                             self.form.rowBy(tag: "RelativesButton")?.updateCell()
                         }
@@ -1242,12 +1255,12 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                     }
                 }
                 
-                let family1 = relatives1?.components(separatedBy: "&")
-                
-                if instantMessage1 != "&" {
+                let family1 = relatives1?.components(separatedBy: "&") ?? [""]
+                print(familyNonOpt1)
+                if familyNonOpt1 != "&" {
                     $0 <<< TextRow() {
-                        $0.title = family1?[0]
-                        $0.value = family1?[1]
+                        $0.title = family1[0]
+                        $0.value = family1[1]
                         $0.tag = "Relatives_1"
                         $0.cell.textField.keyboardType = .default
                         $0.cell.textField.autocorrectionType = .no
@@ -1259,11 +1272,11 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                 }
                 
                 
-                let family2 = relatives2?.components(separatedBy: "&")
-                if relatives2 != "&" {
+                let family2 = relatives2?.components(separatedBy: "&") ?? [""]
+                if familyNonOpt2 != "&" {
                     $0 <<< TextRow() {
-                        $0.title = family2?[0]
-                        $0.value = family2?[1]
+                        $0.title = family2[0]
+                        $0.value = family2[1]
                         $0.tag = "Relatives_2"
                         $0.cell.textField.keyboardType = .default
                         $0.cell.textField.autocorrectionType = .no
@@ -1274,26 +1287,27 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                     }
                 }
                 
-                let family3 = relatives3?.components(separatedBy: "&")
-                if relatives3 != "&" {
+                let family3 = relatives3?.components(separatedBy: "&") ?? [""]
+                if familyNonOpt3 != "&" {
                     $0 <<< TextRow() {
-                        $0.title = family3?[0]
-                        $0.value = family3?[1]
+                        $0.title = family3[0]
+                        $0.value = family3[1]
                         $0.tag = "Relatives_3"
                         $0.cell.textField.keyboardType = .default
                         $0.cell.textField.autocorrectionType = .no
                         $0.cell.textField.autocapitalizationType = .sentences
+                        
                         } .onCellSelection { cell, row in
                             tagFam = row.tag!
                             actionSheetFamily()
                     }
                 }
                 
-                let family4 = relatives4?.components(separatedBy: "&")
-                if relatives4 != "&" {
+                let family4 = relatives4?.components(separatedBy: "&") ?? [""]
+                if familyNonOpt4 != "&" {
                     $0 <<< TextRow() {
-                        $0.title = family4?[0]
-                        $0.value = family4?[1]
+                        $0.title = family4[0]
+                        $0.value = family4[1]
                         $0.tag = "Relatives_4"
                         $0.cell.textField.keyboardType = .default
                         $0.cell.textField.autocorrectionType = .no
@@ -1304,11 +1318,11 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                     }
                 }
                 
-                let family5 = relatives5?.components(separatedBy: "&")
-                if relatives5 != "&" {
+                let family5 = relatives5?.components(separatedBy: "&") ?? [""]
+                if familyNonOpt5 != "&" {
                     $0 <<< TextRow() {
-                        $0.title = family5?[0]
-                        $0.value = family5?[1]
+                        $0.title = family5[0]
+                        $0.value = family5[1]
                         $0.tag = "Relatives_5"
                         $0.cell.textField.keyboardType = .default
                         $0.cell.textField.autocorrectionType = .no
@@ -1320,6 +1334,7 @@ class OpenPrivateSettingProfileViewController: FormViewController {
                 }
                 
         }
+        
         
         form +++ Section()
             <<< TextAreaRow("Notes") { row in
@@ -1969,10 +1984,4 @@ class OpenPrivateSettingProfileViewController: FormViewController {
             print("Error with request: \(error)")
         }
     }
-    
-    
 }
-
-
-
-

@@ -1,0 +1,48 @@
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "2ZN-Zf-nfm"; */
+"2ZN-Zf-nfm.title" = "Settings";
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "4u6-YZ-gIN"; */
+"4u6-YZ-gIN.title" = "Settings";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "8tQ-nm-9gg"; */
+"8tQ-nm-9gg.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "My Code"; ObjectID = "Drg-lS-qyI"; */
+"Drg-lS-qyI.title" = "My Code";
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "Ids-Bd-oq3"; */
+"Ids-Bd-oq3.title" = "Settings";
+
+/* Class = "UITabBarItem"; title = "Scan Code"; ObjectID = "eB5-V0-SM7"; */
+"eB5-V0-SM7.title" = "Scan Code";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "hZ0-1E-eKj"; */
+"hZ0-1E-eKj.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "iSA-7V-ZgY"; */
+"iSA-7V-ZgY.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "kct-m9-Ozb"; */
+"kct-m9-Ozb.title" = "Settings";
+
+/* Class = "UISegmentedControl"; odI-gK-K6l.segmentTitles[0] = "Private"; ObjectID = "odI-gK-K6l"; */
+"odI-gK-K6l.segmentTitles[0]" = "Private";
+
+/* Class = "UISegmentedControl"; odI-gK-K6l.segmentTitles[1] = "Public"; ObjectID = "odI-gK-K6l"; */
+"odI-gK-K6l.segmentTitles[1]" = "Public";
+
+/* Class = "UISegmentedControl"; odI-gK-K6l.segmentTitles[2] = "Social"; ObjectID = "odI-gK-K6l"; */
+"odI-gK-K6l.segmentTitles[2]" = "Social";
+
+/* Class = "UINavigationItem"; title = "My Code"; ObjectID = "ofh-zV-GGS"; */
+"ofh-zV-GGS.title" = "My Code";
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "tBl-RH-879"; */
+"tBl-RH-879.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Scan Code"; ObjectID = "yW6-8p-IMe"; */
+"yW6-8p-IMe.title" = "Scan Code";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "zlb-Z5-Vq7"; */
+"zlb-Z5-Vq7.text" = "Title";

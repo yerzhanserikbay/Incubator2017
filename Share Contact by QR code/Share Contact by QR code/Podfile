@@ -5,18 +5,15 @@ target 'Share Contact by QR code' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 
   use_frameworks!
-  pod ‘Firebase’
-  pod ‘Firebase/Database’
   pod 'Eureka' 
   pod 'ImageRow' 
   pod 'EasyPeasy'
   pod 'PostalAddressRow' 
-  pod 'Firebase/Auth'
   pod 'QRCode'
-  pod 'NVActivityIndicatorView'  
-  pod 'Firebase/Core' 
-  pod 'Firebase/Storage'
+  pod 'NVActivityIndicatorView' 
   pod 'PhoneNumberKit'
+  pod 'TwicketSegmentedControl'
+  
  # Pods for Share Contact by QR code
 
   target 'Share Contact by QR codeTests' do

@@ -10,9 +10,6 @@ import UIKit
 import EasyPeasy
 import Eureka
 import PostalAddressRow
-import FirebaseDatabase
-import FirebaseAuth
-import Firebase
 import CoreData
 
 class SetPrivateProfileViewController: FormViewController {
@@ -344,16 +341,20 @@ class SetPrivateProfileViewController: FormViewController {
             self.tableView.reloadData()
         }
     }
-    
-    //    override func viewDidAppear(_ animated: Bool) {
-    //
-    //    }
+   
     
     override func viewWillAppear(_ animated: Bool) {
         getUsers()
-        self.tableView.reloadData()
-        self.form.allSections.forEach() { $0.reload() }
+        self.tableView?.backgroundColor = UIColor.white
+        self.form.allRows.forEach { $0.updateCell() }
+        self.tableView?.reloadData()
     }
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        getUsers()
+//        self.tableView?.reloadData()
+//        self.form.allRows.forEach { $0.updateCell() }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -440,7 +441,7 @@ class SetPrivateProfileViewController: FormViewController {
                 $0.title = "Phone"
                 $0.placeholder = "None"
                 $0.disabled = true
-                } .cellSetup { cell, row in
+                } .cellUpdate { cell, row in
                     row.value = self.phoneNumber1
                     row.cell.update()
             }
@@ -450,7 +451,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "tag_2"
                     $0.title = "Phone"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.phoneNumber2
                         row.cell.update()
                 }
@@ -461,7 +462,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "tag_3"
                     $0.title = "Phone"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.phoneNumber3
                         row.cell.update()
                 }
@@ -472,7 +473,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "tag_4"
                     $0.title = "Phone"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.phoneNumber4
                         row.cell.update()
                 }
@@ -483,7 +484,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "tag_5"
                     $0.title = "Phone"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.phoneNumber5
                         row.cell.update()
                 }
@@ -513,7 +514,7 @@ class SetPrivateProfileViewController: FormViewController {
                 $0.title = "Email"
                 $0.disabled = true
                 $0.placeholder = "None"
-                } .cellSetup { cell, row in
+                } .cellUpdate { cell, row in
                     row.value = self.email1
                     row.cell.update()
             }
@@ -523,7 +524,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "Email_2"
                     $0.title = "Email"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.email2
                         row.cell.update()
                 }
@@ -534,7 +535,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "Email_3"
                     $0.title = "Email"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.email3
                         row.cell.update()
                 }
@@ -545,7 +546,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "Email_4"
                     $0.title = "Email"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.email4
                         row.cell.update()
                 }
@@ -556,7 +557,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "Email_5"
                     $0.title = "Email"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.email5
                         row.cell.update()
                 }
@@ -587,7 +588,7 @@ class SetPrivateProfileViewController: FormViewController {
                 $0.disabled = true
                 $0.title = "URL"
                 $0.placeholder = "None"
-                } .cellSetup { cell, row in
+                } .cellUpdate { cell, row in
                     row.value = self.url1
                     row.cell.update()
             }
@@ -608,7 +609,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "Url_3"
                     $0.title = "URL"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.url3
                         row.cell.update()
                 }
@@ -619,7 +620,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "Url_4"
                     $0.title = "URL"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.url4
                         row.cell.update()
                 }
@@ -630,7 +631,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.tag = "Url_5"
                     $0.title = "URL"
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = self.url5
                         row.cell.update()
                 }
@@ -659,7 +660,7 @@ class SetPrivateProfileViewController: FormViewController {
                     $0.postalCodePlaceholder = "Zip code"
                 }
             }
-            if street1 != "" {
+        
                 $0 <<< PostalAddressRow() {
                     $0.tag = "Address_1"
                     $0.value = PostalAddress()
@@ -678,7 +679,8 @@ class SetPrivateProfileViewController: FormViewController {
                         row.value?.postalCode = self.postalCode1
                         row.cell.update()
                 }
-            }
+            
+        
             if street2 != "" {
                 $0 <<< PostalAddressRow() {
                     $0.tag = "Address_2"
@@ -726,7 +728,7 @@ class SetPrivateProfileViewController: FormViewController {
                 $0.title = "Your birthday"
                 $0.placeholder = "none"
                 $0.disabled = true
-                } .cellSetup { cell, row in
+                } .cellUpdate { cell, row in
                     row.value = self.birthday
                     row.cell.update()
         }
@@ -760,7 +762,7 @@ class SetPrivateProfileViewController: FormViewController {
             $0 <<< TextRow() {
                 $0.placeholder = "None"
                 $0.disabled = true
-                } .cellSetup { cell, row in
+                } .cellUpdate { cell, row in
                     if social != "&" {
                         row.title = social1?[0]
                         row.value = social1?[1]
@@ -771,7 +773,7 @@ class SetPrivateProfileViewController: FormViewController {
             if socialProfile2 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = social2?[0]
                         row.value = social2?[1]
                         row.cell.update()
@@ -782,7 +784,7 @@ class SetPrivateProfileViewController: FormViewController {
             if socialProfile3 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = social3?[0]
                         row.value = social3?[1]
                         row.cell.update()
@@ -793,7 +795,7 @@ class SetPrivateProfileViewController: FormViewController {
             if socialProfile4 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.value = social4?[0]
                         row.value = social4?[1]
                         row.cell.update()
@@ -804,7 +806,7 @@ class SetPrivateProfileViewController: FormViewController {
             if socialProfile5 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = social5?[0]
                         row.value = social5?[1]
                         row.cell.update()
@@ -840,7 +842,7 @@ class SetPrivateProfileViewController: FormViewController {
             $0 <<< AccountRow() {
                 $0.disabled = true
                 $0.placeholder = "None"
-                } .cellSetup { cell, row in
+                } .cellUpdate { cell, row in
                     if account != "&" {
                         row.title = account1?[0]
                         row.value = account1?[1]
@@ -851,7 +853,7 @@ class SetPrivateProfileViewController: FormViewController {
             if instantMessage2 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = account2?[0]
                         row.value = account2?[1]
                         row.cell.update()
@@ -861,7 +863,7 @@ class SetPrivateProfileViewController: FormViewController {
             if instantMessage3 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = account3?[0]
                         row.value = account3?[1]
                         row.cell.update()
@@ -871,7 +873,7 @@ class SetPrivateProfileViewController: FormViewController {
             if instantMessage4 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = account4?[0]
                         row.value = account4?[1]
                         row.cell.update()
@@ -881,13 +883,20 @@ class SetPrivateProfileViewController: FormViewController {
             if instantMessage5 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = account5?[0]
                         row.value = account5?[1]
                         row.cell.update()
                 }
             }
         }
+        
+        
+        let familyNonOpt1 = relatives1 ?? ""
+        let familyNonOpt2 = relatives2 ?? ""
+        let familyNonOpt3 = relatives3 ?? ""
+        let familyNonOpt4 = relatives4 ?? ""
+        let familyNonOpt5 = relatives5 ?? ""
         
         form  +++  MultivaluedSection(multivaluedOptions: [], header: "Family") {
             
@@ -907,60 +916,64 @@ class SetPrivateProfileViewController: FormViewController {
                 }
             }
             
-            let familyOne = relatives1 ?? ""
+            
             let family1 = relatives1?.components(separatedBy: "&")
             let family2 = relatives2?.components(separatedBy: "&")
             let family3 = relatives3?.components(separatedBy: "&")
             let family4 = relatives4?.components(separatedBy: "&")
             let family5 = relatives5?.components(separatedBy: "&")
             
-            print(relatives1 ?? "")
-            
-            $0 <<< TextRow() {
-                $0.placeholder = "None"
-                $0.disabled = true
-                } .cellSetup { cell, row in
-                    if familyOne != "&" {
-                        row.title = family1?[0]
-                        row.value = family1?[1]
-                        row.cell.update()
-                    }
-            }
-            
-            if relatives2 != "&" {
+            if familyNonOpt1 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
+                            row.title = family1?[0]
+                            row.value = family1?[1]
+                            row.cell.update()
+                }
+            } else {
+                $0 <<< TextRow() {
+                    $0.placeholder = "None"
+                    $0.disabled = true
+                    }
+
+            }
+            
+            if familyNonOpt2 != "&" {
+                $0 <<< TextRow() {
+                    $0.disabled = true
+                    } .cellUpdate { cell, row in
                         row.title = family2?[0]
                         row.value = family2?[1]
                         row.cell.update()
                 }
             }
             
-            if relatives3 != "&" {
+            
+            if familyNonOpt3 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = family3?[0]
                         row.value = family3?[1]
                         row.cell.update()
                 }
             }
             
-            if relatives4 != "&" {
+            if familyNonOpt4 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = family4?[0]
                         row.value = family4?[1]
                         row.cell.update()
                 }
             }
             
-            if relatives5 != "&" {
+            if familyNonOpt5 != "&" {
                 $0 <<< TextRow() {
                     $0.disabled = true
-                    } .cellSetup { cell, row in
+                    } .cellUpdate { cell, row in
                         row.title = family5?[0]
                         row.value = family5?[1]
                         row.cell.update()
@@ -973,7 +986,7 @@ class SetPrivateProfileViewController: FormViewController {
                 row.title = "Notes"
                 row.placeholder = "none"
                 row.disabled = true
-                } .cellSetup { cell, row in
+                } .cellUpdate { cell, row in
                     row.value = self.notes
                     row.cell.update()
         }

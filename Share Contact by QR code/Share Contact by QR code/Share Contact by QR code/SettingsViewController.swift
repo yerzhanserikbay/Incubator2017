@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
         
-    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +41,25 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 0 {
             let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "firstCustomCell")
             cell.textLabel?.text = "Private"
+            cell.textLabel?.font = UIFont(name: "Verdana", size: 34)
             return cell
         } else if indexPath.row == 1 {
             let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "secondCustomCell")
             cell.textLabel?.text = "Public"
+            cell.textLabel?.font = UIFont(name: "Verdana", size: 34)
             return cell
         } else {
             let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "thirdCustomCell")
-            cell.textLabel?.text = "Social"
+            cell.textLabel?.text = "ID number"
+            cell.textLabel?.font = UIFont(name: "Verdana", size: 34)
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "profiles"
+    }
+    
 }
 
 

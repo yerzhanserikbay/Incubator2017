@@ -8,15 +8,26 @@
 
 import UIKit
 import QRCode
-import FirebaseAuth
-import FirebaseDatabase
-import Firebase
 import NVActivityIndicatorView
 import CoreData
+import TwicketSegmentedControl
+import CoreImage
 
 
 
-class MyCodeViewController: UIViewController, NVActivityIndicatorViewable {
+class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, TwicketSegmentedControlDelegate {
+    
+    class Barcode {
+        
+        class func fromString(string : String) -> UIImage? {
+            
+            let data = string.data(using: .ascii)
+            let filter = CIFilter(name: "CICode128BarcodeGenerator")
+            filter?.setValue(data, forKey: "inputMessage")
+            
+            return UIImage(ciImage: (filter?.outputImage)!)
+        }
+    }
     
     var qrcodeText: UITextView!
     
@@ -83,155 +94,103 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable {
     
     var notes: String? = ""
     
-    var firstNamePublic: String = " "
-    var lastNamePublic: String = " "
-    var companyPublic: String = " "
-    var phoneNumberPublic: String = " "
-    var emailPublic: String = " "
-    var urlPublic: String = " "
-    var addressPublic: [String] = [" "]
-    var birthdayPublic: String = " "
-    var socialProfilePublic: String = " "
-    var instantMessagePublic: String = " "
-    var relativesPublic: String = " "
-    var notesPublic: String = " "
+    var firstNamePublic: String? = ""
+    var lastNamePublic: String? = ""
+    var companyPublic: String? = ""
     
-    var firstNameSocial: String = " "
-    var lastNameSocial: String = " "
-    var companySocial: String = " "
-    var phoneNumberSocial: String = " "
-    var emailSocial: String = " "
-    var urlSocial: String = " "
-    var addressSocial: [String] = [" "]
-    var birthdaySocial: String = " "
-    var socialProfileSocial: String = " "
-    var instantMessageSocial: String = " "
-    var relativesSocial: String = " "
-    var notesSocial: String = " "
+    var phoneNumber1Public: String? = ""
+    var phoneNumber2Public: String? = ""
+    var phoneNumber3Public: String? = ""
+    var phoneNumber4Public: String? = ""
+    var phoneNumber5Public: String? = ""
     
     
-    //let firstRun = UserDefaults.standard.bool(forKey: "firstRun") as Bool
+    var email1Public: String? = ""
+    var email2Public: String? = ""
+    var email3Public: String? = ""
+    var email4Public: String? = ""
+    var email5Public: String? = ""
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    var url1Public: String? = ""
+    var url2Public: String? = ""
+    var url3Public: String? = ""
+    var url4Public: String? = ""
+    var url5Public: String? = ""
+    
+    var street1Public: String? = ""
+    var state1Public: String? = ""
+    var city1Public: String? = ""
+    var country1Public: String? = ""
+    var postalCode1Public: String? = ""
+    
+    var street2Public: String? = ""
+    var state2Public: String? = ""
+    var city2Public: String? = ""
+    var country2Public: String? = ""
+    var postalCode2Public: String? = ""
+    
+    var street3Public: String? = ""
+    var state3Public: String? = ""
+    var city3Public: String? = ""
+    var country3Public: String? = ""
+    var postalCode3Public: String? = ""
+    
+    var birthdayPublic: String? = ""
+    
+    var socialProfile1Public: String? = ""
+    var socialProfile2Public: String? = ""
+    var socialProfile3Public: String? = ""
+    var socialProfile4Public: String? = ""
+    var socialProfile5Public: String? = ""
+    
+    var instantMessage1Public: String? = ""
+    var instantMessage2Public: String? = ""
+    var instantMessage3Public: String? = ""
+    var instantMessage4Public: String? = ""
+    var instantMessage5Public: String? = ""
+    
+    var relatives1Public: String? = ""
+    var relatives2Public: String? = ""
+    var relatives3Public: String? = ""
+    var relatives4Public: String? = ""
+    var relatives5Public: String? = ""
+    
+    var notesPublic: String? = ""
+    
+    
     @IBOutlet weak var imgqrCode: UIImageView!
-    @IBOutlet weak var warringLabel: UILabel!
   
-    
-    override func viewWillAppear(_ animated: Bool) {
-        getUsers()
-        genCodePrivate()
-    }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image = #imageLiteral(resourceName: "user.png")
+        let titles = ["Private", "Public", "MyID"]
+        let frame = CGRect(x: 5, y: 500, width: view.frame.width - 10, height: 40)
         
-        let imageData:NSData = UIImageJPEGRepresentation(image, 0.8)! as NSData
+        let segmentedControl = TwicketSegmentedControl(frame: frame)
+        segmentedControl.setSegmentItems(titles)
+        segmentedControl.delegate = self as TwicketSegmentedControlDelegate
         
-        UserDefaults.standard.set(imageData, forKey: "savedImage")
-        
-        
+        view.addSubview(segmentedControl)
+        getUsersPublic()
         getUsers()
         genCodePrivate()
         
         let firstItem = UIApplicationShortcutItem(type: "share", localizedTitle: "Scan")
         UIApplication.shared.shortcutItems = [firstItem]
-        
-        Auth.auth().signInAnonymously(completion: { (user, error) in
-            if error != nil {
-                print(error!)
-                return
-            }
-            print("User logged anonymously wth uid: " + user!.uid)
-           // self.startAnimating()
-//            if !self.firstRun {
-//                self.stopAnimating()
-//                self.warringLabel.text = "Set Your Profiles"
-//                UserDefaults.standard.set(true, forKey: "firstRun")
-//            }
-            //self.warringLabel.isHidden = true
-           // self.privateProfileData()
-            //self.publicProfileData()
-          //  self.socialProfileData()
-            self.segmentedControl.selectedSegmentIndex = .allZeros
-        })
     }
     
-    @IBAction func codeChanged(_ sender: Any) {
-        switch segmentedControl.selectedSegmentIndex
-        {
-        case 0:
+    func didSelect(_ segmentIndex: Int) {
+        if segmentIndex == 0 {
             genCodePrivate()
-        case 1:
+        } else if segmentIndex == 1 {
             genCodePublic()
-        case 2:
-            genCodeSocial()
-        default:
-            break
+        } else if segmentIndex == 2 {
+            genMyID()
         }
     }
     
     
-   
-//    func privateProfileData() {
-//        
-//        //self.startAnimating()
-//        User.fetchUser { (user, error) in
-//            if error == nil {
-//                guard let user = user else { return }
-//                
-//                if let number = user.phoneNumber {
-//                    self.phoneNumber = number
-//                }
-//                
-//                if let firstName = user.firstName {
-//                    self.firstName = firstName
-//                }
-//                
-//                if let lastName = user.lastName {
-//                    self.lastName = lastName
-//                }
-//                
-//                if let company = user.company {
-//                    self.company = company
-//                }
-//                
-//                if let email = user.email {
-//                    self.email = email
-//                }
-//                
-//                if let url = user.url {
-//                    self.url = url
-//                }
-//                
-//                //     if let address = user.address {
-//                //       self.address = address
-//                //     self.form.rowBy(tag: "Address")?.updateCell()
-//                // }
-//                //     if let birthday = user.birthday {
-//                //       self.birthday = birthday
-//                //     self.form.rowBy(tag: "Birthday")?.updateCell()
-//                // }
-//                
-//                if let socialProfile = user.socialProfile {
-//                    self.socialProfile = socialProfile
-//                }
-//                
-//                if let instantMessage = user.instantMessage {
-//                    self.instantMessage = instantMessage
-//                }
-//                
-//                if let relatives = user.relatives {
-//                    self.relatives = relatives
-//                }
-//                
-//                if let notes = user.notes {
-//                    self.notes = notes
-//                }
-//            }
-//        }
-//    }
     func genCodePrivate() {
         let firstNameNonOpt = firstName ?? ""
         let lastNameNonOpt = lastName ?? ""
@@ -298,139 +257,92 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable {
         let notesNonOpt = notes ?? ""
        
         var qrCodePrivate = QRCode("\(firstNameNonOpt)*\(lastNameNonOpt)*\(companyNonOpt)*\(phoneNumber1NonOpt)*\(phoneNumber2NonOpt)*\(phoneNumber3NonOpt)*\(phoneNumber4NonOpt)*\(phoneNumber5NonOpt)*\(email1NonOpt)*\(email2NonOpt)*\(email3NonOpt)*\(email4NonOpt)*\(email5NonOpt)*\(url1NonOpt)*\(url2NonOpt)*\(url3NonOpt)*\(url4NonOpt)*\(url5NonOpt)*\(street1NonOpt)*\(street2NonOpt)*\(street3NonOpt)*\(state1NonOpt)*\(state2NonOpt)*\(state3NonOpt)*\(city1NonOpt)*\(city2NonOpt)*\(city3NonOpt)*\(country1NonOpt)*\(country2NonOpt)*\(country3NonOpt)*\(postalCode1NonOpt)*\(postalCode2NonOpt)*\(postalCode3NonOpt)*\(birthdayNonOpt)*\(socialProfile1NonOpt)*\(socialProfile2NonOpt)*\(socialProfile3NonOpt)*\(socialProfile4NonOpt)*\(socialProfile5NonOpt)*\(instantMessage1NonOpt)*\(instantMessage2NonOpt)*\(instantMessage3NonOpt)*\(instantMessage4NonOpt)*\(instantMessage5NonOpt)*\(relatives1NonOpt)*\(relatives2NonOpt)*\(relatives3NonOpt)*\(relatives4NonOpt)*\(relatives5NonOpt)*\(notesNonOpt)")
-      //  print(firstName)
+        
         qrCodePrivate?.size = self.imgqrCode.bounds.size
         qrCodePrivate?.errorCorrection = .High
-        qrCodePrivate?.size = CGSize(width: 297, height: 297)
+        qrCodePrivate?.size = CGSize(width: 375, height: 375)
         imgqrCode.image = qrCodePrivate?.image
         
       
     }
-//    func publicProfileData() {
-//        // self.startAnimating()
-//        UserPublic.fetchUser { (user, error) in
-//            if error == nil {
-//                guard let user = user else { return }
-//                
-//                if let number = user.phoneNumber {
-//                    self.phoneNumberPublic = number
-//                }
-//                
-//                if let firstName = user.firstName {
-//                    self.firstNamePublic = firstName
-//                }
-//                
-//                if let lastName = user.lastName {
-//                    self.lastNamePublic = lastName
-//                }
-//                
-//                if let company = user.company {
-//                    self.companyPublic = company
-//                }
-//                
-//                if let email = user.email {
-//                    self.emailPublic = email
-//                }
-//                
-//                if let url = user.url {
-//                    self.urlPublic = url
-//                }
-//                
-//                //     if let address = user.address {
-//                //       self.addressPublic = address
-//                // }
-//                //     if let birthday = user.birthday {
-//                //       self.birthdayPublic = birthday
-//                // }
-//                
-//                if let socialProfile = user.socialProfile {
-//                    self.socialProfilePublic = socialProfile
-//                }
-//                
-//                if let instantMessage = user.instantMessage {
-//                    self.instantMessagePublic = instantMessage
-//                }
-//                
-//                if let relatives = user.relatives {
-//                    self.relativesPublic = relatives
-//                }
-//                
-//                if let notes = user.notes {
-//                    self.notesPublic = notes
-//                }
-//            }
-//        }
-//    }
+    
     func genCodePublic() {
-        var qrCodePublic = QRCode("\(self.firstNamePublic)*\(self.lastNamePublic)*\(self.companyPublic)*\(self.phoneNumberPublic)*\(self.emailPublic)*\(self.urlPublic)*\(self.addressPublic)*\(self.birthdayPublic)*\(self.socialProfilePublic)*\(self.instantMessagePublic)*\(self.relativesPublic)*\(self.notesPublic)")
+        let firstNameNonOpt = firstNamePublic ?? ""
+        let lastNameNonOpt = lastNamePublic ?? ""
+        let companyNonOpt = companyPublic ?? ""
+        
+        let phoneNumber1NonOpt = phoneNumber1Public ?? ""
+        let phoneNumber2NonOpt = phoneNumber2Public ?? ""
+        let phoneNumber3NonOpt = phoneNumber3Public ?? ""
+        let phoneNumber4NonOpt = phoneNumber4Public ?? ""
+        let phoneNumber5NonOpt = phoneNumber5Public ?? ""
+        
+        let email1NonOpt = email1Public ?? ""
+        let email2NonOpt = email2Public ?? ""
+        let email3NonOpt = email3Public ?? ""
+        let email4NonOpt = email4Public ?? ""
+        let email5NonOpt = email5Public ?? ""
+        
+        let url1NonOpt = url1Public ?? ""
+        let url2NonOpt = url2Public ?? ""
+        let url3NonOpt = url3Public ?? ""
+        let url4NonOpt = url4Public ?? ""
+        let url5NonOpt = url5Public ?? ""
+        
+        let street1NonOpt = street1Public ?? ""
+        let street2NonOpt = street2Public ?? ""
+        let street3NonOpt = street3Public ?? ""
+        
+        let state1NonOpt = state1Public ?? ""
+        let state2NonOpt = state2Public ?? ""
+        let state3NonOpt = state3Public ?? ""
+        
+        let city1NonOpt = city1Public ?? ""
+        let city2NonOpt = city2Public ?? ""
+        let city3NonOpt = city3Public ?? ""
+        
+        let country1NonOpt = country1Public ?? ""
+        let country2NonOpt = country2Public ?? ""
+        let country3NonOpt = country3Public ?? ""
+        
+        let postalCode1NonOpt = postalCode1Public ?? ""
+        let postalCode2NonOpt = postalCode2Public ?? ""
+        let postalCode3NonOpt = postalCode3Public ?? ""
+        
+        let birthdayNonOpt = birthdayPublic ?? ""
+        
+        let socialProfile1NonOpt = socialProfile1Public ?? ""
+        let socialProfile2NonOpt = socialProfile2Public ?? ""
+        let socialProfile3NonOpt = socialProfile3Public ?? ""
+        let socialProfile4NonOpt = socialProfile4Public ?? ""
+        let socialProfile5NonOpt = socialProfile5Public ?? ""
+        
+        let instantMessage1NonOpt = instantMessage1Public ?? ""
+        let instantMessage2NonOpt = instantMessage2Public ?? ""
+        let instantMessage3NonOpt = instantMessage3Public ?? ""
+        let instantMessage4NonOpt = instantMessage4Public ?? ""
+        let instantMessage5NonOpt = instantMessage5Public ?? ""
+        
+        let relatives1NonOpt = relatives1Public ?? ""
+        let relatives2NonOpt = relatives2Public ?? ""
+        let relatives3NonOpt = relatives3Public ?? ""
+        let relatives4NonOpt = relatives4Public ?? ""
+        let relatives5NonOpt = relatives5Public ?? ""
+        
+        let notesNonOpt = notesPublic ?? ""
+        
+        var qrCodePublic = QRCode("\(firstNameNonOpt)*\(lastNameNonOpt)*\(companyNonOpt)*\(phoneNumber1NonOpt)*\(phoneNumber2NonOpt)*\(phoneNumber3NonOpt)*\(phoneNumber4NonOpt)*\(phoneNumber5NonOpt)*\(email1NonOpt)*\(email2NonOpt)*\(email3NonOpt)*\(email4NonOpt)*\(email5NonOpt)*\(url1NonOpt)*\(url2NonOpt)*\(url3NonOpt)*\(url4NonOpt)*\(url5NonOpt)*\(street1NonOpt)*\(street2NonOpt)*\(street3NonOpt)*\(state1NonOpt)*\(state2NonOpt)*\(state3NonOpt)*\(city1NonOpt)*\(city2NonOpt)*\(city3NonOpt)*\(country1NonOpt)*\(country2NonOpt)*\(country3NonOpt)*\(postalCode1NonOpt)*\(postalCode2NonOpt)*\(postalCode3NonOpt)*\(birthdayNonOpt)*\(socialProfile1NonOpt)*\(socialProfile2NonOpt)*\(socialProfile3NonOpt)*\(socialProfile4NonOpt)*\(socialProfile5NonOpt)*\(instantMessage1NonOpt)*\(instantMessage2NonOpt)*\(instantMessage3NonOpt)*\(instantMessage4NonOpt)*\(instantMessage5NonOpt)*\(relatives1NonOpt)*\(relatives2NonOpt)*\(relatives3NonOpt)*\(relatives4NonOpt)*\(relatives5NonOpt)*\(notesNonOpt)")
         qrCodePublic?.size = self.imgqrCode.bounds.size
         qrCodePublic?.errorCorrection = .High
-        qrCodePublic?.size = CGSize(width: 297, height: 297)
+        qrCodePublic?.size = CGSize(width: 375, height: 375)
         self.imgqrCode.image = qrCodePublic?.image
     }
-//    func socialProfileData() {
-//        UserSocial.fetchUser { (user, error) in
-//            if error == nil {
-//                guard let user = user else { return }
-//                
-//                if let number = user.phoneNumber {
-//                    self.phoneNumberSocial = number
-//                }
-//                
-//                if let firstName = user.firstName {
-//                    self.firstNameSocial = firstName
-//                }
-//                
-//                if let lastName = user.lastName {
-//                    self.lastNameSocial = lastName
-//                }
-//                
-//                if let company = user.company {
-//                    self.companySocial = company
-//                }
-//                
-//                if let email = user.email {
-//                    self.emailSocial = email
-//                }
-//                
-//                if let url = user.url {
-//                    self.urlSocial = url
-//                }
-//                
-//                //     if let address = user.address {
-//                //       self.addressSocial = address
-//                // }
-//                //     if let birthday = user.birthday {
-//                //       self.birthdaySocial = birthday
-//                // }
-//                
-//                if let socialProfile = user.socialProfile {
-//                    self.socialProfileSocial = socialProfile
-//                }
-//                
-//                if let instantMessage = user.instantMessage {
-//                    self.instantMessageSocial = instantMessage
-//                }
-//                
-//                if let relatives = user.relatives {
-//                    self.relativesSocial = relatives
-//                }
-//                
-//                if let notes = user.notes {
-//                    self.notesSocial = notes
-//                }
-//                self.genCodePrivate()
-//                self.segmentedControl.selectedSegmentIndex = 0
-//                self.stopAnimating()
-//            }
-//        }
-//    }
-    func genCodeSocial() {
-        var qrCodeSocial = QRCode("\(self.firstNameSocial)*\(self.lastNameSocial)*\(self.companySocial)*\(self.phoneNumberSocial)*\(self.emailSocial)*\(self.urlSocial)*\(self.addressSocial)*\(self.birthdaySocial)*\(self.socialProfileSocial)*\(self.instantMessageSocial)*\(self.relativesSocial)*\(self.notesSocial)")
-        qrCodeSocial?.size = self.imgqrCode.bounds.size
-        qrCodeSocial?.errorCorrection = .High
-        qrCodeSocial?.size = CGSize(width: 297, height: 297)
-        self.imgqrCode.image = qrCodeSocial?.image
+    
+    func genMyID() {
+        let img  = Barcode.fromString(string: "960813350411")
+        let imageView = UIImageView(image: img!)
+        imageView.frame = CGRect(x: 0, y: 0, width: 375, height: 275)
+        self.imgqrCode.image = imageView.image
     }
     
     
@@ -667,6 +579,202 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable {
             print("Error with request: \(error)")
         }
     }
-}
+    
+    func getUsersPublic () {
+        
+        let fetchRequest: NSFetchRequest<Public> = Public.fetchRequest()
+        
+        do {
+            
+            let array_users = try getContext().fetch(fetchRequest)
+            
+            for user in array_users as [NSManagedObject] {
+                
+                firstName = user.value(forKey: "firstNamePublic") as? String ?? ""
+                
+                lastName = user.value(forKey: "lastNamePublic") as? String ?? ""
+                
+                
+                if companyPublic != nil {
+                    companyPublic = user.value(forKey: "companyPublic") as? String
+                }
+                
+                if phoneNumber1Public != nil {
+                    phoneNumber1Public = user.value(forKey: "phoneNumber1Public") as? String
+                }
+                
+                if phoneNumber2Public != nil {
+                    phoneNumber2Public = user.value(forKey: "phoneNumber2Public") as? String
+                }
+                
+                if phoneNumber3Public != nil {
+                    phoneNumber3Public = user.value(forKey: "phoneNumber3Public") as? String
+                }
+                
+                if phoneNumber4Public != nil {
+                    phoneNumber4Public = user.value(forKey: "phoneNumber4Public") as? String
+                }
+                
+                if phoneNumber5Public != nil {
+                    phoneNumber5Public = user.value(forKey: "phoneNumber5Public") as? String
+                }
+                
+                if email1Public != nil {
+                    email1Public = user.value(forKey: "email1Public") as? String
+                }
+                if email2Public != nil {
+                    email2Public = user.value(forKey: "email2Public") as? String
+                }
+                if email3Public != nil {
+                    email3Public = user.value(forKey: "email3Public") as? String
+                }
+                if email4Public != nil {
+                    email4Public = user.value(forKey: "email4Public") as? String
+                }
+                if email5Public != nil {
+                    email5Public = user.value(forKey: "email5Public") as? String
+                }
+                
+                
+                if url1Public != nil {
+                    url1Public = user.value(forKey: "url1Public") as? String
+                }
+                if url2Public != nil {
+                    url2Public = user.value(forKey: "url2Public") as? String
+                }
+                if url3Public != nil {
+                    url3Public = user.value(forKey: "url3Public") as? String
+                }
+                if url4Public != nil {
+                    url4Public = user.value(forKey: "url4Public") as? String
+                }
+                if url5Public != nil {
+                    url5Public = user.value(forKey: "url5Public") as? String
+                }
+                
+                if street1Public != nil {
+                    street1Public = user.value(forKey: "street1Public") as? String
+                }
+                
+                if state1Public != nil {
+                    state1Public = user.value(forKey: "state1Public") as? String
+                }
+                
+                if city1Public != nil {
+                    city1Public = user.value(forKey: "city1Public") as? String
+                }
+                
+                if postalCode1Public != nil {
+                    postalCode1Public = user.value(forKey: "postalCode1Public") as? String
+                }
+                
+                if country1Public != nil {
+                    country1Public = user.value(forKey: "country1Public") as? String
+                }
+                
+                if street2Public != nil {
+                    street2Public = user.value(forKey: "street2Public") as? String
+                }
+                
+                if state2Public != nil {
+                    state2Public = user.value(forKey: "state2Public") as? String
+                }
+                
+                if city2Public != nil {
+                    city2Public = user.value(forKey: "city2Public") as? String
+                }
+                
+                if postalCode2Public != nil {
+                    postalCode2Public = user.value(forKey: "postalCode2Public") as? String
+                }
+                
+                if country2Public != nil {
+                    country2Public = user.value(forKey: "country2Public") as? String
+                }
+                
+                if street3Public != nil {
+                    street3Public = user.value(forKey: "street3Public") as? String
+                }
+                
+                if state3Public != nil {
+                    state3Public = user.value(forKey: "state3Public") as? String
+                }
+                
+                if city3Public != nil {
+                    city3Public = user.value(forKey: "city3Public") as? String
+                }
+                
+                if postalCode3Public != nil {
+                    postalCode3Public = user.value(forKey: "postalCode3Public") as? String
+                }
+                
+                if country3Public != nil {
+                    country3Public = user.value(forKey: "country3Public") as? String
+                }
+                
+                if birthdayPublic != nil {
+                    birthdayPublic = user.value(forKey: "birthdayPublic") as? String
+                }
+                
+                if socialProfile1Public != nil {
+                    socialProfile1Public = user.value(forKey: "socialProfile1Public") as? String
+                }
+                if socialProfile2Public != nil {
+                    socialProfile2Public = user.value(forKey: "socialProfile2Public") as? String
+                }
+                if socialProfile3Public != nil {
+                    socialProfile3Public = user.value(forKey: "socialProfile3Public") as? String
+                }
+                if socialProfile4Public != nil {
+                    socialProfile4Public = user.value(forKey: "socialProfile4Public") as? String
+                }
+                if socialProfile5Public != nil {
+                    socialProfile5Public = user.value(forKey: "socialProfile5Public") as? String
+                }
+                
+                
+                if instantMessage1Public != nil {
+                    instantMessage1Public = user.value(forKey: "account1Public") as? String
+                }
+                if instantMessage2Public != nil {
+                    instantMessage2Public = user.value(forKey: "account2Public") as? String
+                }
+                if instantMessage3Public != nil {
+                    instantMessage3Public = user.value(forKey: "account3Public") as? String
+                }
+                if instantMessage4Public != nil {
+                    instantMessage4Public = user.value(forKey: "account4Public") as? String
+                }
+                if instantMessage5Public != nil {
+                    instantMessage5Public = user.value(forKey: "account5Public") as? String
+                }
+                
+                
+                if relatives1Public != nil {
+                    relatives1Public = user.value(forKey: "relatives1Public") as? String
+                }
+                if relatives2Public != nil {
+                    relatives2Public = user.value(forKey: "relatives2Public") as? String
+                }
+                if relatives3Public != nil {
+                    relatives3Public = user.value(forKey: "relatives3Public") as? String
+                }
+                if relatives4Public != nil {
+                    relatives4Public = user.value(forKey: "relatives4Public") as? String
+                }
+                if relatives5Public != nil {
+                    relatives5Public = user.value(forKey: "relatives5Public") as? String
+                }
+                
+                
+                if notesPublic != nil {
+                    notesPublic = user.value(forKey: "notesPublic") as? String
+                }
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
+    }
 
+}
 

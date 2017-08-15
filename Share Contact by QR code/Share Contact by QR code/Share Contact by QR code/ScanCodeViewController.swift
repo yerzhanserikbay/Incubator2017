@@ -92,6 +92,10 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let firstItem = UIApplicationShortcutItem(type: "share", localizedTitle: "Scan")
+        UIApplication.shared.shortcutItems = [firstItem]
+        
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {

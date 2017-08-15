@@ -11,18 +11,14 @@
 		4A273088BDE970664DCBD8F0 /* Pods_Share_Contact_by_QR_codeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2243839B39445E4AFCE52C62 /* Pods_Share_Contact_by_QR_codeTests.framework */; };
 		DB9D9D3142FF412197AD0F35 /* Pods_Share_Contact_by_QR_codeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6858236077940BB0430BDEB /* Pods_Share_Contact_by_QR_codeUITests.framework */; };
 		E610AB401F31A421003BA6FF /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E610AB3F1F31A421003BA6FF /* iAd.framework */; };
+		E623C64C1F4323380013BFF2 /* barcode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E623C64B1F4323380013BFF2 /* barcode.jpg */; };
 		E629EC4C1F2F3E4E00FE7DA1 /* SetPublicProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC4B1F2F3E4E00FE7DA1 /* SetPublicProfileViewController.swift */; };
 		E629EC501F2F3E9A00FE7DA1 /* OpenPublicSettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC4F1F2F3E9A00FE7DA1 /* OpenPublicSettingProfileViewController.swift */; };
-		E629EC521F2F3EAC00FE7DA1 /* OpenSocialSettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC511F2F3EAC00FE7DA1 /* OpenSocialSettingProfileViewController.swift */; };
-		E629EC541F2F3EC000FE7DA1 /* SetSocialProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC531F2F3EC000FE7DA1 /* SetSocialProfileViewController.swift */; };
-		E629EC561F2F3F8800FE7DA1 /* UserPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC551F2F3F8800FE7DA1 /* UserPublic.swift */; };
-		E629EC581F2F3F9400FE7DA1 /* UserSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC571F2F3F9400FE7DA1 /* UserSocial.swift */; };
+		E629EC541F2F3EC000FE7DA1 /* myIDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E629EC531F2F3EC000FE7DA1 /* myIDGenerator.swift */; };
 		E63C98D11F177DF700D22AE7 /* SetPrivateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C98D01F177DF700D22AE7 /* SetPrivateProfileViewController.swift */; };
 		E63C98D31F1A1BB000D22AE7 /* OpenPrivateSettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C98D21F1A1BB000D22AE7 /* OpenPrivateSettingProfileViewController.swift */; };
-		E64144921F27491300165F38 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64144911F27491300165F38 /* User.swift */; };
 		E66268FB1F329B2400C13721 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66268FA1F329B2400C13721 /* Images.xcassets */; };
 		E66D2F261F1D017A003B741F /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = E66D2F251F1D017A003B741F /* user.png */; };
-		E66D2F281F1DFCBA003B741F /* photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E66D2F271F1DFCBA003B741F /* photo.jpeg */; };
 		E6B93ADA1F137EC200EF2129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93AD91F137EC200EF2129 /* AppDelegate.swift */; };
 		E6B93ADC1F137EC200EF2129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93ADB1F137EC200EF2129 /* ViewController.swift */; };
 		E6B93ADF1F137EC200EF2129 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B93ADD1F137EC200EF2129 /* Main.storyboard */; };
@@ -35,9 +31,6 @@
 		E6DFCDD31F14C8B3007F90AB /* Private.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD01F14C8B3007F90AB /* Private.png */; };
 		E6DFCDD41F14C8B3007F90AB /* Public.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD11F14C8B3007F90AB /* Public.png */; };
 		E6DFCDD51F14C8B3007F90AB /* Social.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD21F14C8B3007F90AB /* Social.png */; };
-		E6DFCDD91F14CB22007F90AB /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD61F14CB22007F90AB /* qrcode.png */; };
-		E6DFCDDA1F14CB22007F90AB /* scan.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD71F14CB22007F90AB /* scan.png */; };
-		E6DFCDDB1F14CB22007F90AB /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDD81F14CB22007F90AB /* settings.png */; };
 		E6DFCDDD1F15F024007F90AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6DFCDDC1F15F024007F90AB /* GoogleService-Info.plist */; };
 		E6DFCDE01F1605DC007F90AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B93ADB1F137EC200EF2129 /* ViewController.swift */; };
 		E6DFCDE41F162A45007F90AB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DFCDE31F162A45007F90AB /* SettingsViewController.swift */; };
@@ -67,19 +60,15 @@
 		D787BD41A2B695534D1679C5 /* Pods-Share Contact by QR code.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR code.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR code/Pods-Share Contact by QR code.debug.xcconfig"; sourceTree = "<group>"; };
 		E51831154CAAE4514050FB8E /* Pods-Share Contact by QR codeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR codeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR codeTests/Pods-Share Contact by QR codeTests.release.xcconfig"; sourceTree = "<group>"; };
 		E610AB3F1F31A421003BA6FF /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		E623C64B1F4323380013BFF2 /* barcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = barcode.jpg; path = ../../../../../../../Downloads/barcode.jpg; sourceTree = "<group>"; };
 		E629EC4B1F2F3E4E00FE7DA1 /* SetPublicProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPublicProfileViewController.swift; sourceTree = "<group>"; };
 		E629EC4F1F2F3E9A00FE7DA1 /* OpenPublicSettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPublicSettingProfileViewController.swift; sourceTree = "<group>"; };
-		E629EC511F2F3EAC00FE7DA1 /* OpenSocialSettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSocialSettingProfileViewController.swift; sourceTree = "<group>"; };
-		E629EC531F2F3EC000FE7DA1 /* SetSocialProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetSocialProfileViewController.swift; sourceTree = "<group>"; };
-		E629EC551F2F3F8800FE7DA1 /* UserPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPublic.swift; sourceTree = "<group>"; };
-		E629EC571F2F3F9400FE7DA1 /* UserSocial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSocial.swift; sourceTree = "<group>"; };
+		E629EC531F2F3EC000FE7DA1 /* myIDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myIDGenerator.swift; sourceTree = "<group>"; };
 		E63C98D01F177DF700D22AE7 /* SetPrivateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPrivateProfileViewController.swift; sourceTree = "<group>"; };
 		E63C98D21F1A1BB000D22AE7 /* OpenPrivateSettingProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPrivateSettingProfileViewController.swift; sourceTree = "<group>"; };
-		E64144911F27491300165F38 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E64144A81F29F57D00165F38 /* Share Contact by QR code.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Share Contact by QR code.entitlements"; sourceTree = "<group>"; };
 		E66268FA1F329B2400C13721 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E66D2F251F1D017A003B741F /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
-		E66D2F271F1DFCBA003B741F /* photo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpeg; sourceTree = "<group>"; };
 		E673EE72C7F8E15484CD19CC /* Pods-Share Contact by QR code.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR code.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR code/Pods-Share Contact by QR code.release.xcconfig"; sourceTree = "<group>"; };
 		E6B93AD61F137EC200EF2129 /* Share Contact by QR code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Share Contact by QR code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B93AD91F137EC200EF2129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,9 +88,6 @@
 		E6DFCDD01F14C8B3007F90AB /* Private.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Private.png; sourceTree = "<group>"; };
 		E6DFCDD11F14C8B3007F90AB /* Public.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Public.png; sourceTree = "<group>"; };
 		E6DFCDD21F14C8B3007F90AB /* Social.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Social.png; sourceTree = "<group>"; };
-		E6DFCDD61F14CB22007F90AB /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrcode.png; sourceTree = "<group>"; };
-		E6DFCDD71F14CB22007F90AB /* scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan.png; sourceTree = "<group>"; };
-		E6DFCDD81F14CB22007F90AB /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		E6DFCDDC1F15F024007F90AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E6DFCDE31F162A45007F90AB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EB031CE73D04C175EF0FB4CC /* Pods-Share Contact by QR codeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Contact by QR codeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Contact by QR codeTests/Pods-Share Contact by QR codeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +151,6 @@
 		E64144931F28893400165F38 /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				E64144911F27491300165F38 /* User.swift */,
 				E63C98D01F177DF700D22AE7 /* SetPrivateProfileViewController.swift */,
 				E63C98D21F1A1BB000D22AE7 /* OpenPrivateSettingProfileViewController.swift */,
 			);
@@ -175,31 +160,25 @@
 		E64144A61F29153B00165F38 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				E629EC551F2F3F8800FE7DA1 /* UserPublic.swift */,
 				E629EC4B1F2F3E4E00FE7DA1 /* SetPublicProfileViewController.swift */,
 				E629EC4F1F2F3E9A00FE7DA1 /* OpenPublicSettingProfileViewController.swift */,
 			);
 			name = Public;
 			sourceTree = "<group>";
 		};
-		E64144A71F29154700165F38 /* Social */ = {
+		E64144A71F29154700165F38 /* My ID */ = {
 			isa = PBXGroup;
 			children = (
-				E629EC571F2F3F9400FE7DA1 /* UserSocial.swift */,
-				E629EC531F2F3EC000FE7DA1 /* SetSocialProfileViewController.swift */,
-				E629EC511F2F3EAC00FE7DA1 /* OpenSocialSettingProfileViewController.swift */,
+				E629EC531F2F3EC000FE7DA1 /* myIDGenerator.swift */,
 			);
-			name = Social;
+			name = "My ID";
 			sourceTree = "<group>";
 		};
 		E68344EA1F14C72D0030CC26 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E623C64B1F4323380013BFF2 /* barcode.jpg */,
 				E66D2F251F1D017A003B741F /* user.png */,
-				E6DFCDD61F14CB22007F90AB /* qrcode.png */,
-				E6DFCDD71F14CB22007F90AB /* scan.png */,
-				E6DFCDD81F14CB22007F90AB /* settings.png */,
-				E66D2F271F1DFCBA003B741F /* photo.jpeg */,
 				E6DFCDD01F14C8B3007F90AB /* Private.png */,
 				E6DFCDD11F14C8B3007F90AB /* Public.png */,
 				E6DFCDD21F14C8B3007F90AB /* Social.png */,
@@ -281,7 +260,7 @@
 			children = (
 				E6B93AD91F137EC200EF2129 /* AppDelegate.swift */,
 				E6B93ADB1F137EC200EF2129 /* ViewController.swift */,
-				E64144A71F29154700165F38 /* Social */,
+				E64144A71F29154700165F38 /* My ID */,
 				E64144A61F29153B00165F38 /* Public */,
 				E64144931F28893400165F38 /* Private */,
 				E6DFCDE31F162A45007F90AB /* SettingsViewController.swift */,
@@ -424,16 +403,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6DFCDDB1F14CB22007F90AB /* settings.png in Resources */,
 				E6DFCDD51F14C8B3007F90AB /* Social.png in Resources */,
 				E6DFCDDD1F15F024007F90AB /* GoogleService-Info.plist in Resources */,
 				E6B93AE71F137EC200EF2129 /* LaunchScreen.storyboard in Resources */,
-				E66D2F281F1DFCBA003B741F /* photo.jpeg in Resources */,
 				E6B93ADF1F137EC200EF2129 /* Main.storyboard in Resources */,
-				E6DFCDDA1F14CB22007F90AB /* scan.png in Resources */,
 				E66D2F261F1D017A003B741F /* user.png in Resources */,
-				E6DFCDD91F14CB22007F90AB /* qrcode.png in Resources */,
 				E66268FB1F329B2400C13721 /* Images.xcassets in Resources */,
+				E623C64C1F4323380013BFF2 /* barcode.jpg in Resources */,
 				E6DFCDD31F14C8B3007F90AB /* Private.png in Resources */,
 				E6DFCDD41F14C8B3007F90AB /* Public.png in Resources */,
 			);
@@ -604,14 +580,10 @@
 				E6DFCDE41F162A45007F90AB /* SettingsViewController.swift in Sources */,
 				E6B93B111F138CE500EF2129 /* ScanCodeViewController.swift in Sources */,
 				E63C98D11F177DF700D22AE7 /* SetPrivateProfileViewController.swift in Sources */,
-				E629EC581F2F3F9400FE7DA1 /* UserSocial.swift in Sources */,
 				E629EC501F2F3E9A00FE7DA1 /* OpenPublicSettingProfileViewController.swift in Sources */,
-				E629EC561F2F3F8800FE7DA1 /* UserPublic.swift in Sources */,
-				E629EC541F2F3EC000FE7DA1 /* SetSocialProfileViewController.swift in Sources */,
+				E629EC541F2F3EC000FE7DA1 /* myIDGenerator.swift in Sources */,
 				E63C98D31F1A1BB000D22AE7 /* OpenPrivateSettingProfileViewController.swift in Sources */,
 				E6B93ADA1F137EC200EF2129 /* AppDelegate.swift in Sources */,
-				E64144921F27491300165F38 /* User.swift in Sources */,
-				E629EC521F2F3EAC00FE7DA1 /* OpenSocialSettingProfileViewController.swift in Sources */,
 				E6B93AE21F137EC200EF2129 /* Share_Contact_by_QR_code.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
