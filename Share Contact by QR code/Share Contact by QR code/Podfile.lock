@@ -1,4 +1,5 @@
 PODS:
+  - Armchair (0.3.0)
   - EasyPeasy (1.4.2)
   - Eureka (3.0.0)
   - ImageRow (2.0.0):
@@ -16,6 +17,7 @@ PODS:
   - TwicketSegmentedControl (0.1.2)
 
 DEPENDENCIES:
+  - Armchair
   - EasyPeasy
   - Eureka
   - ImageRow
@@ -26,6 +28,7 @@ DEPENDENCIES:
   - TwicketSegmentedControl
 
 SPEC CHECKSUMS:
+  Armchair: c8eca9bdca868fd6f7155eee73ba70a1278b0655
   EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
   Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
   ImageRow: 9dfbfa38c1e62c25d638bc40e97a48c1809443c4
@@ -35,6 +38,6 @@ SPEC CHECKSUMS:
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
 
-PODFILE CHECKSUM: 16eab6e13dabe5831c51b1f51d2e85109faa7836
+PODFILE CHECKSUM: 26e17eb1c5693001d70c4633d659b49628a8b588
 
 COCOAPODS: 1.2.1

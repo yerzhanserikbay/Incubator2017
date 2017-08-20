@@ -12,8 +12,8 @@ target 'Share Contact by QR code' do
   pod 'QRCode'
   pod 'NVActivityIndicatorView' 
   pod 'PhoneNumberKit'
-  pod 'TwicketSegmentedControl'
-  
+  pod 'TwicketSegmentedControl' 
+  pod 'Armchair'
  # Pods for Share Contact by QR code
 
   target 'Share Contact by QR codeTests' do

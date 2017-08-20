@@ -363,7 +363,7 @@ class OpenPrivateSettingProfileViewController: FormViewController, SectionDelega
         
            form +++ ImageRow() {
             $0.tag = "Avatar"
-            $0.title = "Choose Photo For Your Profile"
+            $0.title = "Available soon"
             $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
             $0.value = #imageLiteral(resourceName: "user.png")
             $0.cell.height = { 102 }
@@ -595,6 +595,9 @@ class OpenPrivateSettingProfileViewController: FormViewController, SectionDelega
                     $0.cell.textField.keyboardType = .URL
                     $0.cell.textField.autocapitalizationType = .none
                     $0.cell.textField.autocorrectionType = .no
+                    if index == 0 {
+                       
+                    }
                     if index == 4 {
                         hiddenUrl = true
                         $0.placeholder = "URL"
@@ -1721,7 +1724,7 @@ class OpenPrivateSettingProfileViewController: FormViewController, SectionDelega
         }
     }
     
-    func getUsers () {
+    func getUsers() {
         //create a fetch request, telling it about the entity
         let fetchRequest: NSFetchRequest<Private> = Private.fetchRequest()
         

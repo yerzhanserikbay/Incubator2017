@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Armchair.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EasyPeasy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,17 +72,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>163867481C690D531509B6CD714B38DB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1A914997CC2442CB00BA14C7F71EAE95</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>20B7E8BAB6B258E12A5E14DF493D65CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>37900E72EC972AF6ED5D988BD1F194A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B92B9098F7D105D586AA44FE311240D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,17 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6AF2137E2F6FB8583C2599E02D3FDE0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8C5BD10883BD185426DD737247F56DEC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>901C516B407FC43022889697F2DB631E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B1A9A26033D2A7DF5085DB26E7A45DF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +117,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD87B492989B79C7BA115A44E863D082</key>
+		<key>B572A16AC5B9741550D493E238047E9D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B639F0634214CD4CEE2BA5499AAF9610</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2D90EAB71AD3B21DA205F91AF5F68B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CF2882000931D667403B85ADB7F98B26</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EE3597FBF5D0D1EFC3DBD3EFD6439321</key>
 		<dict>
 			<key>primary</key>
 			<true/>

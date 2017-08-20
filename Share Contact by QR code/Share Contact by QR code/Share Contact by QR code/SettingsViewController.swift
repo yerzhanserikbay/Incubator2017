@@ -11,11 +11,13 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
         
+    let font = UIFont.systemFont(ofSize: 18)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -39,19 +41,34 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "firstCustomCell")
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "firstCustomCell")
             cell.textLabel?.text = "Private"
-            cell.textLabel?.font = UIFont(name: "Verdana", size: 34)
+            cell.detailTextLabel?.text = "You can share this profile with friends"
+            cell.textLabel?.font = font
+            
+            let image : UIImage = UIImage(named: "target.png")!
+            cell.imageView?.image = image
+            cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
         } else if indexPath.row == 1 {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "secondCustomCell")
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "secondCustomCell")
             cell.textLabel?.text = "Public"
-            cell.textLabel?.font = UIFont(name: "Verdana", size: 34)
+            cell.detailTextLabel?.text = "This profile can be setted for everyone"
+            cell.textLabel?.font = font
+            
+            let image : UIImage = UIImage(named: "user.png")!
+            cell.imageView?.image = image
+            cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
         } else {
-            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "thirdCustomCell")
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "thirdCustomCell")
             cell.textLabel?.text = "ID number"
-            cell.textLabel?.font = UIFont(name: "Verdana", size: 34)
+            cell.detailTextLabel?.text = "Set here your IIN for scanning"
+            cell.textLabel?.font = font
+            
+            let image : UIImage = UIImage(named: "id-card.png")!
+            cell.imageView?.image = image
+            cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
         }
     }

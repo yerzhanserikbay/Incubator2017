@@ -13,21 +13,25 @@ import CoreData
 import TwicketSegmentedControl
 import CoreImage
 
-
-
 class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, TwicketSegmentedControlDelegate {
     
     class Barcode {
         
-        class func fromString(string : String) -> UIImage? {
-            
+        class func fromString(string : String) -> UIImage {
             let data = string.data(using: .ascii)
             let filter = CIFilter(name: "CICode128BarcodeGenerator")
             filter?.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
             
+            if let output = filter?.outputImage?.applying(transform) {
+                return UIImage(ciImage: output)
+            }
             return UIImage(ciImage: (filter?.outputImage)!)
         }
     }
+    
+    
+    
     
     var qrcodeText: UITextView!
     
@@ -157,12 +161,20 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
     
     var notesPublic: String? = ""
     
+    var id = ""
     
     @IBOutlet weak var imgqrCode: UIImageView!
-  
-  
+    @IBOutlet weak var idImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        idImage.isHidden = true
+        getUsersID()
+        getUsersPublic()
+        getUsers()
+        genMyID()
+        genCodePrivate()
+        
         
         let titles = ["Private", "Public", "MyID"]
         let frame = CGRect(x: 5, y: 500, width: view.frame.width - 10, height: 40)
@@ -170,26 +182,31 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
         let segmentedControl = TwicketSegmentedControl(frame: frame)
         segmentedControl.setSegmentItems(titles)
         segmentedControl.delegate = self as TwicketSegmentedControlDelegate
-        
         view.addSubview(segmentedControl)
-        getUsersPublic()
-        getUsers()
-        genCodePrivate()
         
         let firstItem = UIApplicationShortcutItem(type: "share", localizedTitle: "Scan")
         UIApplication.shared.shortcutItems = [firstItem]
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        getUsersID()
+    }
+   
     func didSelect(_ segmentIndex: Int) {
         if segmentIndex == 0 {
             genCodePrivate()
+            imgqrCode.isHidden = false
+            idImage.isHidden = true
         } else if segmentIndex == 1 {
             genCodePublic()
+            imgqrCode.isHidden = false
+            idImage.isHidden = true
         } else if segmentIndex == 2 {
             genMyID()
+            imgqrCode.isHidden = true
+            idImage.isHidden = false
         }
     }
-    
     
     func genCodePrivate() {
         let firstNameNonOpt = firstName ?? ""
@@ -339,11 +356,13 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
     }
     
     func genMyID() {
-        let img  = Barcode.fromString(string: "960813350411")
-        let imageView = UIImageView(image: img!)
-        imageView.frame = CGRect(x: 0, y: 0, width: 375, height: 275)
-        self.imgqrCode.image = imageView.image
+        let img  = Barcode.fromString(string: id)
+        
+        let imageView = UIImageView(image: img)
+        imageView.frame = CGRect(x: 0, y: 0, width: 375, height: 50)
+        self.idImage.image = imageView.image
     }
+    
     
     
     
@@ -590,186 +609,202 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
             
             for user in array_users as [NSManagedObject] {
                 
-                firstName = user.value(forKey: "firstNamePublic") as? String ?? ""
+                firstName = user.value(forKey: "firstName") as? String ?? ""
                 
-                lastName = user.value(forKey: "lastNamePublic") as? String ?? ""
+                lastName = user.value(forKey: "lastName") as? String ?? ""
                 
                 
                 if companyPublic != nil {
-                    companyPublic = user.value(forKey: "companyPublic") as? String
+                    companyPublic = user.value(forKey: "company") as? String
                 }
                 
                 if phoneNumber1Public != nil {
-                    phoneNumber1Public = user.value(forKey: "phoneNumber1Public") as? String
+                    phoneNumber1Public = user.value(forKey: "phoneNumber1") as? String
                 }
                 
                 if phoneNumber2Public != nil {
-                    phoneNumber2Public = user.value(forKey: "phoneNumber2Public") as? String
+                    phoneNumber2Public = user.value(forKey: "phoneNumber2") as? String
                 }
                 
                 if phoneNumber3Public != nil {
-                    phoneNumber3Public = user.value(forKey: "phoneNumber3Public") as? String
+                    phoneNumber3Public = user.value(forKey: "phoneNumber3") as? String
                 }
                 
                 if phoneNumber4Public != nil {
-                    phoneNumber4Public = user.value(forKey: "phoneNumber4Public") as? String
+                    phoneNumber4Public = user.value(forKey: "phoneNumber4") as? String
                 }
                 
                 if phoneNumber5Public != nil {
-                    phoneNumber5Public = user.value(forKey: "phoneNumber5Public") as? String
+                    phoneNumber5Public = user.value(forKey: "phoneNumber5") as? String
                 }
                 
                 if email1Public != nil {
-                    email1Public = user.value(forKey: "email1Public") as? String
+                    email1Public = user.value(forKey: "email1") as? String
                 }
                 if email2Public != nil {
-                    email2Public = user.value(forKey: "email2Public") as? String
+                    email2Public = user.value(forKey: "email2") as? String
                 }
                 if email3Public != nil {
-                    email3Public = user.value(forKey: "email3Public") as? String
+                    email3Public = user.value(forKey: "email3") as? String
                 }
                 if email4Public != nil {
-                    email4Public = user.value(forKey: "email4Public") as? String
+                    email4Public = user.value(forKey: "email4") as? String
                 }
                 if email5Public != nil {
-                    email5Public = user.value(forKey: "email5Public") as? String
+                    email5Public = user.value(forKey: "email5") as? String
                 }
                 
                 
                 if url1Public != nil {
-                    url1Public = user.value(forKey: "url1Public") as? String
+                    url1Public = user.value(forKey: "url1") as? String
                 }
                 if url2Public != nil {
-                    url2Public = user.value(forKey: "url2Public") as? String
+                    url2Public = user.value(forKey: "url2") as? String
                 }
                 if url3Public != nil {
-                    url3Public = user.value(forKey: "url3Public") as? String
+                    url3Public = user.value(forKey: "url3") as? String
                 }
                 if url4Public != nil {
-                    url4Public = user.value(forKey: "url4Public") as? String
+                    url4Public = user.value(forKey: "url4") as? String
                 }
                 if url5Public != nil {
-                    url5Public = user.value(forKey: "url5Public") as? String
+                    url5Public = user.value(forKey: "url5") as? String
                 }
                 
                 if street1Public != nil {
-                    street1Public = user.value(forKey: "street1Public") as? String
+                    street1Public = user.value(forKey: "street1") as? String
                 }
                 
                 if state1Public != nil {
-                    state1Public = user.value(forKey: "state1Public") as? String
+                    state1Public = user.value(forKey: "state1") as? String
                 }
                 
                 if city1Public != nil {
-                    city1Public = user.value(forKey: "city1Public") as? String
+                    city1Public = user.value(forKey: "city1") as? String
                 }
                 
                 if postalCode1Public != nil {
-                    postalCode1Public = user.value(forKey: "postalCode1Public") as? String
+                    postalCode1Public = user.value(forKey: "postalCode1") as? String
                 }
                 
                 if country1Public != nil {
-                    country1Public = user.value(forKey: "country1Public") as? String
+                    country1Public = user.value(forKey: "country1") as? String
                 }
                 
                 if street2Public != nil {
-                    street2Public = user.value(forKey: "street2Public") as? String
+                    street2Public = user.value(forKey: "street2") as? String
                 }
                 
                 if state2Public != nil {
-                    state2Public = user.value(forKey: "state2Public") as? String
+                    state2Public = user.value(forKey: "state2") as? String
                 }
                 
                 if city2Public != nil {
-                    city2Public = user.value(forKey: "city2Public") as? String
+                    city2Public = user.value(forKey: "city2") as? String
                 }
                 
                 if postalCode2Public != nil {
-                    postalCode2Public = user.value(forKey: "postalCode2Public") as? String
+                    postalCode2Public = user.value(forKey: "postalCode2") as? String
                 }
                 
                 if country2Public != nil {
-                    country2Public = user.value(forKey: "country2Public") as? String
+                    country2Public = user.value(forKey: "country2") as? String
                 }
                 
                 if street3Public != nil {
-                    street3Public = user.value(forKey: "street3Public") as? String
+                    street3Public = user.value(forKey: "street3") as? String
                 }
                 
                 if state3Public != nil {
-                    state3Public = user.value(forKey: "state3Public") as? String
+                    state3Public = user.value(forKey: "state3") as? String
                 }
                 
                 if city3Public != nil {
-                    city3Public = user.value(forKey: "city3Public") as? String
+                    city3Public = user.value(forKey: "city3") as? String
                 }
                 
                 if postalCode3Public != nil {
-                    postalCode3Public = user.value(forKey: "postalCode3Public") as? String
+                    postalCode3Public = user.value(forKey: "postalCode3") as? String
                 }
                 
                 if country3Public != nil {
-                    country3Public = user.value(forKey: "country3Public") as? String
+                    country3Public = user.value(forKey: "country3") as? String
                 }
                 
                 if birthdayPublic != nil {
-                    birthdayPublic = user.value(forKey: "birthdayPublic") as? String
+                    birthdayPublic = user.value(forKey: "birthday") as? String
                 }
                 
                 if socialProfile1Public != nil {
-                    socialProfile1Public = user.value(forKey: "socialProfile1Public") as? String
+                    socialProfile1Public = user.value(forKey: "socialProfile1") as? String
                 }
                 if socialProfile2Public != nil {
-                    socialProfile2Public = user.value(forKey: "socialProfile2Public") as? String
+                    socialProfile2Public = user.value(forKey: "socialProfile2") as? String
                 }
                 if socialProfile3Public != nil {
-                    socialProfile3Public = user.value(forKey: "socialProfile3Public") as? String
+                    socialProfile3Public = user.value(forKey: "socialProfile3") as? String
                 }
                 if socialProfile4Public != nil {
-                    socialProfile4Public = user.value(forKey: "socialProfile4Public") as? String
+                    socialProfile4Public = user.value(forKey: "socialProfile4") as? String
                 }
                 if socialProfile5Public != nil {
-                    socialProfile5Public = user.value(forKey: "socialProfile5Public") as? String
+                    socialProfile5Public = user.value(forKey: "socialProfile5") as? String
                 }
                 
                 
                 if instantMessage1Public != nil {
-                    instantMessage1Public = user.value(forKey: "account1Public") as? String
+                    instantMessage1Public = user.value(forKey: "account1") as? String
                 }
                 if instantMessage2Public != nil {
-                    instantMessage2Public = user.value(forKey: "account2Public") as? String
+                    instantMessage2Public = user.value(forKey: "account2") as? String
                 }
                 if instantMessage3Public != nil {
-                    instantMessage3Public = user.value(forKey: "account3Public") as? String
+                    instantMessage3Public = user.value(forKey: "account3") as? String
                 }
                 if instantMessage4Public != nil {
-                    instantMessage4Public = user.value(forKey: "account4Public") as? String
+                    instantMessage4Public = user.value(forKey: "account4") as? String
                 }
                 if instantMessage5Public != nil {
-                    instantMessage5Public = user.value(forKey: "account5Public") as? String
+                    instantMessage5Public = user.value(forKey: "account5") as? String
                 }
-                
                 
                 if relatives1Public != nil {
-                    relatives1Public = user.value(forKey: "relatives1Public") as? String
+                    relatives1Public = user.value(forKey: "relatives1") as? String
                 }
                 if relatives2Public != nil {
-                    relatives2Public = user.value(forKey: "relatives2Public") as? String
+                    relatives2Public = user.value(forKey: "relatives2") as? String
                 }
                 if relatives3Public != nil {
-                    relatives3Public = user.value(forKey: "relatives3Public") as? String
+                    relatives3Public = user.value(forKey: "relatives3") as? String
                 }
                 if relatives4Public != nil {
-                    relatives4Public = user.value(forKey: "relatives4Public") as? String
+                    relatives4Public = user.value(forKey: "relatives4") as? String
                 }
                 if relatives5Public != nil {
-                    relatives5Public = user.value(forKey: "relatives5Public") as? String
+                    relatives5Public = user.value(forKey: "relatives5") as? String
                 }
                 
                 
                 if notesPublic != nil {
-                    notesPublic = user.value(forKey: "notesPublic") as? String
+                    notesPublic = user.value(forKey: "notes") as? String
                 }
+            }
+        } catch {
+            print("Error with request: \(error)")
+        }
+    }
+    func getUsersID () {
+        
+        let fetchRequest: NSFetchRequest<ID> = ID.fetchRequest()
+        
+        do {
+            
+            let array_users = try getContext().fetch(fetchRequest)
+            
+            for user in array_users as [NSManagedObject] {
+                
+                id = user.value(forKey: "id") as? String ?? ""
+                
             }
         } catch {
             print("Error with request: \(error)")
