@@ -17,6 +17,7 @@
         <attribute name="country1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="data" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="email1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email3" optional="YES" attributeType="String" syncable="YES"/>
@@ -108,8 +109,8 @@
         <attribute name="url5" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Private" positionX="-63" positionY="-18" width="128" height="795"/>
-        <element name="Public" positionX="-63" positionY="135" width="128" height="795"/>
         <element name="ID" positionX="-63" positionY="135" width="128" height="60"/>
+        <element name="Private" positionX="-63" positionY="-18" width="128" height="810"/>
+        <element name="Public" positionX="-63" positionY="135" width="128" height="795"/>
     </elements>
 </model>

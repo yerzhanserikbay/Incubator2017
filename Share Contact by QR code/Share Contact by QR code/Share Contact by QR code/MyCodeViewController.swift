@@ -12,6 +12,7 @@ import NVActivityIndicatorView
 import CoreData
 import TwicketSegmentedControl
 import CoreImage
+import EasyPeasy
 
 class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, TwicketSegmentedControlDelegate {
     
@@ -29,9 +30,8 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
             return UIImage(ciImage: (filter?.outputImage)!)
         }
     }
-    
-    
-    
+
+    let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
     
     var qrcodeText: UITextView!
     
@@ -78,23 +78,23 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
     
     var birthday: String? = ""
     
-    var socialProfile1: String? = ""
-    var socialProfile2: String? = ""
-    var socialProfile3: String? = ""
-    var socialProfile4: String? = ""
-    var socialProfile5: String? = ""
+    var socialProfile1: String? = "&"
+    var socialProfile2: String? = "&"
+    var socialProfile3: String? = "&"
+    var socialProfile4: String? = "&"
+    var socialProfile5: String? = "&"
     
-    var instantMessage1: String? = ""
-    var instantMessage2: String? = ""
-    var instantMessage3: String? = ""
-    var instantMessage4: String? = ""
-    var instantMessage5: String? = ""
+    var instantMessage1: String? = "&"
+    var instantMessage2: String? = "&"
+    var instantMessage3: String? = "&"
+    var instantMessage4: String? = "&"
+    var instantMessage5: String? = "&"
     
-    var relatives1: String? = ""
-    var relatives2: String? = ""
-    var relatives3: String? = ""
-    var relatives4: String? = ""
-    var relatives5: String? = ""
+    var relatives1: String? = "&"
+    var relatives2: String? = "&"
+    var relatives3: String? = "&"
+    var relatives4: String? = "&"
+    var relatives5: String? = "&"
     
     var notes: String? = ""
     
@@ -141,33 +141,75 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
     
     var birthdayPublic: String? = ""
     
-    var socialProfile1Public: String? = ""
-    var socialProfile2Public: String? = ""
-    var socialProfile3Public: String? = ""
-    var socialProfile4Public: String? = ""
-    var socialProfile5Public: String? = ""
+    var socialProfile1Public: String? = "&"
+    var socialProfile2Public: String? = "&"
+    var socialProfile3Public: String? = "&"
+    var socialProfile4Public: String? = "&"
+    var socialProfile5Public: String? = "&"
     
-    var instantMessage1Public: String? = ""
-    var instantMessage2Public: String? = ""
-    var instantMessage3Public: String? = ""
-    var instantMessage4Public: String? = ""
-    var instantMessage5Public: String? = ""
+    var instantMessage1Public: String? = "&"
+    var instantMessage2Public: String? = "&"
+    var instantMessage3Public: String? = "&"
+    var instantMessage4Public: String? = "&"
+    var instantMessage5Public: String? = "&"
     
-    var relatives1Public: String? = ""
-    var relatives2Public: String? = ""
-    var relatives3Public: String? = ""
-    var relatives4Public: String? = ""
-    var relatives5Public: String? = ""
+    var relatives1Public: String? = "&"
+    var relatives2Public: String? = "&"
+    var relatives3Public: String? = "&"
+    var relatives4Public: String? = "&"
+    var relatives5Public: String? = "&"
     
     var notesPublic: String? = ""
     
     var id = ""
     
+    var segmentedIndex = 0
+    
     @IBOutlet weak var imgqrCode: UIImageView!
     @IBOutlet weak var idImage: UIImageView!
     
+
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.tintColor = UIColor.white
+        UIApplication.shared.isStatusBarHidden = false
+        getUsers()
+        getUsersPublic()
+        getUsersID()
+        
+        if segmentedIndex == 0 {
+            didSelect(0)
+        } else if segmentedIndex == 1 {
+            didSelect(1)
+        } else {
+            didSelect(2)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Savoye Let", size: 35)!, NSForegroundColorAttributeName: UIColor(red: 243/255, green: 223/255, blue: 162/255, alpha: 1.0)]
+        
+        navigationController?.navigationBar.isTranslucent = false
+       
+    
+        let cornerRadius: CGFloat = 15
+        let maskLayer = CAShapeLayer()
+        
+        maskLayer.path = UIBezierPath(
+            roundedRect: view.bounds,
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)
+            ).cgPath
+        
+        tabBarController?.tabBar.layer.mask = maskLayer
+        tabBarController?.tabBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        
+        
+
         idImage.isHidden = true
         getUsersID()
         getUsersPublic()
@@ -175,36 +217,53 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
         genMyID()
         genCodePrivate()
         
-        
         let titles = ["Private", "Public", "MyID"]
+        
         let frame = CGRect(x: 5, y: 500, width: view.frame.width - 10, height: 40)
         
+        
         let segmentedControl = TwicketSegmentedControl(frame: frame)
+        segmentedControl.sliderBackgroundColor = UIColor(red: 187/255, green: 68/255, blue: 48/255, alpha: 1.0)
+        segmentedControl.segmentsBackgroundColor = UIColor(red: 239/255, green: 230/255, blue: 221/255, alpha: 1.0)
         segmentedControl.setSegmentItems(titles)
         segmentedControl.delegate = self as TwicketSegmentedControlDelegate
         view.addSubview(segmentedControl)
         
-        let firstItem = UIApplicationShortcutItem(type: "share", localizedTitle: "Scan")
-        UIApplication.shared.shortcutItems = [firstItem]
+        segmentedControl <- [
+            CenterX(0),
+            Bottom(150),
+            Right(16),
+            Left(16),
+            Height(40)
+        ]
+        
+        if launchedBefore  {
+            print("Not first launch.")
+        } else {
+            print("First launch, setting UserDefault.")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            self.performSegue(withIdentifier: "welcomeSegue", sender: self)
+        }
+    
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        getUsersID()
-    }
    
     func didSelect(_ segmentIndex: Int) {
         if segmentIndex == 0 {
             genCodePrivate()
             imgqrCode.isHidden = false
             idImage.isHidden = true
+            segmentedIndex = 0
         } else if segmentIndex == 1 {
             genCodePublic()
             imgqrCode.isHidden = false
             idImage.isHidden = true
+            segmentedIndex = 1
         } else if segmentIndex == 2 {
             genMyID()
             imgqrCode.isHidden = true
             idImage.isHidden = false
+            segmentedIndex = 2
         }
     }
     
@@ -356,11 +415,24 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
     }
     
     func genMyID() {
-        let img  = Barcode.fromString(string: id)
+        var image = #imageLiteral(resourceName: "barcode.jpg")
+        if id != "" {
+            let img  = Barcode.fromString(string: id)
+            image = img
+        } else {
+            let img  = Barcode.fromString(string: "0000")
+            image = img
+        }
         
-        let imageView = UIImageView(image: img)
-        imageView.frame = CGRect(x: 0, y: 0, width: 375, height: 50)
+        let imageView = UIImageView(image: image)
+//        imageView.frame = CGRect(x: 0, y: 0, width: 375, height: 50)
+        imageView.frame = CGRect.zero
         self.idImage.image = imageView.image
+        
+        imageView <- [
+            CenterX(),
+            Height(0)
+        ]
     }
     
     
@@ -609,9 +681,9 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
             
             for user in array_users as [NSManagedObject] {
                 
-                firstName = user.value(forKey: "firstName") as? String ?? ""
+                firstNamePublic = user.value(forKey: "firstName") as? String ?? ""
                 
-                lastName = user.value(forKey: "lastName") as? String ?? ""
+                lastNamePublic = user.value(forKey: "lastName") as? String ?? ""
                 
                 
                 if companyPublic != nil {
@@ -810,6 +882,6 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
             print("Error with request: \(error)")
         }
     }
-
 }
+
 

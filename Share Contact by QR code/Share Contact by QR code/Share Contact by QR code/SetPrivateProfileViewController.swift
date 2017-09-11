@@ -345,79 +345,50 @@ class SetPrivateProfileViewController: FormViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getUsers()
-        self.tableView?.backgroundColor = UIColor.white
         self.form.allRows.forEach { $0.updateCell() }
         self.tableView?.reloadData()
+        UIApplication.shared.isStatusBarHidden = false
+      
     }
-//
-//    override func viewDidAppear(_ animated: Bool) {
-//        getUsers()
-//        self.tableView?.reloadData()
-//        self.form.allRows.forEach { $0.updateCell() }
-//    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.contentInset = UIEdgeInsetsMake(-23,0,0,0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        navigationController?.navigationBar.isTranslucent = false
         getUsers()
         
-        self.view.backgroundColor = .white
-        self.view.addSubview(self.container)
+        self.tableView?.backgroundColor = UIColor.white
         
         
-        let data = UserDefaults.standard.object(forKey: "savedImage") as!NSData
+        form +++
+            Section(header: "Personal Information", footer: "")
+            <<< TextRow() {
+                $0.tag = "firstName"
+                $0.title = "First name"
+                $0.placeholder = "None"
+                $0.disabled = true
+                } .cellUpdate { cell, row in
+                    row.value = self.firstName
+            }
         
-        let userImage = UIImageView(frame: CGRect.zero)
-        userImage.backgroundColor = .white
-        userImage.layer.cornerRadius = 43
-        userImage.clipsToBounds = true
-        userImage.image = UIImage(data: data as Data) // 2. Photo
-        self.container.addSubview(userImage)
+            <<< TextRow() {
+                $0.tag = "lastName"
+                $0.title = "Last name"
+                $0.placeholder = "None"
+                $0.disabled = true
+                } .cellUpdate { cell, row in
+                    row.value = self.lastName
+            }
         
-        
-        self.userName.textColor = .black
-        self.userName.sizeToFit()
-        self.userName.text = "none"
-        self.userName.font = userName.font.withSize(27)
-        self.container.addSubview(userName)
-        
-        
-        self.userLastName.textColor = .black
-        self.userLastName.sizeToFit()
-        self.userLastName.text = "none"
-        self.userLastName.font = userLastName.font.withSize(27)
-        self.container.addSubview(userLastName)
-        
-        self.userCompany.textColor = .black
-        self.userCompany.sizeToFit()
-        self.userCompany.text = "none"
-        self.userCompany.font = userCompany.font.withSize(14)
-        self.container.addSubview(userCompany)
-        
-        self.userName <- [
-            Left(116),
-            Top(80)
-        ]
-        
-        self.userLastName <- [
-            Left(116),
-            Top(30+80)
-        ]
-        
-        self.userCompany <- [
-            Left(116),
-            Top(145)
-        ]
-        
-        userImage <- [
-            Left(15),
-            Top(80),
-            Size(CGSize(width: 86, height: 86))
-        ]
-        
-        form +++ Section()
-        form +++ Section()
-        form +++ Section()
+            <<< TextRow() {
+                $0.tag = "company"
+                $0.title = "Company"
+                $0.placeholder = "None"
+                $0.disabled = true
+                } .cellUpdate { cell, row in
+                    row.value = self.company
+        }
         
         form +++ MultivaluedSection(multivaluedOptions: [], header: "Contact Numbers") {
             $0.addButtonProvider = { section in
@@ -512,8 +483,8 @@ class SetPrivateProfileViewController: FormViewController {
             $0 <<< TextRow() {
                 $0.tag = "Email_1"
                 $0.title = "Email"
-                $0.disabled = true
                 $0.placeholder = "None"
+                $0.disabled = true
                 } .cellUpdate { cell, row in
                     row.value = self.email1
                     row.cell.update()
@@ -726,7 +697,7 @@ class SetPrivateProfileViewController: FormViewController {
         form +++ Section("Birthday")
             <<< TextRow("Birthday") {
                 $0.title = "Your birthday"
-                $0.placeholder = "none"
+                $0.placeholder = "None"
                 $0.disabled = true
                 } .cellUpdate { cell, row in
                     row.value = self.birthday
@@ -1013,19 +984,20 @@ class SetPrivateProfileViewController: FormViewController {
             for user in array_users as [NSManagedObject] {
                 //get the Key Value pairs (although there may be a better way to do that...
                 
+                
+                firstName = user.value(forKey: "firstName") as? String
                 if firstName != nil {
-                    firstName = user.value(forKey: "firstName") as? String
-                    self.userName.text  = firstName
+                    self.form.rowBy(tag: "firstName")?.updateCell()
                 }
                 
+                lastName = user.value(forKey: "lastName") as? String
                 if lastName != nil {
-                    lastName = user.value(forKey: "lastName") as? String
-                    self.userLastName.text = lastName
+                    self.form.rowBy(tag: "lastName")?.updateCell()
                 }
                 
+                company = user.value(forKey: "company") as? String
                 if company != nil {
-                    company = user.value(forKey: "company") as? String
-                    self.userCompany.text = company
+                    self.form.rowBy(tag: "company")?.updateCell()
                 }
                 
                 
@@ -1280,5 +1252,37 @@ class SetPrivateProfileViewController: FormViewController {
         } catch {
             print("Error with request: \(error)")
         }
-    }    
+    }
+    func deleteUser () {
+        
+        let context = getContext()
+        
+        //create a fetch request, telling it about the entity
+        let fetchRequest: NSFetchRequest<Private> = Private.fetchRequest()
+        
+        do {
+            //go get the results
+            let array_users = try getContext().fetch(fetchRequest)
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for user in array_users as [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
+                context.delete(user)
+            }
+            //save the context
+            
+            do {
+                try context.save()
+                print("saved!")
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            } catch {
+                
+            }
+            
+        } catch {
+            print("Error with request: \(error)")
+        }
+    }
+
 }

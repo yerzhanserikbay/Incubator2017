@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 import Contacts
 import ContactsUI
+import AudioToolbox
+
 
 class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -18,7 +20,7 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
-
+    
     var firstName: String?
     var lastName: String?
     var company: String?
@@ -82,20 +84,52 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     
     var notes: String?
     
+    
     var is3DTouchAvailable: Bool {
         return view.traitCollection.forceTouchCapability == .available
     }
     
-  //  @IBOutlet weak var messageLabel: UILabel!
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstItem = UIApplicationShortcutItem(type: "share", localizedTitle: "Scan")
-        UIApplication.shared.shortcutItems = [firstItem]
+        navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
+        
+     //   tabBarController?.tabBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        
+        
+        let cornerRadius: CGFloat = 15
+        let maskLayer = CAShapeLayer()
+        
+        maskLayer.path = UIBezierPath(
+            roundedRect: view.bounds,
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)
+            ).cgPath
+        
+        tabBarController?.tabBar.layer.mask = maskLayer
+        
+        let icon = UIApplicationShortcutIcon(type: .capturePhoto)
+        let firstItem = UIApplicationShortcutItem(type: "Share", localizedTitle: "Scan", localizedSubtitle: "", icon: icon, userInfo: nil)
+        UIApplication.shared.shortcutItems = [firstItem]
+        capture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        timer = 0
+        tabBarController?.tabBar.tintColor = UIColor(red: 187/255, green: 68/255, blue: 48/255, alpha: 1.0)
+        print("hello")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timer = 1
+    }
+    
+    func capture() {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
@@ -112,13 +146,13 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
             videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             videoPreviewLayer?.frame = view.layer.bounds
             view.layer.addSublayer(videoPreviewLayer!)
-    
+            
             captureSession?.startRunning()
             
             qrCodeFrameView = UIView()
             
             if let qrCodeFrameView = qrCodeFrameView {
-                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+                qrCodeFrameView.layer.borderColor = UIColor.blue.cgColor
                 qrCodeFrameView.layer.borderWidth = 2
                 view.addSubview(qrCodeFrameView)
                 view.bringSubview(toFront: qrCodeFrameView)
@@ -129,13 +163,11 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
             return
         }
     }
-
+    
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
-           // messageLabel.text = "No QR code is detected"
-            timer = 0
             return
         }
         
@@ -144,7 +176,9 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         if metadataObj.type == AVMetadataObjectTypeQRCode {
             
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView?.frame = barCodeObject!.bounds
+            if barCodeObject?.bounds != nil {
+                qrCodeFrameView?.frame = barCodeObject!.bounds
+            }
             
             if metadataObj.stringValue != nil {
                 
@@ -353,6 +387,7 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
                     if dataBaseArr?[49] != nil {
                         notes = dataBaseArr![49]
                     }
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                     createNewContact()
                     timer = 1
                 }
@@ -360,15 +395,10 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         }
     }
     
-//    func alert() {
-//        let alert = UIAlertController(title: "Magic!", message: "Contact is saved successfully!", preferredStyle: UIAlertControllerStyle.alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//    }
     
     func createNewContact() {
+        captureSession?.stopRunning()
         let newContact = CNMutableContact()
-       // newContact.imageData = NSData() as Data
         newContact.givenName = "\(String(describing: firstName!))"
         newContact.familyName = "\(String(describing: lastName!))"
         newContact.organizationName = "\(String(describing: company!))"
@@ -496,25 +526,25 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         
         
         
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd,yyyy" //Your date format
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
-        let date = dateFormatter.date(from: birthday!) //according to date format your date string
-        
-        let dateThree = date
-        let calendar = Calendar.current
-        
-        let day = calendar.component(.day, from: dateThree!)
-        let month = calendar.component(.month, from: dateThree!)
-        let year = calendar.component(.year, from: dateThree!)
-        
-        let myBirthday = NSDateComponents()
-        myBirthday.day = day
-        myBirthday.month = month
-        myBirthday.year = year
-        newContact.birthday = myBirthday as DateComponents
-        
+        if birthday != "" {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMMM dd,yyyy" //Your date format
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
+            let date = dateFormatter.date(from: birthday!) //according to date format your date string
+            
+            let dateThree = date
+            let calendar = Calendar.current
+            
+            let day = calendar.component(.day, from: dateThree!)
+            let month = calendar.component(.month, from: dateThree!)
+            let year = calendar.component(.year, from: dateThree!)
+            
+            let myBirthday = NSDateComponents()
+            myBirthday.day = day
+            myBirthday.month = month
+            myBirthday.year = year
+            newContact.birthday = myBirthday as DateComponents
+        }
         
         if socialProfile1 != "&" {
             let profileArr = socialProfile1?.components(separatedBy: "&")
@@ -582,7 +612,7 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         }
         
         
-       
+        
         if relatives1 != "&" {
             let familyArr = relatives1?.components(separatedBy: "&")
             let contactRelation = CNContactRelation(name: "\(familyArr?[1] ?? "")")
@@ -619,7 +649,7 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         }
         
         
-
+        
         
         newContact.note = "\(String(describing: notes!))"
         
@@ -628,21 +658,42 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         let controller = CNContactViewController(forNewContact: newContact)
         controller.contactStore = store
         controller.delegate = self
+    
+        
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController!.pushViewController(controller, animated: true)
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        self.tabBarController?.tabBar.isHidden = true
+        hideStatusBar(status: true)
         
+        
+    }
+    
+    func hideStatusBar( status: Bool) -> () {
+        if status == true {
+            UIApplication.shared.isStatusBarHidden = true
+        } else {
+            return UIApplication.shared.isStatusBarHidden = false
+        }
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        captureSession?.stopRunning()
     }
 }
 
 extension ScanCodeViewController: CNContactViewControllerDelegate{
     func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
         self.navigationController?.popViewController(animated: true)
-        }
+        self.tabBarController?.tabBar.isHidden = false
+        capture()
+        timer = 0
+        hideStatusBar(status: false)
+    }
     
     func contactViewController(_ viewController: CNContactViewController, shouldPerformDefaultActionFor property: CNContactProperty) -> Bool {
         return true
     }
-    
 }
 
 

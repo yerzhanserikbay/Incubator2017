@@ -19,9 +19,20 @@ class myIDGenerator: FormViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.isStatusBarHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView?.backgroundColor = UIColor.white
+        self.tableView.contentInset = UIEdgeInsetsMake(-35,0,0,0)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.tableView.alwaysBounceVertical = false
+
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        navigationController?.navigationBar.isTranslucent = false
+        
         getUser()
         form +++ Section()
         <<< TextRow() {
@@ -30,6 +41,7 @@ class myIDGenerator: FormViewController {
             $0.placeholder = "Number"
             $0.value = self.number
             $0.cell.textField.keyboardType = .decimalPad
+            $0.cell.textField.clearButtonMode = .always
         }
     }
 

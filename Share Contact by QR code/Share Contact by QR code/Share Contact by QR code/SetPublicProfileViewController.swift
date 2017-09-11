@@ -345,79 +345,48 @@ class SetPublicProfileViewController: FormViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getUsers()
-        self.tableView?.backgroundColor = UIColor.white
         self.form.allRows.forEach { $0.updateCell() }
         self.tableView?.reloadData()
+        UIApplication.shared.isStatusBarHidden = false
     }
-    //
-    //    override func viewDidAppear(_ animated: Bool) {
-    //        getUsers()
-    //        self.tableView?.reloadData()
-    //        self.form.allRows.forEach { $0.updateCell() }
-    //    }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView?.backgroundColor = UIColor.white
+        self.tableView.contentInset = UIEdgeInsetsMake(-23,0,0,0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        navigationController?.navigationBar.isTranslucent = false
         getUsers()
         
-        self.view.backgroundColor = .white
-        self.view.addSubview(self.container)
         
-        
-        let data = UserDefaults.standard.object(forKey: "savedImage") as!NSData
-        
-        let userImage = UIImageView(frame: CGRect.zero)
-        userImage.backgroundColor = .white
-        userImage.layer.cornerRadius = 43
-        userImage.clipsToBounds = true
-        userImage.image = UIImage(data: data as Data) // 2. Photo
-        self.container.addSubview(userImage)
-        
-        
-        self.userName.textColor = .black
-        self.userName.sizeToFit()
-        self.userName.text = "none"
-        self.userName.font = userName.font.withSize(27)
-        self.container.addSubview(userName)
-        
-        
-        self.userLastName.textColor = .black
-        self.userLastName.sizeToFit()
-        self.userLastName.text = "none"
-        self.userLastName.font = userLastName.font.withSize(27)
-        self.container.addSubview(userLastName)
-        
-        self.userCompany.textColor = .black
-        self.userCompany.sizeToFit()
-        self.userCompany.text = "none"
-        self.userCompany.font = userCompany.font.withSize(14)
-        self.container.addSubview(userCompany)
-        
-        self.userName <- [
-            Left(116),
-            Top(80)
-        ]
-        
-        self.userLastName <- [
-            Left(116),
-            Top(30+80)
-        ]
-        
-        self.userCompany <- [
-            Left(116),
-            Top(145)
-        ]
-        
-        userImage <- [
-            Left(15),
-            Top(80),
-            Size(CGSize(width: 86, height: 86))
-        ]
-        
-        form +++ Section()
-        form +++ Section()
-        form +++ Section()
+        form +++
+            Section(header: "Personal Information", footer: "")
+            <<< TextRow() {
+                $0.tag = "firstName"
+                $0.title = "First name"
+                $0.placeholder = "None"
+                $0.disabled = true
+                } .cellUpdate { cell, row in
+                    row.value = self.firstName
+            }
+            
+            <<< TextRow() {
+                $0.tag = "lastName"
+                $0.title = "Last name"
+                $0.placeholder = "None"
+                $0.disabled = true
+                } .cellUpdate { cell, row in
+                    row.value = self.lastName
+            }
+            
+            <<< TextRow() {
+                $0.tag = "company"
+                $0.title = "Company"
+                $0.placeholder = "None"
+                $0.disabled = true
+                } .cellUpdate { cell, row in
+                    row.value = self.company
+        }
         
         form +++ MultivaluedSection(multivaluedOptions: [], header: "Contact Numbers") {
             $0.addButtonProvider = { section in
@@ -570,7 +539,6 @@ class SetPublicProfileViewController: FormViewController {
                 return ButtonRow("UrlButton") {
                     $0.title = "add url"
                     }
-                    
                     .cellUpdate { cell, row in
                         cell.textLabel?.textColor = .black
                         cell.textLabel?.textAlignment = .left
@@ -726,7 +694,7 @@ class SetPublicProfileViewController: FormViewController {
         form +++ Section("Birthday")
             <<< TextRow("Birthday") {
                 $0.title = "Your birthday"
-                $0.placeholder = "none"
+                $0.placeholder = "None"
                 $0.disabled = true
                 } .cellUpdate { cell, row in
                     row.value = self.birthday
@@ -1027,6 +995,7 @@ class SetPublicProfileViewController: FormViewController {
                     company = user.value(forKey: "company") as? String
                     self.userCompany.text = company
                 }
+
                 
                 
                 phoneNumber1 = user.value(forKey: "phoneNumber1") as? String

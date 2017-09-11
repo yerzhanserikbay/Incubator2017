@@ -336,29 +336,23 @@ class OpenPublicSettingProfileViewController: FormViewController {
             self.tableView.reloadData()
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.isStatusBarHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView?.backgroundColor = UIColor.white
-        getUsers()
+        self.tableView.contentInset = UIEdgeInsetsMake(-33,0,0,0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        form +++ ImageRow() {
-            $0.tag = "Avatar"
-            $0.title = "Choose Photo For Your Profile"
-            $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum]
-            $0.value = #imageLiteral(resourceName: "user.png")
-            $0.cell.height = { 102 }
-            $0.clearAction = .no
-            $0.disabled = true
-            }
-            .cellUpdate { cell, row in
-                cell.accessoryView?.layer.cornerRadius = 34
-                cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 68, height: 68)
-        }
+        getUsers()
         
         form +++ Section()
             <<< NameRow("First Name") {
-                $0.placeholder = "First Name"
+                $0.placeholder = "First name"
                 $0.cell.textField.keyboardType = .default
                 $0.value = self.firstName
                 } .cellSetup { cell, row in
@@ -367,7 +361,7 @@ class OpenPublicSettingProfileViewController: FormViewController {
             }
             
             <<< NameRow("Last Name") {
-                $0.placeholder = "Last Name"
+                $0.placeholder = "Last name"
                 $0.cell.textField.keyboardType = .default
                 $0.value = self.lastName
                 } .cellSetup { cell, row in
@@ -390,6 +384,7 @@ class OpenPublicSettingProfileViewController: FormViewController {
         let phone3 = phoneNumber3 ?? ""
         let phone4 = phoneNumber4 ?? ""
         let phone5 = phoneNumber5 ?? ""
+        
         var hiddenPhone = false
         form +++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete]) {
             $0.addButtonProvider = { section in
@@ -397,7 +392,6 @@ class OpenPublicSettingProfileViewController: FormViewController {
                     $0.title = "add phone"
                     }
                     .cellUpdate { cell, row in
-                        // cell.textLabel?.font = .systemFont(ofSize: 18)
                         cell.textLabel?.textColor = .black
                         cell.textLabel?.textAlignment = .left
                         if hiddenPhone == true {
@@ -409,22 +403,8 @@ class OpenPublicSettingProfileViewController: FormViewController {
             $0.multivaluedRowToInsertAt = { index in
                 return PhoneRow("tag_\(index + 1)") {
                     $0.placeholder = "Phone"
-                    
-                    if index == 0 {
-                        $0.tag = "tag_1"
-                    }
-                    if index == 1 {
-                        $0.tag = "tag_2"
-                    }
-                    if index == 2 {
-                        $0.tag = "tag_3"
-                    }
                     if index == 3 {
-                        $0.tag = "tag_4"
-                    }
-                    if index == 4 {
                         hiddenPhone = true
-                        $0.tag = "tag_5"
                         self.form.rowBy(tag: "PhoneButton")?.updateCell()
                     }
                     } .cellSetup { cell, row in
@@ -445,38 +425,45 @@ class OpenPublicSettingProfileViewController: FormViewController {
             if phone1 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_1"
-                    $0.value = self.phoneNumber1
+                    } .cellSetup { cell, row in
+                        row.value = self.phoneNumber1
+                        row.cell.update()
                 }
             }
             
             if phone2 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_2"
-                    $0.value = self.phoneNumber2
+                    } .cellSetup { cell, row in
+                        row.value = self.phoneNumber2
+                        row.cell.update()
                 }
             }
             
             if phone3 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_3"
-                    $0.value = self.phoneNumber3
-                    $0.cell.update()
+                    } .cellSetup { cell, row in
+                        row.value = self.phoneNumber3
+                        row.cell.update()
                 }
             }
             
             if phone4 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_4"
-                    $0.value = self.phoneNumber4
-                    $0.cell.update()
+                    } .cellSetup { cell, row in
+                        row.value = self.phoneNumber4
+                        row.cell.update()
                 }
             }
             
             if phone5 != "" {
                 $0 <<< PhoneRow() {
                     $0.tag = "tag_5"
-                    $0.value = self.phoneNumber5
-                    $0.cell.update()
+                    } .cellSetup { cell, row in
+                        row.value = self.phoneNumber5
+                        row.cell.update()
                 }
             }
         }
@@ -748,7 +735,7 @@ class OpenPublicSettingProfileViewController: FormViewController {
                             cell.isHidden = true
                         }
                     } .cellSetup({ (cell, row) in
-                        cell.height = ({return 0})
+                        cell.height = ({return 40})
                     })
                 
             }
@@ -768,13 +755,16 @@ class OpenPublicSettingProfileViewController: FormViewController {
             dateFormatter.dateStyle = DateFormatter.Style.long
             let date = dateFormatter.date(from: self.birthday!)
             
-            if birthday != "" {
+            let nonOptBirthday = birthday ?? ""
+            
+            if nonOptBirthday != "" {
                 $0 <<< DateRow() {
                     $0.tag = "Birthday"
                     $0.title = "Your birthday:"
-                    $0.value = date
                     hiddenBirthday = true
                     self.form.rowBy(tag: "BirthdayButton")?.updateCell()
+                    } .cellUpdate { cell, row in
+                        row.value = date
                 }
             }
         }
@@ -1195,9 +1185,9 @@ class OpenPublicSettingProfileViewController: FormViewController {
         form +++ Section()
             <<< SwitchRow("switchRowTag") {
                 $0.title = "Family"
-                $0.value = true
-                if relatives1 == "" {
-                    $0.value = false
+                $0.value = false
+                if relatives1 != "&" {
+                    $0.value = true
                 }
             }
             +++  MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete]) {
@@ -1332,11 +1322,18 @@ class OpenPublicSettingProfileViewController: FormViewController {
         var dict = form.values(includeHidden: true)
         
         let date = Date()
+        
         let addressEx = PostalAddress()
+        
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.long
+        
+        var birthdayComponentsString = ""
+        
         let birthday = dict["Birthday"] as? Date ?? date
-        let birthdayComponentsString = formatter.string(from: birthday)
+        if birthday != date {
+            birthdayComponentsString = formatter.string(from: birthday)
+        }
         
         let firstName = dict["First Name"] as? String ?? ""
         let lastName = dict["Last Name"] as? String ?? ""

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gUq-AP-5do">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Qs-nh-ZO3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -144,13 +144,14 @@
                     <navigationItem key="navigationItem" title="Settings" id="kct-m9-Ozb"/>
                     <connections>
                         <outlet property="tableView" destination="cr0-A1-FYz" id="FxK-nZ-3xk"/>
+                        <segue destination="gUq-AP-5do" kind="presentation" identifier="welcomeSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="n2r-3W-n0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgd-0B-ODB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2138.4000000000001" y="861.3193403298352"/>
         </scene>
-        <!--Open Private Setting Profile View Controller-->
+        <!--Private-->
         <scene sceneID="jTJ-XI-TUe">
             <objects>
                 <viewController id="cM2-Yl-Jct" customClass="OpenPrivateSettingProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,13 +164,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jGh-EM-N5J">
+                    <navigationItem key="navigationItem" title="Private" id="jGh-EM-N5J">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="7q3-ak-Vxu">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="cM2-Yl-Jct" id="VZI-2V-AsP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="aou-iR-c3x">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneButtonPressed:" destination="cM2-Yl-Jct" id="KXX-OX-Yl4"/>
                             </connections>
@@ -180,7 +183,7 @@
             </objects>
             <point key="canvasLocation" x="2137" y="3238"/>
         </scene>
-        <!--Set Private Profile View Controller-->
+        <!--Private-->
         <scene sceneID="j4Y-jn-qEb">
             <objects>
                 <viewController storyboardIdentifier="privateIndetifier" id="kCP-6k-GGt" customClass="SetPrivateProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,10 +196,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="s5T-cf-xib">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Private" id="s5T-cf-xib">
                         <barButtonItem key="backBarButtonItem" title="Settings" id="4u6-YZ-gIN"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="fua-LH-mjh">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="cPw-Wy-zPf" kind="show" identifier="" id="HNs-Ca-97G"/>
                             </connections>
@@ -207,7 +210,7 @@
             </objects>
             <point key="canvasLocation" x="2138" y="1649"/>
         </scene>
-        <!--My Code-->
+        <!--Easy Hello-->
         <scene sceneID="f2s-6u-svG">
             <objects>
                 <viewController id="VMi-vK-HLK" customClass="MyCodeViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
@@ -221,27 +224,34 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1s4-pW-R6D">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="REG-rs-ShY"/>
+                                    <constraint firstAttribute="width" constant="375" id="b66-Zc-8ma"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ofz-fe-9vj">
-                                <rect key="frame" x="0.0" y="183" width="375" height="136"/>
+                                <rect key="frame" x="0.0" y="219" width="375" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="dBy-Dd-BSl"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ofz-fe-9vj" firstAttribute="top" secondItem="89h-YS-890" secondAttribute="bottom" constant="119" id="0Mq-Ky-ehC"/>
                             <constraint firstAttribute="trailing" secondItem="1s4-pW-R6D" secondAttribute="trailing" id="4XX-Kc-Iku"/>
+                            <constraint firstItem="Ofz-fe-9vj" firstAttribute="centerY" secondItem="1s4-pW-R6D" secondAttribute="centerY" constant="3" id="9zG-WD-XRq"/>
                             <constraint firstAttribute="trailing" secondItem="Ofz-fe-9vj" secondAttribute="trailing" id="RI3-gd-akx"/>
-                            <constraint firstItem="DjV-xS-cMd" firstAttribute="top" secondItem="Ofz-fe-9vj" secondAttribute="bottom" constant="299" id="RmK-GP-vQO"/>
                             <constraint firstItem="1s4-pW-R6D" firstAttribute="leading" secondItem="1hB-bd-532" secondAttribute="leading" id="acN-sJ-xoJ"/>
                             <constraint firstItem="1s4-pW-R6D" firstAttribute="top" secondItem="89h-YS-890" secondAttribute="bottom" id="gHq-jf-rTj"/>
-                            <constraint firstItem="DjV-xS-cMd" firstAttribute="top" secondItem="1s4-pW-R6D" secondAttribute="bottom" constant="179" id="jwL-jy-BdD"/>
+                            <constraint firstItem="DjV-xS-cMd" firstAttribute="top" secondItem="1s4-pW-R6D" secondAttribute="bottom" constant="179" id="kLh-h4-tOe"/>
                             <constraint firstItem="Ofz-fe-9vj" firstAttribute="leading" secondItem="1hB-bd-532" secondAttribute="leading" id="xBN-Lw-doq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Code" id="ofh-zV-GGS"/>
+                    <navigationItem key="navigationItem" title="Easy Hello" id="ofh-zV-GGS"/>
                     <connections>
                         <outlet property="idImage" destination="Ofz-fe-9vj" id="0CD-2s-eAQ"/>
                         <outlet property="imgqrCode" destination="1s4-pW-R6D" id="x0b-fh-clJ"/>
+                        <segue destination="gUq-AP-5do" kind="presentation" identifier="welcomeSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="2N3-wl-BoL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb9-mp-5mD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,10 +318,10 @@
         <!--Root Page View Controller-->
         <scene sceneID="5q7-U0-blX">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gUq-AP-5do" customClass="RootPageViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="welcomeSegue" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gUq-AP-5do" customClass="RootPageViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9r-9u-AFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="-835"/>
+            <point key="canvasLocation" x="-732" y="498"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ttg-PC-tfq">
@@ -341,10 +351,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="sVr-FD-hK1" firstAttribute="top" secondItem="bHE-2U-O1w" secondAttribute="top" id="Jzt-Qw-ZA1"/>
-                            <constraint firstItem="xcv-qg-DkS" firstAttribute="top" secondItem="sVr-FD-hK1" secondAttribute="bottom" id="Km1-Qk-7Nb"/>
-                            <constraint firstItem="sVr-FD-hK1" firstAttribute="leading" secondItem="bHE-2U-O1w" secondAttribute="leading" id="QfC-qB-932"/>
-                            <constraint firstAttribute="trailing" secondItem="sVr-FD-hK1" secondAttribute="trailing" id="iEf-5J-IaR"/>
+                            <constraint firstItem="sVr-FD-hK1" firstAttribute="top" secondItem="bHE-2U-O1w" secondAttribute="top" id="4mI-R2-mzU"/>
+                            <constraint firstAttribute="trailing" secondItem="sVr-FD-hK1" secondAttribute="trailing" id="D1F-GY-18h"/>
+                            <constraint firstItem="xcv-qg-DkS" firstAttribute="top" secondItem="sVr-FD-hK1" secondAttribute="bottom" id="g0o-rX-h3M"/>
+                            <constraint firstItem="sVr-FD-hK1" firstAttribute="leading" secondItem="bHE-2U-O1w" secondAttribute="leading" id="zXE-ce-Ei5"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -370,10 +380,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="sDJ-z3-XhW" firstAttribute="top" secondItem="c4V-4X-ndz" secondAttribute="top" id="Fd1-jY-ccj"/>
-                            <constraint firstItem="scQ-lS-PlT" firstAttribute="top" secondItem="sDJ-z3-XhW" secondAttribute="bottom" id="NmQ-0q-aKI"/>
-                            <constraint firstAttribute="trailing" secondItem="sDJ-z3-XhW" secondAttribute="trailing" id="oKX-Sv-1ss"/>
-                            <constraint firstItem="sDJ-z3-XhW" firstAttribute="leading" secondItem="c4V-4X-ndz" secondAttribute="leading" id="p54-uQ-fal"/>
+                            <constraint firstAttribute="trailing" secondItem="sDJ-z3-XhW" secondAttribute="trailing" id="Ryd-n9-8Gq"/>
+                            <constraint firstItem="sDJ-z3-XhW" firstAttribute="leading" secondItem="c4V-4X-ndz" secondAttribute="leading" id="VBi-tp-WqJ"/>
+                            <constraint firstItem="sDJ-z3-XhW" firstAttribute="top" secondItem="c4V-4X-ndz" secondAttribute="top" id="h6X-Ni-VMg"/>
+                            <constraint firstItem="scQ-lS-PlT" firstAttribute="top" secondItem="sDJ-z3-XhW" secondAttribute="bottom" id="rNu-1G-b9d"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -397,7 +407,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jn-jn-VJE">
-                                <rect key="frame" x="307" y="20" width="42" height="30"/>
+                                <rect key="frame" x="317" y="20" width="42" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xez-Al-0N7"/>
+                                </constraints>
                                 <state key="normal" title="Got it!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -408,13 +421,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="22z-lr-jd0" firstAttribute="top" secondItem="Od4-hD-sUn" secondAttribute="bottom" id="QC0-zR-BMG"/>
-                            <constraint firstItem="Od4-hD-sUn" firstAttribute="top" secondItem="AlF-UH-nDg" secondAttribute="top" id="Sib-MN-LC2"/>
-                            <constraint firstItem="22z-lr-jd0" firstAttribute="top" secondItem="5jn-jn-VJE" secondAttribute="bottom" constant="617" id="W4p-mh-rZd"/>
-                            <constraint firstItem="Od4-hD-sUn" firstAttribute="leading" secondItem="AlF-UH-nDg" secondAttribute="leading" id="hO9-MX-AI4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5jn-jn-VJE" secondAttribute="trailing" constant="10" id="stg-Fj-zbY"/>
-                            <constraint firstAttribute="trailing" secondItem="Od4-hD-sUn" secondAttribute="trailing" id="wmL-6r-Dzv"/>
-                            <constraint firstItem="5jn-jn-VJE" firstAttribute="top" secondItem="EBg-FZ-mMy" secondAttribute="bottom" id="yVA-th-LXE"/>
+                            <constraint firstItem="5jn-jn-VJE" firstAttribute="top" secondItem="EBg-FZ-mMy" secondAttribute="bottom" id="DRm-Jn-QOQ"/>
+                            <constraint firstItem="Od4-hD-sUn" firstAttribute="leading" secondItem="AlF-UH-nDg" secondAttribute="leading" id="SQ3-rc-RxQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Od4-hD-sUn" secondAttribute="trailing" id="T9G-5e-R2l"/>
+                            <constraint firstItem="22z-lr-jd0" firstAttribute="top" secondItem="5jn-jn-VJE" secondAttribute="bottom" constant="617" id="YXO-tx-KQc"/>
+                            <constraint firstItem="22z-lr-jd0" firstAttribute="top" secondItem="Od4-hD-sUn" secondAttribute="bottom" id="dXI-6l-ZXI"/>
+                            <constraint firstItem="Od4-hD-sUn" firstAttribute="top" secondItem="AlF-UH-nDg" secondAttribute="top" id="esa-Rb-HZg"/>
+                            <constraint firstItem="5jn-jn-VJE" firstAttribute="trailing" secondItem="AlF-UH-nDg" secondAttribute="trailingMargin" id="hQw-BC-BlZ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -425,8 +438,9 @@
         <!--My Code-->
         <scene sceneID="lhQ-K4-sLo">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWc-na-Bmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d9j-ds-i2o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Code" image="qrcode" id="Drg-lS-qyI"/>
+                    <tabBarItem key="tabBarItem" title="My Code" image="qrcode" selectedImage="qrcode" id="Drg-lS-qyI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hGh-7X-u8D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -437,7 +451,6 @@
                         <segue destination="VMi-vK-HLK" kind="relationship" relationship="rootViewController" id="8Ow-ui-htX"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qWc-na-Bmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1383.2" y="-156.07196401799101"/>
         </scene>
@@ -463,7 +476,7 @@
             </objects>
             <point key="canvasLocation" x="2140" y="2436"/>
         </scene>
-        <!--Set Public Profile View Controller-->
+        <!--Public-->
         <scene sceneID="I1n-gF-Rds">
             <objects>
                 <viewController storyboardIdentifier="publicIndetifier" id="U6M-ng-CEf" customClass="SetPublicProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
@@ -476,10 +489,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qYn-q2-936">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Public" id="qYn-q2-936">
                         <barButtonItem key="backBarButtonItem" title="Settings" id="2ZN-Zf-nfm"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Fzm-O5-9nR">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="hqz-Vc-Kcs" kind="show" id="St1-ND-SGq"/>
                             </connections>
@@ -490,7 +503,7 @@
             </objects>
             <point key="canvasLocation" x="3190" y="1648"/>
         </scene>
-        <!--Open Public Setting Profile View Controller-->
+        <!--Public-->
         <scene sceneID="StI-hz-XlS">
             <objects>
                 <viewController id="t4A-bt-4Jg" customClass="OpenPublicSettingProfileViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
@@ -503,13 +516,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="K9C-z7-haU">
+                    <navigationItem key="navigationItem" title="Public" id="K9C-z7-haU">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="agO-2U-g1m">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="t4A-bt-4Jg" id="wdr-kb-0D6"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="2T5-Fg-GF4">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneButtonPressed:" destination="t4A-bt-4Jg" id="9v9-yL-9C7"/>
                             </connections>
@@ -538,7 +553,7 @@
             </objects>
             <point key="canvasLocation" x="3190" y="2454"/>
         </scene>
-        <!--MyID Generator-->
+        <!--ID number-->
         <scene sceneID="Jnw-2e-sNa">
             <objects>
                 <viewController storyboardIdentifier="socialIndetifier" id="byH-n8-l2x" customClass="myIDGenerator" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
@@ -551,10 +566,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dR6-B3-i1d">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="ID number" id="dR6-B3-i1d">
                         <barButtonItem key="backBarButtonItem" title="Settings" id="Ids-Bd-oq3"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="U1U-1B-0We">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneButtonPressed:" destination="byH-n8-l2x" id="OWq-5X-as5"/>
                             </connections>
@@ -593,6 +608,7 @@
         <image name="settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RDX-ie-TQG"/>
+        <segue reference="fE4-3w-JG2"/>
+        <segue reference="n2r-3W-n0u"/>
     </inferredMetricsTieBreakers>
 </document>

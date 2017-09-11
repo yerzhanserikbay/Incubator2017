@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>CFBundleDisplayName</key>
 	<string>Easy Hello</string>
 	<key>CFBundleExecutable</key>
@@ -32,19 +34,6 @@
 	<string>We need to access you Contacts for save the new contact</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need to access your gallery for import photo</string>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutIconItemType</key>
-			<string>scan</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutItemIconTypeSearch</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Scan</string>
-		</dict>
-		<dict/>
-		<dict/>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>

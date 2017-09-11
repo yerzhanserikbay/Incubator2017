@@ -266,9 +266,9 @@
 				E64144A61F29153B00165F38 /* Public */,
 				E64144931F28893400165F38 /* Private */,
 				E6DFCDE31F162A45007F90AB /* SettingsViewController.swift */,
-				E6B4F3041F48B6B200B894AD /* RootPageViewController.swift */,
 				E6B93B0E1F13845400EF2129 /* MyCodeViewController.swift */,
 				E6B93B101F138CE500EF2129 /* ScanCodeViewController.swift */,
+				E6B4F3041F48B6B200B894AD /* RootPageViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -361,7 +361,7 @@
 				TargetAttributes = {
 					E6B93AD51F137EC200EF2129 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = L3B877U2ZV;
+						DevelopmentTeam = AB65P3C5XF;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -745,12 +745,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Share Contact by QR code/Share Contact by QR code.entitlements";
-				DEVELOPMENT_TEAM = L3B877U2ZV;
+				DEVELOPMENT_TEAM = AB65P3C5XF;
 				INFOPLIST_FILE = "Share Contact by QR code/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Share-Contact-by-QR-code";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yerzhanserikbay.easyhello;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -760,12 +761,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Share Contact by QR code/Share Contact by QR code.entitlements";
-				DEVELOPMENT_TEAM = L3B877U2ZV;
+				DEVELOPMENT_TEAM = AB65P3C5XF;
 				INFOPLIST_FILE = "Share Contact by QR code/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "HOME.Share-Contact-by-QR-code";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yerzhanserikbay.easyhello;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
