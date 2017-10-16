@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>CFBundleDisplayName</key>
 	<string>Easy Hello</string>
 	<key>CFBundleExecutable</key>
@@ -33,9 +31,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>We need to access you Contacts for save the new contact</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need to access your gallery for import photo</string>
-	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>We need to access your gallery for export QR code.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -55,5 +51,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

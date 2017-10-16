@@ -4,17 +4,17 @@
 target 'Share Contact by QR code' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 
-  use_frameworks!
-  pod 'Eureka' 
+  use_frameworks! 
   pod 'ImageRow' 
+  pod 'Eureka'
   pod 'EasyPeasy'
   pod 'PostalAddressRow' 
   pod 'QRCode'
   pod 'NVActivityIndicatorView' 
   pod 'PhoneNumberKit'
   pod 'TwicketSegmentedControl' 
- 
- # Pods for Share Contact by QR code
+
+  # Pods for Share Contact by QR code
 
   target 'Share Contact by QR codeTests' do
     inherit! :search_paths

@@ -14,6 +14,8 @@ import TwicketSegmentedControl
 import CoreImage
 import EasyPeasy
 
+
+
 class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, TwicketSegmentedControlDelegate {
     
     class Barcode {
@@ -30,6 +32,7 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
             return UIImage(ciImage: (filter?.outputImage)!)
         }
     }
+    
 
     let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
     
@@ -165,9 +168,11 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
     
     var segmentedIndex = 0
     
+    var image: UIImage!
+    
     @IBOutlet weak var imgqrCode: UIImageView!
     @IBOutlet weak var idImage: UIImageView!
-    
+    @IBOutlet weak var button: UIButton!
 
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.tintColor = UIColor.white
@@ -246,25 +251,39 @@ class MyCodeViewController: UIViewController, NVActivityIndicatorViewable, Twick
         }
     
     }
-    
    
+    
     func didSelect(_ segmentIndex: Int) {
         if segmentIndex == 0 {
             genCodePrivate()
             imgqrCode.isHidden = false
             idImage.isHidden = true
             segmentedIndex = 0
+            button.isEnabled = true
+            image = imgqrCode.image
+            
         } else if segmentIndex == 1 {
             genCodePublic()
             imgqrCode.isHidden = false
             idImage.isHidden = true
             segmentedIndex = 1
+            button.isEnabled = true
+            image = imgqrCode.image
         } else if segmentIndex == 2 {
             genMyID()
             imgqrCode.isHidden = true
             idImage.isHidden = false
             segmentedIndex = 2
+            button.isEnabled = false
         }
+    }
+    
+    @IBAction func shareImageButton(_ sender: UIButton) {
+        
+        let activityViewController = UIActivityViewController(activityItems: [self.image!], applicationActivities: nil)
+        
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     func genCodePrivate() {

@@ -353,9 +353,11 @@ class SetPrivateProfileViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteUser()
         self.tableView.contentInset = UIEdgeInsetsMake(-23,0,0,0)
         navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
         navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = UIColor.white
         getUsers()
         
         self.tableView?.backgroundColor = UIColor.white

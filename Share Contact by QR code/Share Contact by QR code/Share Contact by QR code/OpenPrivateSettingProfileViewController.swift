@@ -367,6 +367,7 @@ class OpenPrivateSettingProfileViewController: FormViewController, SectionDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.reloadData()
         self.tableView?.backgroundColor = UIColor.white
         self.tableView.contentInset = UIEdgeInsetsMake(-33,0,0,0)
         navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)

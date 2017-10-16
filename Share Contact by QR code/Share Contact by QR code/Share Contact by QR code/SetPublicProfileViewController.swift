@@ -352,10 +352,12 @@ class SetPublicProfileViewController: FormViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteUser()
         self.tableView?.backgroundColor = UIColor.white
         self.tableView.contentInset = UIEdgeInsetsMake(-23,0,0,0)
         navigationController?.navigationBar.barTintColor = UIColor(red: 35/255, green: 31/255, blue: 32/255, alpha: 1.0)
         navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = UIColor.white
         getUsers()
         
         
@@ -1249,4 +1251,38 @@ class SetPublicProfileViewController: FormViewController {
         } catch {
             print("Error with request: \(error)")
         }
-    }  }
+    }
+    
+    func deleteUser () {
+        
+        let context = getContext()
+        
+        //create a fetch request, telling it about the entity
+        let fetchRequest: NSFetchRequest<Private> = Private.fetchRequest()
+        
+        do {
+            //go get the results
+            let array_users = try getContext().fetch(fetchRequest)
+            
+            //You need to convert to NSManagedObject to use 'for' loops
+            for user in array_users as [NSManagedObject] {
+                //get the Key Value pairs (although there may be a better way to do that...
+                context.delete(user)
+            }
+            //save the context
+            
+            do {
+                try context.save()
+                print("saved!")
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            } catch {
+                
+            }
+            
+        } catch {
+            print("Error with request: \(error)")
+        }
+    }
+
+}

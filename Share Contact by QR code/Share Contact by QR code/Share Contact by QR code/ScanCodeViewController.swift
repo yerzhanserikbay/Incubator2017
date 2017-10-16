@@ -31,7 +31,6 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     var phoneNumber4: String?
     var phoneNumber5: String?
     
-    
     var email1: String?
     var email2: String?
     var email3: String?
@@ -69,6 +68,7 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     var socialProfile3: String?
     var socialProfile4: String?
     var socialProfile5: String?
+    var socialLink: String?
     
     var instantMessage1: String?
     var instantMessage2: String?
@@ -122,7 +122,6 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     override func viewWillAppear(_ animated: Bool) {
         timer = 0
         tabBarController?.tabBar.tintColor = UIColor(red: 187/255, green: 68/255, blue: 48/255, alpha: 1.0)
-        print("hello")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -549,6 +548,18 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         if socialProfile1 != "&" {
             let profileArr = socialProfile1?.components(separatedBy: "&")
             
+            if profileArr?[0] == "Facebook" {
+                socialLink = "https://www.facebook.com/"
+            } else if profileArr?[0] == "Twitter" {
+                socialLink = "https://twitter.com/"
+            } else if profileArr?[0] == "VKontakte" {
+                socialLink = "https://vk.com/"
+            } else if profileArr?[0] == "Odnolassniki" {
+                socialLink = "https://ok.ru/"
+            } else {
+                socialLink = "https://www.instagram.com/"
+            }
+            
             let socialProfile = CNLabeledValue(label: "", value: CNSocialProfile(urlString: "", username: "\(profileArr?[1] ?? "none")", userIdentifier: "something", service: "\(profileArr?[0] ?? "none")" ))
             newContact.socialProfiles = [socialProfile]
             
@@ -556,24 +567,76 @@ class ScanCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         
         if socialProfile2 != "&" {
             let profileArr = socialProfile2?.components(separatedBy: "&")
+            
+            if profileArr?[0] == "Facebook" {
+                socialLink = "https://www.facebook.com/"
+            } else if profileArr?[0] == "Twitter" {
+                socialLink = "https://twitter.com/"
+            } else if profileArr?[0] == "VKontakte" {
+                socialLink = "https://vk.com/"
+            } else if profileArr?[0] == "Odnolassniki" {
+                socialLink = "https://ok.ru/"
+            } else {
+                socialLink = "https://www.instagram.com/"
+            }
+            
             let socialProfile = CNLabeledValue(label: "", value: CNSocialProfile(urlString: "", username: "\(profileArr?[1] ?? "none")", userIdentifier: "something", service: "\(profileArr?[0] ?? "none")"))
             newContact.socialProfiles.append(socialProfile)
         }
         
         if socialProfile3 != "&" {
             let profileArr = socialProfile3?.components(separatedBy: "&")
+            
+            if profileArr?[0] == "Facebook" {
+                socialLink = "https://www.facebook.com/"
+            } else if profileArr?[0] == "Twitter" {
+                socialLink = "https://twitter.com/"
+            } else if profileArr?[0] == "VKontakte" {
+                socialLink = "https://vk.com/"
+            } else if profileArr?[0] == "Odnolassniki" {
+                socialLink = "https://ok.ru/"
+            } else {
+                socialLink = "https://www.instagram.com/"
+            }
+            
             let socialProfile = CNLabeledValue(label: "", value: CNSocialProfile(urlString: "", username: "\(profileArr?[1] ?? "none")", userIdentifier: "something", service: "\(profileArr?[0] ?? "none")"))
             newContact.socialProfiles.append(socialProfile)
         }
         
         if socialProfile4 != "&" {
             let profileArr = socialProfile4?.components(separatedBy: "&")
+            
+            if profileArr?[0] == "Facebook" {
+                socialLink = "https://www.facebook.com/"
+            } else if profileArr?[0] == "Twitter" {
+                socialLink = "https://twitter.com/"
+            } else if profileArr?[0] == "VKontakte" {
+                socialLink = "https://vk.com/"
+            } else if profileArr?[0] == "Odnolassniki" {
+                socialLink = "https://ok.ru/"
+            } else {
+                socialLink = "https://www.instagram.com/"
+            }
+            
             let socialProfile = CNLabeledValue(label: "", value: CNSocialProfile(urlString: "", username: "\(profileArr?[1] ?? "none")", userIdentifier: "something", service: "\(profileArr?[0] ?? "none")"))
             newContact.socialProfiles.append(socialProfile)
         }
         
         if socialProfile5 != "&" {
             let profileArr = socialProfile5?.components(separatedBy: "&")
+            
+            if profileArr?[0] == "Facebook" {
+                socialLink = "https://www.facebook.com/"
+            } else if profileArr?[0] == "Twitter" {
+                socialLink = "https://twitter.com/"
+            } else if profileArr?[0] == "VKontakte" {
+                socialLink = "https://vk.com/"
+            } else if profileArr?[0] == "Odnolassniki" {
+                socialLink = "https://ok.ru/"
+            } else {
+                socialLink = "https://www.instagram.com/"
+            }
+            
             let socialProfile = CNLabeledValue(label: "", value: CNSocialProfile(urlString: "", username: "\(profileArr?[1] ?? "none")", userIdentifier: "something", service: "\(profileArr?[0] ?? "none")"))
             newContact.socialProfiles.append(socialProfile)
         }

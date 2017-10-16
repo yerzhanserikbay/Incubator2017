@@ -246,50 +246,6 @@
       "idiom" : "mac",
       "size" : "512x512",
       "scale" : "2x"
-    },
-    {
-      "size" : "72x72",
-      "idiom" : "ipad",
-      "filename" : "hdpi.png",
-      "unassigned" : true,
-      "scale" : "1x"
-    },
-    {
-      "size" : "72x72",
-      "idiom" : "ipad",
-      "filename" : "xxhdpi.png",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "role" : "notificationCenter",
-      "size" : "24x24",
-      "idiom" : "watch",
-      "filename" : "mdpi.png",
-      "subtype" : "38mm",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "role" : "appLauncher",
-      "size" : "40x40",
-      "idiom" : "watch",
-      "filename" : "Icon-Small-40@2x.png",
-      "subtype" : "38mm",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "filename" : "ldpi.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "xhdpi.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "xxxhdpi.png",
-      "unassigned" : true
     }
   ],
   "info" : {

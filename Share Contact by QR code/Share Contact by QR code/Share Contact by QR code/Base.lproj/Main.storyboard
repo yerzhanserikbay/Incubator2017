@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Qs-nh-ZO3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Qs-nh-ZO3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -197,7 +197,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Private" id="s5T-cf-xib">
-                        <barButtonItem key="backBarButtonItem" title="Settings" id="4u6-YZ-gIN"/>
+                        <barButtonItem key="backBarButtonItem" title="Settings" id="4u6-YZ-gIN">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="fua-LH-mjh">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -222,6 +224,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeF-z9-grO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="367"/>
+                                <connections>
+                                    <action selector="shareImageButton:" destination="VMi-vK-HLK" eventType="touchUpInside" id="mpK-Ns-Ske"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1s4-pW-R6D">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <constraints>
@@ -238,17 +246,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MeF-z9-grO" secondAttribute="trailing" id="2PZ-WW-3dg"/>
                             <constraint firstAttribute="trailing" secondItem="1s4-pW-R6D" secondAttribute="trailing" id="4XX-Kc-Iku"/>
                             <constraint firstItem="Ofz-fe-9vj" firstAttribute="centerY" secondItem="1s4-pW-R6D" secondAttribute="centerY" constant="3" id="9zG-WD-XRq"/>
                             <constraint firstAttribute="trailing" secondItem="Ofz-fe-9vj" secondAttribute="trailing" id="RI3-gd-akx"/>
                             <constraint firstItem="1s4-pW-R6D" firstAttribute="leading" secondItem="1hB-bd-532" secondAttribute="leading" id="acN-sJ-xoJ"/>
                             <constraint firstItem="1s4-pW-R6D" firstAttribute="top" secondItem="89h-YS-890" secondAttribute="bottom" id="gHq-jf-rTj"/>
+                            <constraint firstItem="DjV-xS-cMd" firstAttribute="top" secondItem="MeF-z9-grO" secondAttribute="bottom" constant="187" id="hHT-pa-0gp"/>
                             <constraint firstItem="DjV-xS-cMd" firstAttribute="top" secondItem="1s4-pW-R6D" secondAttribute="bottom" constant="179" id="kLh-h4-tOe"/>
+                            <constraint firstItem="MeF-z9-grO" firstAttribute="top" secondItem="89h-YS-890" secondAttribute="bottom" id="usU-b1-ut0"/>
+                            <constraint firstItem="MeF-z9-grO" firstAttribute="leading" secondItem="1hB-bd-532" secondAttribute="leading" id="vCM-nm-obl"/>
                             <constraint firstItem="Ofz-fe-9vj" firstAttribute="leading" secondItem="1hB-bd-532" secondAttribute="leading" id="xBN-Lw-doq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Easy Hello" id="ofh-zV-GGS"/>
                     <connections>
+                        <outlet property="button" destination="MeF-z9-grO" id="Hff-JL-kDq"/>
                         <outlet property="idImage" destination="Ofz-fe-9vj" id="0CD-2s-eAQ"/>
                         <outlet property="imgqrCode" destination="1s4-pW-R6D" id="x0b-fh-clJ"/>
                         <segue destination="gUq-AP-5do" kind="presentation" identifier="welcomeSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="2N3-wl-BoL"/>
@@ -258,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="2322.4000000000001" y="-156.07196401799101"/>
         </scene>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="1tq-Jp-Jnz">
             <objects>
-                <tabBarController id="5Qs-nh-ZO3" customClass="ViewController" customModule="Share_Contact_by_QR_code" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="5Qs-nh-ZO3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Rzm-W7-gXz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -275,13 +288,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfv-uD-GQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="-156"/>
+            <point key="canvasLocation" x="330" y="-299"/>
         </scene>
         <!--Settings-->
         <scene sceneID="RWw-EO-Slg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wfo-Mv-VDY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="iSA-7V-ZgY"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="iSA-7V-ZgY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZUE-UT-Mwk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -300,7 +313,13 @@
         <scene sceneID="3cH-3A-RV6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a6Z-9z-z8d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scan Code" image="scan" id="eB5-V0-SM7"/>
+                    <tabBarItem key="tabBarItem" title="Scan Code" image="scan" selectedImage="scan" id="eB5-V0-SM7">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="yOffSet">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tpj-l2-xRZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -438,9 +457,14 @@
         <!--My Code-->
         <scene sceneID="lhQ-K4-sLo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qWc-na-Bmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d9j-ds-i2o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Code" image="qrcode" selectedImage="qrcode" id="Drg-lS-qyI"/>
+                    <tabBarItem key="tabBarItem" title="My Code" image="qrcode" selectedImage="qrcode" id="Drg-lS-qyI">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="yOffSet">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hGh-7X-u8D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -451,6 +475,7 @@
                         <segue destination="VMi-vK-HLK" kind="relationship" relationship="rootViewController" id="8Ow-ui-htX"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWc-na-Bmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1383.2" y="-156.07196401799101"/>
         </scene>

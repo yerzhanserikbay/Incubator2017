@@ -12,7 +12,7 @@ import EasyPeasy
 import MessageUI
 
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
         
     let font = UIFont.systemFont(ofSize: 18)
@@ -103,7 +103,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.text = "You can share this profile with friends"
             cell.textLabel?.font = font
             
-            let image : UIImage = UIImage(named: "target.png")!
+            let image : UIImage = UIImage(named: "private.png")!
             cell.imageView?.image = image
             cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
@@ -113,7 +113,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.text = "This profile can be set for everyone"
             cell.textLabel?.font = font
             
-            let image : UIImage = UIImage(named: "user1.png")!
+            let image : UIImage = UIImage(named: "public.png")!
             cell.imageView?.image = image
             cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
@@ -123,7 +123,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.text = "Set here your IIN for scanning"
             cell.textLabel?.font = font
             
-            let image : UIImage = UIImage(named: "id-card.png")!
+            let image : UIImage = UIImage(named: "id.png")!
             cell.imageView?.image = image
             cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
@@ -135,7 +135,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
             cell.textLabel?.font = font
             
-            let image : UIImage = UIImage(named: "letter.png")!
+            let image : UIImage = UIImage(named: "feedback.png")!
             cell.imageView?.image = image
             cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
@@ -147,7 +147,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
             cell.textLabel?.font = font
             
-            let image : UIImage = UIImage(named: "shopping-online.png")!
+            let image : UIImage = UIImage(named: "rate.png")!
             cell.imageView?.image = image
             cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
@@ -158,7 +158,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
             cell.textLabel?.font = font
             
-            let image : UIImage = UIImage(named: "bulb.png")!
+            let image : UIImage = UIImage(named: "help.png")!
             cell.imageView?.image = image
             cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             return cell
